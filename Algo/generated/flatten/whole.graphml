@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="kind" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="name" attr.type="string" for="node"/>
+    <key attr.name="kind" attr.type="string" for="node"/>
+    <key attr.name="nbRepeat" attr.type="int" for="node"/>
+    <graph edgedefault="directed" kind="sdf">
+        <data key="name">whole</data>
+        <data key="kind">sdf</data>
+        <data key="variables">
+            <variable name="bands" value="128"/>
+            <variable name="rows" value="270"/>
+            <variable name="columns" value="233"/>
+            <variable name="pixels" value="62910"/>
+        </data>
+        <node id="kmeans">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@6ac22500</data>
+            <data key="name">kmeans</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="bands" value="bands"/>
+                <argument name="rows" value="rows"/>
+                <argument name="columns" value="columns"/>
+                <argument name="pixels" value="pixels"/>
+            </data>
+        </node>
+    </graph>
+</graphml>

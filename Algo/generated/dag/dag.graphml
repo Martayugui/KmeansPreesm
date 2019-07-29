@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="kind" attr.type="string" for="graph"/>
+    <key attr.name="SCHEDULE_COST" attr.type="int" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="name" attr.type="string" for="node"/>
+    <key attr.name="kind" attr.type="string" for="node"/>
+    <key attr.name="time" attr.type="string" for="node"/>
+    <key attr.name="nb_repeat" attr.type="string" for="node"/>
+    <key attr.name="OperatorDef" attr.type="string" for="node"/>
+    <key attr.name="availableOperators" attr.type="string" for="node"/>
+    <key attr.name="originalId" attr.type="string" for="node"/>
+    <key attr.name="duration" attr.type="int" for="node"/>
+    <key attr.name="schedulingOrder" attr.type="int" for="node"/>
+    <key attr.name="Operator" attr.type="string" for="node"/>
+    <graph edgedefault="directed" kind="sdf">
+        <data key="name">whole</data>
+        <data key="kind">sdf</data>
+        <data key="SCHEDULE_COST">0</data>
+        <data key="variables">
+            <variable name="bands" value="128"/>
+            <variable name="rows" value="270"/>
+            <variable name="columns" value="233"/>
+            <variable name="pixels" value="62910"/>
+        </data>
+        <node id="kmeans" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@6ac22500</data>
+            <data key="name">kmeans</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@68c30a23 (instanceName: Core0)]</data>
+            <data key="originalId">kmeans</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">0</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+    </graph>
+</graphml>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="kind" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="name" attr.type="string" for="node"/>
+    <key attr.name="kind" attr.type="string" for="node"/>
+    <key attr.name="nbRepeat" attr.type="int" for="node"/>
+    <key attr.name="edge_cons" attr.type="string" for="edge"/>
+    <key attr.name="edge_delay" attr.type="string" for="edge"/>
+    <key attr.name="edge_prod" attr.type="string" for="edge"/>
+    <key attr.name="data_type" attr.type="string" for="edge"/>
+    <graph edgedefault="directed" kind="sdf">
+        <data key="name">wholekmeans</data>
+        <data key="kind">sdf</data>
+        <data key="variables">
+            <variable name="rows" value="270"/>
+            <variable name="columns" value="233"/>
+            <variable name="bands" value="128"/>
+            <variable name="pixels" value="62910"/>
+        </data>
+        <node id="read_parameters">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@113bfc4b</data>
+            <data key="name">read_parameters</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="rows" value="rows"/>
+                <argument name="columns" value="columns"/>
+                <argument name="bands" value="bands"/>
+                <argument name="pixels" value="pixels"/>
+            </data>
+        </node>
+        <node id="kmeansCluster">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@6f3da89a</data>
+            <data key="name">kmeansCluster</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="rows" value="rows"/>
+                <argument name="columns" value="columns"/>
+                <argument name="bands" value="bands"/>
+                <argument name="pixels" value="pixels"/>
+            </data>
+        </node>
+        <node id="write_results">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@60fd7e6</data>
+            <data key="name">write_results</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="rows" value="rows"/>
+                <argument name="columns" value="columns"/>
+            </data>
+        </node>
+        <edge source="read_parameters" sourceport="image" target="kmeansCluster" targetport="image">
+            <data key="edge_cons">8052480</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">8052480</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="read_parameters" sourceport="par" target="kmeansCluster" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster" sourceport="assignedCluster" target="write_results" targetport="assignedCluster">
+            <data key="edge_cons">62910</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">62910</data>
+            <data key="data_type">int</data>
+        </edge>
+    </graph>
+</graphml>

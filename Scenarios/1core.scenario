@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+    <files>
+        <algorithm url="/KmeansSerialLast/Algo/Clustering/wholekmeans.pi"/>
+        <architecture url="/KmeansSerialLast/Archi/1CoreX86.slam"/>
+        <codegenDirectory url="/KmeansSerialLast/Code/generated"/>
+    </files>
+    <constraints excelUrl="">
+        <constraintGroup>
+            <operator name="Core0"/>
+            <task name="wholekmeans/read_parameters"/>
+            <task name="wholekmeans/kmeansCluster"/>
+            <task name="wholekmeans/write_results"/>
+            <task name="wholekmeans"/>
+        </constraintGroup>
+    </constraints>
+    <relativeconstraints excelUrl=""/>
+    <timings excelUrl="">
+        <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>
+    </timings>
+    <simuParams>
+        <mainCore>Core0</mainCore>
+        <mainComNode>shared_mem</mainComNode>
+        <averageDataSize>1000</averageDataSize>
+        <dataTypes>
+            <dataType name="char" size="1"/>
+            <dataType name="int" size="4"/>
+            <dataType name="float" size="4"/>
+            <dataType name="double" size="8"/>
+            <dataType name="parameters" size="16"/>
+        </dataTypes>
+        <specialVertexOperators>
+            <specialVertexOperator path="Core0"/>
+        </specialVertexOperators>
+        <numberOfTopExecutions>1</numberOfTopExecutions>
+    </simuParams>
+    <parameterValues/>
+    <papifyConfigs xmlUrl=""/>
+</scenario>
