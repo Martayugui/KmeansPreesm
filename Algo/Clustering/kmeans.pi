@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="delay" attr.type="string" for="edge"/>
+    <graph edgedefault="directed">
+        <data key="name">kmeans</data>
+        <node id="bands" kind="cfg_in_iface"/>
+        <node id="rows" kind="cfg_in_iface"/>
+        <node id="columns" kind="cfg_in_iface"/>
+        <node id="pixels" kind="cfg_in_iface"/>
+        <node id="image" kind="src">
+            <port annotation="NONE" expr="0" kind="output" name="image"/>
+        </node>
+        <node id="assignedCluster" kind="snk">
+            <port annotation="NONE" expr="0" kind="input" name="assignedCluster"/>
+        </node>
+        <node id="kmeansCluster" kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="kmeansfunction">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="rows*columns"
+                kind="output" name="assignedCluster"/>
+        </node>
+        <node expr="0" getter=""
+            id="kmeansCluster_assignedCluster__assignedCluster_assignedCluster"
+            kind="delay" level="permanent" setter="">
+            <port annotation="NONE" expr="0" kind="input" name="set"/>
+            <port annotation="NONE" expr="0" kind="output" name="get"/>
+        </node>
+        <edge expr="0" kind="fifo" source="kmeansCluster"
+            sourceport="assignedCluster" target="assignedCluster"
+            targetport="assignedCluster" type="void">
+            <data key="delay">kmeansCluster_assignedCluster__assignedCluster_assignedCluster</data>
+        </edge>
+        <edge kind="fifo" source="image" sourceport="image"
+            target="kmeansCluster" targetport="image" type="void"/>
+        <edge kind="dependency" source="bands"
+            target="kmeansCluster" targetport="bands"/>
+        <edge kind="dependency" source="rows"
+            target="kmeansCluster" targetport="rows"/>
+        <edge kind="dependency" source="columns"
+            target="kmeansCluster" targetport="columns"/>
+        <edge kind="dependency" source="pixels"
+            target="kmeansCluster" targetport="pixels"/>
+    </graph>
+</graphml>

@@ -1,4 +1,4 @@
 k	24
 minErr	1e-3
-maxIter	1
+maxIter	100
 verbose 0

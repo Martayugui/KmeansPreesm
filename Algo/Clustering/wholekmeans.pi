@@ -7,8 +7,8 @@
     <key attr.name="graph_desc" attr.type="string" for="node"/>
     <graph edgedefault="directed">
         <data key="name">wholekmeans</data>
-        <node expr="270" id="rows" kind="param"/>
-        <node expr="233" id="columns" kind="param"/>
+        <node expr="329" id="rows" kind="param"/>
+        <node expr="377" id="columns" kind="param"/>
         <node expr="128" id="bands" kind="param"/>
         <node expr="rows*columns" id="pixels" kind="param"/>
         <node id="read_parameters" kind="actor" period="0">

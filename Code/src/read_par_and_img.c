@@ -13,15 +13,19 @@
    ======================================================================*/
 static FILE *fp ;
 static FILE *fp1;
+static FILE *c;
 
 void readParAndImg (int rows,int columns,int bands,int pixels,float *image,struct parameters *par){
 
 	fp = fopen(namefile, "r");
-	fp1 = fopen(nameimage, "r");
+	fp1 = fopen(nameimage, "rb");
+	c=fopen(txtfile,"r+");
     int scan = 0;
     char s[10];
     float n;
 	int i;
+/*	float *img;
+	img = (float *)malloc(pixels * bands * sizeof(float));*/
 	int j;
 	if (!fp) {
 		perror("File opening failed");
@@ -32,8 +36,8 @@ void readParAndImg (int rows,int columns,int bands,int pixels,float *image,struc
 			exit(0);
 	}
     rewind(fp);
-    rewind(fp1);
-
+    //rewind(fp1);
+    rewind(c);
 /* reads the parameters and populates the corresponding struct */
 	while (scan!=EOF) {
 		scan=fscanf(fp, "%s", &s);
@@ -50,19 +54,50 @@ void readParAndImg (int rows,int columns,int bands,int pixels,float *image,struc
 	}
 	printf("parameters k: %d\t minErr: %f\t maxIter: %d\n",par->k, par->minErr, par->maxIter);
 	fflush(stdout);
-/* reads the image and populates the corresponding struct */
-	
+/* reads the image and populates the corresponding struct txt image*/
+
+    int valueRead = 0;
+
+	if( ftell(fp1)/(rows*columns*bands * sizeof(float)) >=1){
+	    	unsigned int time = 0;
+		rewind(fp1);
+	    }
+	valueRead = fread(image, sizeof(float), rows * columns * bands, fp1);
+    valueRead = valueRead + 1;
+    /*for (int i = 0; i<1; i++) {
+    	    		for (int j = 0; j < bands; j++) {
+    	    			printf("%f\t", image[bands*i + j]);
+    	    		}
+     printf("\n");
+    }*/
+    /*for (int i = 0; i<rows * columns; i++) {
+		for (int j = 0; j < bands; j++) {
+			image[(rows * columns)*j + i] = img[bands*i + j];
+		}
+    }*/
+    	/*for (i = 0; i<pixels; i++) {
+    		for (j = 0; j < bands ; j++) {
+    			fprintf(c, "%f\t", image[bands*i + j]);
+    		}
+    		fprintf(c, "\n");
+    	}
+    fprintf(c, "\n");
+
+
 	for (i = 0; i<pixels; i++) {
-		for (j = 0; j < bands; j++) { 
-			fscanf(fp1, "%f", &image[bands*i + j]);
+		for (j = 0; j < bands; j++) {
+			fscanf(c, "%f", &image[bands*i + j]);
 		}
 	}
-
+	 for (int i = 0; i<1; i++) {
+	    		for (int j = 0; j < bands; j++) {
+	    			printf("%f\t", image[bands*i + j]);
+	    		}
+	    printf("\n");
+	    }*/
 	fclose(fp);
     fclose(fp1);
+    fclose(c);
 }
-
-
-
 
 

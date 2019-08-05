@@ -16,30 +16,75 @@
     <key attr.name="duration" attr.type="int" for="node"/>
     <key attr.name="schedulingOrder" attr.type="int" for="node"/>
     <key attr.name="Operator" attr.type="string" for="node"/>
+    <key attr.name="Weight" attr.type="string" for="edge"/>
     <graph edgedefault="directed" kind="sdf">
-        <data key="name">whole</data>
+        <data key="name">wholekmeans</data>
         <data key="kind">sdf</data>
         <data key="SCHEDULE_COST">0</data>
         <data key="variables">
+            <variable name="rows" value="329"/>
+            <variable name="columns" value="377"/>
             <variable name="bands" value="128"/>
-            <variable name="rows" value="270"/>
-            <variable name="columns" value="233"/>
-            <variable name="pixels" value="62910"/>
+            <variable name="pixels" value="124033"/>
         </data>
-        <node id="kmeans" kind="vertex">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@6ac22500</data>
-            <data key="name">kmeans</data>
+        <node id="read_parameters" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@16b4f742</data>
+            <data key="name">read_parameters</data>
             <data key="kind">dag_vertex</data>
             <data key="time">0</data>
             <data key="nb_repeat">1</data>
             <data key="OperatorDef">x86</data>
-            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@68c30a23 (instanceName: Core0)]</data>
-            <data key="originalId">kmeans</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@45528b8b (instanceName: Core0)]</data>
+            <data key="originalId">read_parameters</data>
             <data key="duration">-1</data>
             <data key="schedulingOrder">0</data>
             <data key="Operator">Core0</data>
             <data key="graph_desc"/>
             <data key="arguments"/>
         </node>
+        <node id="kmeansCluster" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@1d9655e9</data>
+            <data key="name">kmeansCluster</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@45528b8b (instanceName: Core0)]</data>
+            <data key="originalId">kmeansCluster</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">1</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="write_results" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@4a0d6c77</data>
+            <data key="name">write_results</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@45528b8b (instanceName: Core0)]</data>
+            <data key="originalId">write_results</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">2</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <edge source="read_parameters" sourceport="out0" target="kmeansCluster" targetport="in0">
+            <data key="Weight">63505152</data>
+            <data key="edge_prod">63505152</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">63505152</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster" sourceport="out0" target="write_results" targetport="in0">
+            <data key="Weight">496132</data>
+            <data key="edge_prod">496132</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">496132</data>
+            <data key="data_type">memUnit</data>
+        </edge>
     </graph>
 </graphml>

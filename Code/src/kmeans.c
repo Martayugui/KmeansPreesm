@@ -17,6 +17,8 @@
 #include "kmeans.h"
 #include "read_par_and_img.h"
 
+static FILE *p;
+
 void kmeansfunction(int rows, int columns, int bands,int pixels, float *image, struct parameters *par,int *assignedCluster){
 
 
@@ -28,13 +30,6 @@ void kmeansfunction(int rows, int columns, int bands,int pixels, float *image, s
 	memset(previousCentroids, 0, par->k*bands * sizeof(float));
 	initializeCluster(clusterCentroids, par->k,pixels,bands, image);
 	error=computeError(clusterCentroids, previousCentroids,par->k, bands);
-
-/*	for (int i = 0; i<pixels; i++) {
-			for (int j = 0; j < bands; j++) {
-				printf("%f", image[bands*i + j]);
-			}
-		}*/
-
 
 	float centroidDistances[par->k];
 
@@ -52,11 +47,31 @@ void kmeansfunction(int rows, int columns, int bands,int pixels, float *image, s
 			printf("error: %f\t minErr:%f\t nIter:%d\t maxIter: %d\n", error, par->minErr, nIter, par->maxIter);
 		}
 	}
-
 }
 /* assignes an initial value to the centroids: k (number of clusters, one of the parameters) random non-repeated numbers are extracted as indices;
 pixels of preProcessedImage corresponding to these indices are the first centroids of the clusters */
 void initializeCluster(float *clusterCentroids, int k, int pixels, int bands, float *image) {
+
+	/*p = fopen(clustervalues, "r");
+	if (!p) {
+		perror("File opening failed");
+		exit(0);
+	}
+	rewind(p);
+	for (int z = 0; z < k; z++) {
+			for (int j = 0; j < bands; j++) {
+					fscanf(p,"%f",&clusterCentroids[bands*z + j]);
+			}
+	}
+
+	for (int z = 0; z < k; z++) {
+				for (int j = 0; j < bands; j++) {
+						printf("%f",clusterCentroids[bands*z + j]);
+				}
+		}
+	printf("\n");
+
+fclose(p);*/
 
 	int indicesCentroids[k];
 
