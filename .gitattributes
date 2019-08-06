@@ -1,3 +1,6 @@
 Code/dat/Op20C1.bin filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 Code/dat/ filter=lfs diff=lfs merge=lfs -text
+Code/dat/image.txt filter=lfs diff=lfs merge=lfs -text
+Code/dat/Op8C2.bin filter=lfs diff=lfs merge=lfs -text
+Code/dat/immagine.bmp filter=lfs diff=lfs merge=lfs -text

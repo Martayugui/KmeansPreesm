@@ -5,18 +5,15 @@
     <key attr.name="arguments" for="node" id="arguments"/>
     <key attr.name="name" attr.type="string" for="graph"/>
     <key attr.name="graph_desc" attr.type="string" for="node"/>
-    <key attr.name="delay" attr.type="string" for="edge"/>
     <graph edgedefault="directed">
         <data key="name">kmeans</data>
         <node id="bands" kind="cfg_in_iface"/>
         <node id="rows" kind="cfg_in_iface"/>
         <node id="columns" kind="cfg_in_iface"/>
         <node id="pixels" kind="cfg_in_iface"/>
-        <node id="image" kind="src">
-            <port annotation="NONE" expr="0" kind="output" name="image"/>
-        </node>
         <node id="assignedCluster" kind="snk">
-            <port annotation="NONE" expr="0" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="rows*columns"
+                kind="input" name="assignedCluster"/>
         </node>
         <node id="kmeansCluster" kind="actor" period="0">
             <data key="graph_desc">Code/include/kmeans.h</data>
@@ -29,6 +26,8 @@
                 <param direction="IN" isConfig="true"
                     name="pixels" type="int"/>
                 <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
                     name="image" type="float "/>
                 <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
                 <param direction="OUT" isConfig="false"
@@ -38,32 +37,116 @@
             <port kind="cfg_input" name="columns"/>
             <port kind="cfg_input" name="bands"/>
             <port kind="cfg_input" name="pixels"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="pixels*bands"
                 kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="4*bands" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="rows*columns"
                 kind="output" name="assignedCluster"/>
         </node>
-        <node expr="0" getter=""
-            id="kmeansCluster_assignedCluster__assignedCluster_assignedCluster"
-            kind="delay" level="permanent" setter="">
-            <port annotation="NONE" expr="0" kind="input" name="set"/>
-            <port annotation="NONE" expr="0" kind="output" name="get"/>
+        <node id="par" kind="src">
+            <port annotation="NONE" expr="16" kind="output" name="par"/>
         </node>
-        <edge expr="0" kind="fifo" source="kmeansCluster"
+        <node id="image" kind="src">
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="image"/>
+        </node>
+        <node id="initialization" kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="initializeCluster">
+                <param direction="OUT" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="4*bands" kind="output" name="clusterCentroids"/>
+        </node>
+        <node id="error" kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeError">
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="true" name="c" type="int"/>
+            </loop>
+            <port kind="cfg_input" name="c"/>
+            <port annotation="NONE" expr="4*c" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="4*c" kind="output" name="clusterCentroid"/>
+        </node>
+        <node id="BroadcastHsImage" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="input" name="image"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="imageInitialization"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="imageKmeans"/>
+        </node>
+        <node id="BroadcastStruck" kind="broadcast">
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="16" kind="output" name="parInitialization"/>
+            <port annotation="NONE" expr="16" kind="output" name="parError"/>
+            <port annotation="NONE" expr="16" kind="output" name="parKmeansCluster"/>
+        </node>
+        <edge kind="fifo" source="kmeansCluster"
             sourceport="assignedCluster" target="assignedCluster"
-            targetport="assignedCluster" type="void">
-            <data key="delay">kmeansCluster_assignedCluster__assignedCluster_assignedCluster</data>
-        </edge>
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo" source="initialization"
+            sourceport="clusterCentroids" target="error"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo" source="error"
+            sourceport="clusterCentroid" target="kmeansCluster"
+            targetport="clusterCentroids" type="void"/>
         <edge kind="fifo" source="image" sourceport="image"
-            target="kmeansCluster" targetport="image" type="void"/>
-        <edge kind="dependency" source="bands"
-            target="kmeansCluster" targetport="bands"/>
+            target="BroadcastHsImage" targetport="image" type="void"/>
+        <edge kind="fifo" source="BroadcastHsImage"
+            sourceport="imageInitialization"
+            target="initialization" targetport="image" type="float"/>
+        <edge kind="fifo" source="BroadcastHsImage"
+            sourceport="imageKmeans" target="kmeansCluster"
+            targetport="image" type="float"/>
+        <edge kind="fifo" source="par" sourceport="par"
+            target="BroadcastStruck" targetport="par" type="parameters"/>
+        <edge kind="fifo" source="BroadcastStruck"
+            sourceport="parInitialization"
+            target="initialization" targetport="par" type="parameters"/>
+        <edge kind="fifo" source="BroadcastStruck"
+            sourceport="parError" target="error" targetport="par" type="parameters"/>
+        <edge kind="fifo" source="BroadcastStruck"
+            sourceport="parKmeansCluster" target="kmeansCluster"
+            targetport="par" type="parameters"/>
         <edge kind="dependency" source="rows"
             target="kmeansCluster" targetport="rows"/>
         <edge kind="dependency" source="columns"
             target="kmeansCluster" targetport="columns"/>
+        <edge kind="dependency" source="bands"
+            target="kmeansCluster" targetport="bands"/>
         <edge kind="dependency" source="pixels"
             target="kmeansCluster" targetport="pixels"/>
+        <edge kind="dependency" source="pixels" target="image"/>
+        <edge kind="dependency" source="bands" target="image"/>
+        <edge kind="dependency" source="rows" target="assignedCluster"/>
+        <edge kind="dependency" source="columns" target="assignedCluster"/>
+        <edge kind="dependency" source="bands" target="error" targetport="c"/>
+        <edge kind="dependency" source="pixels"
+            target="BroadcastHsImage" targetport="pixels"/>
+        <edge kind="dependency" source="bands"
+            target="BroadcastHsImage" targetport="bands"/>
+        <edge kind="dependency" source="pixels"
+            target="initialization" targetport="pixels"/>
+        <edge kind="dependency" source="bands"
+            target="initialization" targetport="bands"/>
     </graph>
 </graphml>

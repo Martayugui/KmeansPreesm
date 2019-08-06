@@ -8,11 +8,11 @@
 
 #define clustervalues PROJECT_ROOT_PATH "/dat/clusterCentroid.txt"
 
-void kmeansfunction(int rows, int columns, int bands,int pixels, IN float *image,IN struct parameters *par,OUT int *assignedCluster);
+void kmeansfunction(int rows, int columns, int bands,int pixels,IN float *clusterCentroids, IN float *image,IN struct parameters *par,OUT int *assignedCluster);
 
-void initializeCluster(float *clusterCentroids, int k, int pixels, int bands, float *image);
+void initializeCluster(float *clusterCentroids, int pixels, int bands,struct parameters *par, float *image);
 
-float computeError(float *clusterCentroids, float *previousCentroids, int r, int c);
+float computeError(float *clusterCentroids,struct parameters *par, int c);
 
 void computeDistance(int *assignedCluster, float *centroidDistances, int pixels, int bands, float *clusterCentroids, float *image, int k);
 

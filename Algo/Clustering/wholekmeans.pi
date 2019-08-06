@@ -7,8 +7,8 @@
     <key attr.name="graph_desc" attr.type="string" for="node"/>
     <graph edgedefault="directed">
         <data key="name">wholekmeans</data>
-        <node expr="329" id="rows" kind="param"/>
-        <node expr="377" id="columns" kind="param"/>
+        <node expr="552" id="rows" kind="param"/>
+        <node expr="479" id="columns" kind="param"/>
         <node expr="128" id="bands" kind="param"/>
         <node expr="rows*columns" id="pixels" kind="param"/>
         <node id="read_parameters" kind="actor" period="0">
@@ -35,21 +35,7 @@
             <port annotation="NONE" expr="16" kind="output" name="par"/>
         </node>
         <node id="kmeansCluster" kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="kmeansfunction">
-                <param direction="IN" isConfig="true" name="rows" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="columns" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="bands" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="pixels" type="int"/>
-                <param direction="IN" isConfig="false"
-                    name="image" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
-            </loop>
+            <data key="graph_desc">Algo/Clustering/kmeans.pi</data>
             <port kind="cfg_input" name="rows"/>
             <port kind="cfg_input" name="columns"/>
             <port kind="cfg_input" name="bands"/>

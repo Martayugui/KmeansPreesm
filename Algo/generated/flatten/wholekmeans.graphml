@@ -16,13 +16,13 @@
         <data key="name">wholekmeans</data>
         <data key="kind">sdf</data>
         <data key="variables">
-            <variable name="rows" value="329"/>
-            <variable name="columns" value="377"/>
+            <variable name="rows" value="552"/>
+            <variable name="columns" value="479"/>
             <variable name="bands" value="128"/>
-            <variable name="pixels" value="124033"/>
+            <variable name="pixels" value="264408"/>
         </data>
         <node id="read_parameters">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@16b4f742</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@85deb58</data>
             <data key="name">read_parameters</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -34,7 +34,7 @@
             </data>
         </node>
         <node id="kmeansCluster">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@1d9655e9</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@5d10b268</data>
             <data key="name">kmeansCluster</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -46,7 +46,7 @@
             </data>
         </node>
         <node id="write_results">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@4a0d6c77</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@2f6f448c</data>
             <data key="name">write_results</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -56,9 +56,9 @@
             </data>
         </node>
         <edge source="read_parameters" sourceport="image" target="kmeansCluster" targetport="image">
-            <data key="edge_cons">15876224</data>
+            <data key="edge_cons">33844224</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">15876224</data>
+            <data key="edge_prod">33844224</data>
             <data key="data_type">float</data>
         </edge>
         <edge source="read_parameters" sourceport="par" target="kmeansCluster" targetport="par">
@@ -68,9 +68,9 @@
             <data key="data_type">parameters</data>
         </edge>
         <edge source="kmeansCluster" sourceport="assignedCluster" target="write_results" targetport="assignedCluster">
-            <data key="edge_cons">124033</data>
+            <data key="edge_cons">264408</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">124033</data>
+            <data key="edge_prod">264408</data>
             <data key="data_type">int</data>
         </edge>
     </graph>
