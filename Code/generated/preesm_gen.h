@@ -82,7 +82,7 @@
 #include "preesm.h"
 
 #include "read_par_and_img.h"
-#include "kmeans.h"
 #include "write_kmeans_results.h"
+#include "kmeans.h"
 
 #endif

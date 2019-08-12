@@ -1,6 +1,48 @@
 # Memory scripts summary
-- Independent match trees : *0*
-- Total number of buffers in these trees: From 0 to 0 buffers.
-- Total size of these buffers: From 0 to 0 (NaN%).
+- Independent match trees : *3*
+- Total number of buffers in these trees: From 10 to 7 buffers.
+- Total size of these buffers: From 406168576 to 270779136 (33.333312323994264%).
 
 # Match tree optimization log
+## Tree of 3 buffers
+### Original buffer list:
+> [kmeansCluster_BroadcastHsImage.image[135376896], kmeansCluster_BroadcastHsImage.imageInitialization_0_0[135376896], kmeansCluster_BroadcastHsImage.imageKmeans_33844224_0[135376896]]
+
+### Match application log: 
+- __Step 6 - 1 matches__
+>kmeansCluster_BroadcastHsImage.imageInitialization_0_0[0..135376896[=>kmeansCluster_BroadcastHsImage.image[0..135376896[
+
+### Tree summary:
+- From 3 buffers to 2 buffers.
+- From 406130688 bytes to 270753792 bytes (33.333333333333336%)
+
+### Unapplied matches:
+>kmeansCluster_BroadcastHsImage.image[0..135376896[=>kmeansCluster_BroadcastHsImage.imageKmeans_33844224_0[0..135376896[, 
+## Tree of 4 buffers
+### Original buffer list:
+> [kmeansCluster_BroadcastStruck.par[256], kmeansCluster_BroadcastStruck.parKmeansCluster_16_0[256], kmeansCluster_BroadcastStruck.parError_0_0[256], kmeansCluster_BroadcastStruck.parInitialization_32_0[256]]
+
+### Match application log: 
+- __Step 6 - 1 matches__
+>kmeansCluster_BroadcastStruck.parError_0_0[0..256[=>kmeansCluster_BroadcastStruck.par[0..256[
+
+### Tree summary:
+- From 4 buffers to 3 buffers.
+- From 1024 bytes to 768 bytes (25.0%)
+
+### Unapplied matches:
+>kmeansCluster_BroadcastStruck.par[0..256[=>kmeansCluster_BroadcastStruck.parKmeansCluster_16_0[0..256[, kmeansCluster_BroadcastStruck.par[0..256[=>kmeansCluster_BroadcastStruck.parInitialization_32_0[0..256[, 
+## Tree of 3 buffers
+### Original buffer list:
+> [kmeansCluster_BroadcastClusterCentroids.clusterCentroids[12288], kmeansCluster_BroadcastClusterCentroids.clusterCentroidsError_3072_0[12288], kmeansCluster_BroadcastClusterCentroids.clusterCentroidskmeans_0_0[12288]]
+
+### Match application log: 
+- __Step 6 - 1 matches__
+>kmeansCluster_BroadcastClusterCentroids.clusterCentroidsError_3072_0[0..12288[=>kmeansCluster_BroadcastClusterCentroids.clusterCentroids[0..12288[
+
+### Tree summary:
+- From 3 buffers to 2 buffers.
+- From 36864 bytes to 24576 bytes (33.333333333333336%)
+
+### Unapplied matches:
+>kmeansCluster_BroadcastClusterCentroids.clusterCentroids[0..12288[=>kmeansCluster_BroadcastClusterCentroids.clusterCentroidskmeans_0_0[0..12288[, 
