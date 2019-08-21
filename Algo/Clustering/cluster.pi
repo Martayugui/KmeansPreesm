@@ -25,6 +25,7 @@
                 kind="output" name="assignedCluster"/>
         </node>
         <node id="loop" kind="actor" period="0">
+            <port annotation="NONE" expr="0" kind="input" name="error"/>
             <port annotation="NONE" expr="50" kind="output" name="N"/>
         </node>
         <node id="image" kind="src">
@@ -44,6 +45,7 @@
             <port kind="cfg_input" name="columns"/>
             <port annotation="NONE" expr="0" kind="input" name="assignedCluster"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="0" kind="input" name="image"/>
             <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroids"/>
         </node>
         <node id="BroadcastActorPar" kind="broadcast">
@@ -51,9 +53,26 @@
             <port annotation="NONE" expr="16" kind="output" name="parDistance"/>
             <port annotation="NONE" expr="16" kind="output" name="parUpdate"/>
         </node>
-        <node expr="24*bands" getter=""
+        <node id="setter" kind="actor" period="0">
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="24*bands" kind="input" name="inputInterface"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroids"/>
+        </node>
+        <node id="getter" kind="actor" period="0">
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroids"/>
+        </node>
+        <node id="error" kind="src">
+            <port annotation="NONE" expr="0" kind="output" name="error"/>
+        </node>
+        <node id="BroadcastActorImage" kind="broadcast">
+            <port annotation="NONE" expr="0" kind="input" name="image"/>
+            <port annotation="NONE" expr="0" kind="output" name="imageDistance"/>
+            <port annotation="NONE" expr="0" kind="output" name="imageUpdate"/>
+        </node>
+        <node expr="24*bands" getter="getter"
             id="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"
-            kind="delay" level="none" setter="">
+            kind="delay" level="none" setter="setter">
             <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
             <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
         </node>
@@ -66,8 +85,6 @@
         </edge>
         <edge kind="fifo" source="loop" sourceport="N"
             target="computeDistance" targetport="N" type="int"/>
-        <edge kind="fifo" source="image" sourceport="image"
-            target="computeDistance" targetport="image" type="float"/>
         <edge kind="fifo" source="computeDistance"
             sourceport="assignedCluster" target="updateCentroids"
             targetport="assignedCluster" type="void"/>
@@ -79,6 +96,27 @@
         <edge kind="fifo" source="BroadcastActorPar"
             sourceport="parUpdate" target="computeDistance"
             targetport="par" type="parameters"/>
+        <edge kind="fifo" source="clusterCentroids"
+            sourceport="clusterCentroids" target="setter"
+            targetport="inputInterface" type="void"/>
+        <edge kind="fifo" source="setter"
+            sourceport="clusterCentroids"
+            target="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"
+            targetport="set" type="float"/>
+        <edge kind="fifo"
+            source="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"
+            sourceport="get" target="getter"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo" source="error" sourceport="error"
+            target="loop" targetport="error" type="void"/>
+        <edge kind="fifo" source="image" sourceport="image"
+            target="BroadcastActorImage" targetport="image" type="void"/>
+        <edge kind="fifo" source="BroadcastActorImage"
+            sourceport="imageDistance" target="computeDistance"
+            targetport="image" type="void"/>
+        <edge kind="fifo" source="BroadcastActorImage"
+            sourceport="imageUpdate" target="updateCentroids"
+            targetport="image" type="void"/>
         <edge kind="dependency" source="rows"
             target="computeDistance" targetport="rows"/>
         <edge kind="dependency" source="columns"
@@ -99,5 +137,7 @@
         <edge kind="dependency" source="columns"
             target="updateCentroids" targetport="columns"/>
         <edge kind="dependency" source="bands" target="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"/>
+        <edge kind="dependency" source="bands" target="setter" targetport="bands"/>
+        <edge kind="dependency" source="bands" target="getter" targetport="bands"/>
     </graph>
 </graphml>

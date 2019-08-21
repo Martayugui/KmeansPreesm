@@ -215,10 +215,10 @@ int findMinimum(float *vet, int size) {
 }
 
 /* updates the centroids: they are calculated as mean of the elements of the cluster*/
-void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,float *error,struct parameters *par,float * image,float * clusterCentroids, float *previousCentroids) {
+void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float * image,float * clusterCentroids) {
 	int n;
-	float
-	memcpy(previousCentroids, clusterCentroids, par->k*ppimg->b * sizeof(float));
+	float sumperb;
+	//memcpy(previousCentroids, clusterCentroids, par->k*ppimg->b * sizeof(float));
 	for (int z = 0; z < par->k; z++) {
 		for (int j = 0; j < bands; j++) {
 			sumperb = 0;
@@ -240,7 +240,7 @@ void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * as
 }
 
 
-void loop (int *N) {
+void loop (int *N,float *error) {
 
 }
 

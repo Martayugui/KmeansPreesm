@@ -20,9 +20,9 @@ void computeDistance(int pixels, int bands, int rows,int columns,float * image,s
 
 int findMinimum(float *vet, int size);
 
-void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,float *error,struct parameters *par,float * image,float * clusterCentroids,float *previousCentroids);
+void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float * image,float * clusterCentroids,float *previousCentroids);
 
-void loop (int *N);
+void loop (int *N,float *error);
 
 void setter (int bands, float *inputsetter, float *clusterCentroids);
 
