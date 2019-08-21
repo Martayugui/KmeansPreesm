@@ -5,15 +5,7 @@
         <architecture url="/KmeansSerialLast/Archi/1CoreX86.slam"/>
         <codegenDirectory url="/KmeansSerialLast/Code/generated"/>
     </files>
-    <constraints excelUrl="">
-        <constraintGroup>
-            <operator name="Core0"/>
-            <task name="wholekmeans/read_parameters"/>
-            <task name="wholekmeans/kmeansCluster"/>
-            <task name="wholekmeans/write_results"/>
-            <task name="wholekmeans"/>
-        </constraintGroup>
-    </constraints>
+    <constraints excelUrl=""/>
     <relativeconstraints excelUrl=""/>
     <timings excelUrl="">
         <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>

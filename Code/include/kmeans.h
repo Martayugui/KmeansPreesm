@@ -14,11 +14,16 @@ void initializeCluster(int pixels, int bands, float * image,struct parameters * 
 
 void computeErrorInitialization(int c,struct parameters * par,float * clusterCentroids,float * error);
 
-//void computeError(float *clusterCentroids, float *previousCentroids,struct parameters *par, int c,float *error);
+void computeError( int c,struct parameters *par,float *clusterCentroids,float *previousCentroids);
 
-void computeDistance(int *assignedCluster, float * centroidDistances, int pixels, int bands, float * clusterCentroids, float * image, int k);
+void computeDistance(int pixels, int bands, int rows,int columns,float * image,struct parameters *par, float * clusterCentroids,char *N,int *assignedCluster);
 
 int findMinimum(float *vet, int size);
 
-void updateClusterCentroids(float * clusterCentroids, int * assignedCluster, int pixels,int bands, float * image, int k);
+void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,float *error,struct parameters *par,float * image,float * clusterCentroids,float *previousCentroids);
 
+void loop (int *N);
+
+void setter (int bands, float *inputsetter, float *clusterCentroids);
+
+void getter (int bands, float *clusterCentroids);

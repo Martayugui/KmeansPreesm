@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="delay" attr.type="string" for="edge"/>
+    <graph edgedefault="directed">
+        <data key="name">cluster</data>
+        <node id="rows" kind="cfg_in_iface"/>
+        <node id="columns" kind="cfg_in_iface"/>
+        <node id="pixels" kind="cfg_in_iface"/>
+        <node id="bands" kind="cfg_in_iface"/>
+        <node id="computeDistance" kind="actor" period="0">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="columns*rows"
+                kind="output" name="assignedCluster"/>
+        </node>
+        <node id="loop" kind="actor" period="0">
+            <port annotation="NONE" expr="50" kind="output" name="N"/>
+        </node>
+        <node id="image" kind="src">
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="image"/>
+        </node>
+        <node id="par" kind="src">
+            <port annotation="NONE" expr="16" kind="output" name="par"/>
+        </node>
+        <node id="clusterCentroids" kind="src">
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroids"/>
+        </node>
+        <node id="updateCentroids" kind="actor" period="0">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="NONE" expr="0" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroids"/>
+        </node>
+        <node id="BroadcastActorPar" kind="broadcast">
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="16" kind="output" name="parDistance"/>
+            <port annotation="NONE" expr="16" kind="output" name="parUpdate"/>
+        </node>
+        <node expr="24*bands" getter=""
+            id="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"
+            kind="delay" level="none" setter="">
+            <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
+        </node>
+        <edge expr="24*bands" kind="fifo"
+            source="updateCentroids"
+            sourceport="clusterCentroids"
+            target="computeDistance"
+            targetport="clusterCentroids" type="float">
+            <data key="delay">updateCentroids_clusterCentroids__computeDistance_clusterCentroids</data>
+        </edge>
+        <edge kind="fifo" source="loop" sourceport="N"
+            target="computeDistance" targetport="N" type="int"/>
+        <edge kind="fifo" source="image" sourceport="image"
+            target="computeDistance" targetport="image" type="float"/>
+        <edge kind="fifo" source="computeDistance"
+            sourceport="assignedCluster" target="updateCentroids"
+            targetport="assignedCluster" type="void"/>
+        <edge kind="fifo" source="par" sourceport="par"
+            target="BroadcastActorPar" targetport="par" type="parameters"/>
+        <edge kind="fifo" source="BroadcastActorPar"
+            sourceport="parDistance" target="updateCentroids"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo" source="BroadcastActorPar"
+            sourceport="parUpdate" target="computeDistance"
+            targetport="par" type="parameters"/>
+        <edge kind="dependency" source="rows"
+            target="computeDistance" targetport="rows"/>
+        <edge kind="dependency" source="columns"
+            target="computeDistance" targetport="columns"/>
+        <edge kind="dependency" source="pixels"
+            target="computeDistance" targetport="pixels"/>
+        <edge kind="dependency" source="bands"
+            target="computeDistance" targetport="bands"/>
+        <edge kind="dependency" source="bands" target="clusterCentroids"/>
+        <edge kind="dependency" source="pixels" target="image"/>
+        <edge kind="dependency" source="bands" target="image"/>
+        <edge kind="dependency" source="pixels"
+            target="updateCentroids" targetport="pixels"/>
+        <edge kind="dependency" source="bands"
+            target="updateCentroids" targetport="bands"/>
+        <edge kind="dependency" source="rows"
+            target="updateCentroids" targetport="rows"/>
+        <edge kind="dependency" source="columns"
+            target="updateCentroids" targetport="columns"/>
+        <edge kind="dependency" source="bands" target="updateCentroids_clusterCentroids__computeDistance_clusterCentroids"/>
+    </graph>
+</graphml>

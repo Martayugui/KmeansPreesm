@@ -62,10 +62,6 @@ void writeResults (int rows, int columns, int *assignedCluster)  {
 	fprintf(fp, "\n");
 	fclose(fp);
 
-	 printf("\n");
-	printf("pepe");
-	 printf("\n");
-
 /* converts results to an image*/
 
 	int x, y, r, g, b, idx, i, j;
@@ -120,9 +116,6 @@ void writeResults (int rows, int columns, int *assignedCluster)  {
 		fwrite(bmppad, 1, (4 - (rows * 3) % 4) % 4, f);
 	}
 	fclose(f);
-	 printf("\n");
-	 printf("caca");
-	 printf("\n");
 }
 
 

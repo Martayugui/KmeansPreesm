@@ -362,6 +362,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_SDL2:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2mai
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2TTF:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;-lpthread][/usr/include/SDL2][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-SDL2TTF_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;-lpthread
-SDL2_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread
+SDL2TTF_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;-lpthread;-lpthread
+SDL2_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread;-lpthread
 

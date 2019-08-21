@@ -20,9 +20,17 @@
             <variable name="columns" value="479"/>
             <variable name="bands" value="128"/>
             <variable name="pixels" value="264408"/>
+            <variable name="kmeansCluster_rows" value="552"/>
+            <variable name="kmeansCluster_bands" value="128"/>
+            <variable name="kmeansCluster_pixels" value="264408"/>
+            <variable name="kmeansCluster_columns" value="479"/>
+            <variable name="kmeansfunction_columns" value="479"/>
+            <variable name="kmeansfunction_pixels" value="264408"/>
+            <variable name="kmeansfunction_bands" value="128"/>
+            <variable name="kmeansfunction_rows" value="552"/>
         </data>
         <node id="read_parameters">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@85deb58</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@59dc5710</data>
             <data key="name">read_parameters</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -33,20 +41,8 @@
                 <argument name="pixels" value="pixels"/>
             </data>
         </node>
-        <node id="kmeansCluster">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@5d10b268</data>
-            <data key="name">kmeansCluster</data>
-            <data key="kind">vertex</data>
-            <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="rows" value="rows"/>
-                <argument name="columns" value="columns"/>
-                <argument name="bands" value="bands"/>
-                <argument name="pixels" value="pixels"/>
-            </data>
-        </node>
         <node id="write_results">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@2f6f448c</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@178406a1</data>
             <data key="name">write_results</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -55,23 +51,266 @@
                 <argument name="columns" value="columns"/>
             </data>
         </node>
-        <edge source="read_parameters" sourceport="image" target="kmeansCluster" targetport="image">
+        <node id="kmeansCluster_initializeCluster">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@65f43d71</data>
+            <data key="name">kmeansCluster_initializeCluster</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="pixels" value="kmeansCluster_pixels"/>
+                <argument name="bands" value="kmeansCluster_bands"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_error">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@28032d5</data>
+            <data key="name">kmeansCluster_error</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="c" value="kmeansCluster_bands"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_BroadcastHsImage">
+            <data key="name">kmeansCluster_BroadcastHsImage</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_BroadcastStruck">
+            <data key="name">kmeansCluster_BroadcastStruck</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_BroadcastClusterCentroids">
+            <data key="name">kmeansCluster_BroadcastClusterCentroids</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_computeDistance">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@395f8142</data>
+            <data key="name">kmeansCluster_kmeansfunction_computeDistance</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="pixels" value="kmeansfunction_pixels"/>
+                <argument name="bands" value="kmeansfunction_bands"/>
+                <argument name="rows" value="kmeansfunction_rows"/>
+                <argument name="columns" value="kmeansfunction_columns"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_evaluation">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@ed929c6</data>
+            <data key="name">kmeansCluster_kmeansfunction_evaluation</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="rows" value="kmeansfunction_rows"/>
+                <argument name="columns" value="kmeansfunction_columns"/>
+                <argument name="bands" value="kmeansfunction_bands"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastPar">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastPar</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_computeError">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@4a0292d9</data>
+            <data key="name">kmeansCluster_kmeansfunction_computeError</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="c" value="kmeansfunction_bands"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_updateCentroids">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@491717d6</data>
+            <data key="name">kmeansCluster_kmeansfunction_updateCentroids</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="pixels" value="kmeansfunction_pixels"/>
+                <argument name="bands" value="kmeansfunction_bands"/>
+                <argument name="rows" value="kmeansfunction_rows"/>
+                <argument name="columns" value="kmeansfunction_columns"/>
+            </data>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastHsImage">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastHsImage</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastClusterCentroids">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastClusterCentroids</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastAssignedCluster">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastAssignedCluster</data>
+            <data key="kind">Broadcast</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <edge source="kmeansCluster_BroadcastHsImage" sourceport="imageInitialization_0_0" target="kmeansCluster_initializeCluster" targetport="image">
             <data key="edge_cons">33844224</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">33844224</data>
             <data key="data_type">float</data>
         </edge>
-        <edge source="read_parameters" sourceport="par" target="kmeansCluster" targetport="par">
+        <edge source="kmeansCluster_initializeCluster" sourceport="clusterCentroids" target="kmeansCluster_BroadcastClusterCentroids" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="parError_0_0" target="kmeansCluster_initializeCluster" targetport="par">
             <data key="edge_cons">16</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">16</data>
             <data key="data_type">parameters</data>
         </edge>
-        <edge source="kmeansCluster" sourceport="assignedCluster" target="write_results" targetport="assignedCluster">
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="parInitialization_32_0" target="kmeansCluster_error" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastClusterCentroids" sourceport="clusterCentroidsError_3072_0" target="kmeansCluster_error" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="read_parameters" sourceport="par" target="kmeansCluster_BroadcastStruck" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="read_parameters" sourceport="image" target="kmeansCluster_BroadcastHsImage" targetport="image">
+            <data key="edge_cons">33844224</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">33844224</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_evaluation" sourceport="previousCentroids" target="kmeansCluster_kmeansfunction_computeError" targetport="previousCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">3072</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="parDistance_0_0" target="kmeansCluster_kmeansfunction_computeDistance" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="parEvaluation_16_0" target="kmeansCluster_kmeansfunction_evaluation" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="parError_32_0" target="kmeansCluster_kmeansfunction_computeError" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_computeError" sourceport="error" target="kmeansCluster_kmeansfunction_evaluation" targetport="error">
+            <data key="edge_cons">4</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">4</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastHsImage" sourceport="imageDistance_0_0" target="kmeansCluster_kmeansfunction_computeDistance" targetport="image">
+            <data key="edge_cons">33844224</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">33844224</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="parUpdate_48_0" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastHsImage" sourceport="imageUpdate_33844224_0" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="image">
+            <data key="edge_cons">33844224</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">33844224</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_updateCentroids" sourceport="clusterCentroids" target="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" sourceport="clusterCentroidsError_0_0" target="kmeansCluster_kmeansfunction_computeError" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" sourceport="clusterCentroidsevaluation_3072_0" target="kmeansCluster_kmeansfunction_evaluation" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_computeDistance" sourceport="assignedClusterp" target="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" targetport="assignedCluster">
             <data key="edge_cons">264408</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">264408</data>
             <data key="data_type">int</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" sourceport="assignedClusterUpdate_0_0" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="assignedClusterp">
+            <data key="edge_cons">264408</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">264408</data>
+            <data key="data_type">int</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" sourceport="assignedClusterevaluation_264408_0" target="kmeansCluster_kmeansfunction_evaluation" targetport="assignedClusterp">
+            <data key="edge_cons">264408</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">264408</data>
+            <data key="data_type">int</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastHsImage" sourceport="imageKmeans_33844224_0" target="kmeansCluster_kmeansfunction_BroadcastHsImage" targetport="image">
+            <data key="edge_cons">33844224</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">33844224</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="parKmeansCluster_16_0" target="kmeansCluster_kmeansfunction_BroadcastPar" targetport="par">
+            <data key="edge_cons">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">16</data>
+            <data key="data_type">parameters</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastClusterCentroids" sourceport="clusterCentroidskmeans_0_0" target="kmeansCluster_kmeansfunction_computeDistance" targetport="clusterCentroids">
+            <data key="edge_cons">3072</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3072</data>
+            <data key="data_type">float</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_evaluation" sourceport="assignedCluster" target="write_results" targetport="assignedCluster">
+            <data key="edge_cons">264408</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">264408</data>
+            <data key="data_type">int</data>
+        </edge>
+        <edge source="kmeansCluster_error" sourceport="error" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="error">
+            <data key="edge_cons">4</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">4</data>
+            <data key="data_type">float</data>
         </edge>
     </graph>
 </graphml>

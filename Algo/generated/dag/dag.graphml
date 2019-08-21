@@ -26,31 +26,24 @@
             <variable name="columns" value="479"/>
             <variable name="bands" value="128"/>
             <variable name="pixels" value="264408"/>
+            <variable name="kmeansCluster_rows" value="552"/>
+            <variable name="kmeansCluster_bands" value="128"/>
+            <variable name="kmeansCluster_pixels" value="264408"/>
+            <variable name="kmeansCluster_columns" value="479"/>
+            <variable name="kmeansfunction_columns" value="479"/>
+            <variable name="kmeansfunction_pixels" value="264408"/>
+            <variable name="kmeansfunction_bands" value="128"/>
+            <variable name="kmeansfunction_rows" value="552"/>
         </data>
         <node id="read_parameters" kind="vertex">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@85deb58</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@59dc5710</data>
             <data key="name">read_parameters</data>
             <data key="kind">dag_vertex</data>
             <data key="time">0</data>
             <data key="nb_repeat">1</data>
             <data key="OperatorDef">x86</data>
-            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@2145ed75 (instanceName: Core0)]</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
             <data key="originalId">read_parameters</data>
-            <data key="duration">-1</data>
-            <data key="schedulingOrder">0</data>
-            <data key="Operator">Core0</data>
-            <data key="graph_desc"/>
-            <data key="arguments"/>
-        </node>
-        <node id="kmeansCluster" kind="vertex">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@5d10b268</data>
-            <data key="name">kmeansCluster</data>
-            <data key="kind">dag_vertex</data>
-            <data key="time">0</data>
-            <data key="nb_repeat">1</data>
-            <data key="OperatorDef">x86</data>
-            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@2145ed75 (instanceName: Core0)]</data>
-            <data key="originalId">kmeansCluster</data>
             <data key="duration">-1</data>
             <data key="schedulingOrder">1</data>
             <data key="Operator">Core0</data>
@@ -58,32 +51,423 @@
             <data key="arguments"/>
         </node>
         <node id="write_results" kind="vertex">
-            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@2f6f448c</data>
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@178406a1</data>
             <data key="name">write_results</data>
             <data key="kind">dag_vertex</data>
             <data key="time">0</data>
             <data key="nb_repeat">1</data>
             <data key="OperatorDef">x86</data>
-            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@2145ed75 (instanceName: Core0)]</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
             <data key="originalId">write_results</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">16</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_initializeCluster" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@65f43d71</data>
+            <data key="name">kmeansCluster_initializeCluster</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">initializeCluster</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">5</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_error" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@28032d5</data>
+            <data key="name">kmeansCluster_error</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">error</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">8</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_BroadcastHsImage" kind="Broadcast">
+            <data key="name">kmeansCluster_BroadcastHsImage</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">eb1762d9-2706-4f54-adfc-a71292eb3081</data>
             <data key="duration">-1</data>
             <data key="schedulingOrder">2</data>
             <data key="Operator">Core0</data>
             <data key="graph_desc"/>
             <data key="arguments"/>
         </node>
-        <edge source="read_parameters" sourceport="out0" target="kmeansCluster" targetport="in0">
-            <data key="Weight">135377152</data>
-            <data key="edge_prod">135377152</data>
+        <node id="kmeansCluster_BroadcastStruck" kind="Broadcast">
+            <data key="name">kmeansCluster_BroadcastStruck</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">2a61a75b-294d-4ccc-8736-74afd1e23a73</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">3</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_BroadcastClusterCentroids" kind="Broadcast">
+            <data key="name">kmeansCluster_BroadcastClusterCentroids</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">193c03ed-288e-439b-8a99-8aafeff78cf8</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">7</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_computeDistance" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@395f8142</data>
+            <data key="name">kmeansCluster_kmeansfunction_computeDistance</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">computeDistance</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">9</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_evaluation" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@ed929c6</data>
+            <data key="name">kmeansCluster_kmeansfunction_evaluation</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">evaluation</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">14</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastPar" kind="Broadcast">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastPar</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">4d520489-4278-465c-b325-61ab7c4dbe55</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">4</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_computeError" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@4a0292d9</data>
+            <data key="name">kmeansCluster_kmeansfunction_computeError</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">computeError</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">13</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_updateCentroids" kind="vertex">
+            <data key="graph_desc">org.preesm.algorithm.codegen.idl.ActorPrototypes@491717d6</data>
+            <data key="name">kmeansCluster_kmeansfunction_updateCentroids</data>
+            <data key="kind">dag_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">updateCentroids</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">11</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastHsImage" kind="Broadcast">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastHsImage</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">ef2f853b-c679-4e6a-85b2-e1ee437fe662</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">6</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" kind="Broadcast">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastClusterCentroids</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">ad2c40eb-d0f0-40cf-9d4a-2378c2e58b30</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">12</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" kind="Broadcast">
+            <data key="name">kmeansCluster_kmeansfunction_BroadcastAssignedCluster</data>
+            <data key="kind">dag_broadcast_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">7b8ce58a-6573-49a3-b010-07b44cd010a4</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">10</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_computeError_init_previousCentroids" kind="init">
+            <data key="name">kmeansCluster_kmeansfunction_computeError_init_previousCentroids</data>
+            <data key="kind">dag_init_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">bcf2076a-5891-4aab-9878-b6cc70701001</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">0</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <node id="kmeansCluster_kmeansfunction_evaluation_end_previousCentroids" kind="END">
+            <data key="name">kmeansCluster_kmeansfunction_evaluation_end_previousCentroids</data>
+            <data key="kind">dag_end_vertex</data>
+            <data key="time">0</data>
+            <data key="nb_repeat">1</data>
+            <data key="OperatorDef">x86</data>
+            <data key="availableOperators">[org.preesm.model.slam.impl.ComponentInstanceImpl@35a358ad (instanceName: Core0)]</data>
+            <data key="originalId">866e1d5f-8445-4b9c-b34c-4eff59bf6549</data>
+            <data key="duration">-1</data>
+            <data key="schedulingOrder">15</data>
+            <data key="Operator">Core0</data>
+            <data key="graph_desc"/>
+            <data key="arguments"/>
+        </node>
+        <edge source="kmeansCluster_BroadcastHsImage" sourceport="out0" target="kmeansCluster_initializeCluster" targetport="in0">
+            <data key="Weight">135376896</data>
+            <data key="edge_prod">135376896</data>
             <data key="edge_delay">0</data>
-            <data key="edge_cons">135377152</data>
+            <data key="edge_cons">135376896</data>
             <data key="data_type">memUnit</data>
         </edge>
-        <edge source="kmeansCluster" sourceport="out0" target="write_results" targetport="in0">
+        <edge source="kmeansCluster_initializeCluster" sourceport="out0" target="kmeansCluster_BroadcastClusterCentroids" targetport="in0">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="out0" target="kmeansCluster_initializeCluster" targetport="in1">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="out1" target="kmeansCluster_error" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastClusterCentroids" sourceport="out0" target="kmeansCluster_error" targetport="in1">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="read_parameters" sourceport="out0" target="kmeansCluster_BroadcastStruck" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="read_parameters" sourceport="out1" target="kmeansCluster_BroadcastHsImage" targetport="in0">
+            <data key="Weight">135376896</data>
+            <data key="edge_prod">135376896</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">135376896</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="out0" target="kmeansCluster_kmeansfunction_computeDistance" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="out1" target="kmeansCluster_kmeansfunction_evaluation" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="out2" target="kmeansCluster_kmeansfunction_computeError" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_computeError" sourceport="out0" target="kmeansCluster_kmeansfunction_evaluation" targetport="in1">
+            <data key="Weight">16</data>
+            <data key="edge_prod">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">16</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastHsImage" sourceport="out0" target="kmeansCluster_kmeansfunction_computeDistance" targetport="in1">
+            <data key="Weight">135376896</data>
+            <data key="edge_prod">135376896</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">135376896</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastPar" sourceport="out3" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastHsImage" sourceport="out1" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="in1">
+            <data key="Weight">135376896</data>
+            <data key="edge_prod">135376896</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">135376896</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_updateCentroids" sourceport="out0" target="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" targetport="in0">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" sourceport="out0" target="kmeansCluster_kmeansfunction_computeError" targetport="in1">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastClusterCentroids" sourceport="out1" target="kmeansCluster_kmeansfunction_evaluation" targetport="in2">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_computeDistance" sourceport="out0" target="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" targetport="in0">
             <data key="Weight">1057632</data>
             <data key="edge_prod">1057632</data>
             <data key="edge_delay">0</data>
             <data key="edge_cons">1057632</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" sourceport="out0" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="in2">
+            <data key="Weight">1057632</data>
+            <data key="edge_prod">1057632</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">1057632</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_BroadcastAssignedCluster" sourceport="out1" target="kmeansCluster_kmeansfunction_evaluation" targetport="in3">
+            <data key="Weight">1057632</data>
+            <data key="edge_prod">1057632</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">1057632</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastHsImage" sourceport="out1" target="kmeansCluster_kmeansfunction_BroadcastHsImage" targetport="in0">
+            <data key="Weight">135376896</data>
+            <data key="edge_prod">135376896</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">135376896</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastStruck" sourceport="out2" target="kmeansCluster_kmeansfunction_BroadcastPar" targetport="in0">
+            <data key="Weight">256</data>
+            <data key="edge_prod">256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">256</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_BroadcastClusterCentroids" sourceport="out1" target="kmeansCluster_kmeansfunction_computeDistance" targetport="in2">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_evaluation" sourceport="out0" target="write_results" targetport="in0">
+            <data key="Weight">1057632</data>
+            <data key="edge_prod">1057632</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">1057632</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_error" sourceport="out0" target="kmeansCluster_kmeansfunction_updateCentroids" targetport="in3">
+            <data key="Weight">16</data>
+            <data key="edge_prod">16</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">16</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_computeError_init_previousCentroids" sourceport="out0" target="kmeansCluster_kmeansfunction_computeError" targetport="in2">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
+            <data key="data_type">memUnit</data>
+        </edge>
+        <edge source="kmeansCluster_kmeansfunction_evaluation" sourceport="out1" target="kmeansCluster_kmeansfunction_evaluation_end_previousCentroids" targetport="in0">
+            <data key="Weight">12288</data>
+            <data key="edge_prod">12288</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_cons">12288</data>
             <data key="data_type">memUnit</data>
         </edge>
     </graph>
