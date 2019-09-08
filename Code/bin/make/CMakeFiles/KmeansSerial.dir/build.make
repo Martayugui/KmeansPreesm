@@ -303,9 +303,11 @@ Release/KmeansSerial: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Release/KmeansSerial: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 Release/KmeansSerial: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 Release/KmeansSerial: /usr/local/lib/libpapi.so
+Release/KmeansSerial: ../../lib/spider/lib/libSpider.so
 Release/KmeansSerial: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 Release/KmeansSerial: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 Release/KmeansSerial: /usr/local/lib/libpapi.so
+Release/KmeansSerial: ../../lib/spider/lib/libSpider.so
 Release/KmeansSerial: CMakeFiles/KmeansSerial.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable Release/KmeansSerial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/KmeansSerial.dir/link.txt --verbose=$(VERBOSE)

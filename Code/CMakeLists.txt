@@ -151,10 +151,41 @@ endif()
 
 find_library(papi_LIBRARY papi)
 
+
+# *******************************************
+# ************ Spider LIBRARY ***************
+# *******************************************
+
+# find the spider folder in the libspider directory.
+file(GLOB SPIDERDIR "${LIBS_DIR}/spider")
+set(ENV{SPIDERDIR} ${SPIDERDIR})
+
+Find_Package (Spider REQUIRED )
+
+if(NOT SPIDER_FOUND)
+  MESSAGE(FATAL_ERROR "SPIDER not found !")
+endif()
+
+if (WIN32)
+    file(GLOB
+        SPIDER_DLL
+        ${SPIDERDIR}/lib/*.dll
+    )
+
+    MESSAGE("Copy SPIDER DLLs into ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+    if(NOT ${CMAKE_GENERATOR} MATCHES "Visual Studio.*")
+        file(COPY ${SPIDER_DLL} DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+    else()
+        file(COPY ${SPIDER_DLL} DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug)
+        file(COPY ${SPIDER_DLL} DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release)
+    endif()
+endif()
+
+
 # *******************************************
 # **************** HSICancerDetection.exe  ****************
 # *******************************************
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${SDL2_INCLUDE_DIR} ${SDL2TTF_INCLUDE_DIR} ${THREADS_PTHREADS_INCLUDE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${SDL2_INCLUDE_DIR} ${SDL2TTF_INCLUDE_DIR} ${THREADS_PTHREADS_INCLUDE_DIR} ${SPIDER_INCLUDE_DIR})
 file(
 	GLOB_RECURSE
 	source_files
@@ -164,6 +195,10 @@ file(
 	./include/*.h
 )
 
+
 add_executable( KmeansSerial ${source_files} ${header_files})
-target_link_libraries(KmeansSerial ${SDL2_LIBRARY} ${SDL2TTF_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${papi_LIBRARY} -lm)
+target_link_libraries(KmeansSerial ${SDL2_LIBRARY} ${SDL2TTF_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${papi_LIBRARY} ${SPIDER_LIBRARY} -lm)
 set(CMAKE_C_FLAGS "-std=gnu99")
+
+
+

@@ -1,0 +1,274 @@
+
+<data>
+	<event
+		start="0"
+		end="100"
+		title="kmeansCluster_0_kmeansfunction_0_loop_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_loop_0_(x1).</event>
+	<event
+		start="100"
+		end="101"
+		title="kmeansCluster_init_in_kmeansfunction_in_computeDistance_clusterCentroids (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_init_in_kmeansfunction_in_computeDistance_clusterCentroids_(x1).</event>
+	<event
+		start="101"
+		end="201"
+		title="read_parameters_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_read_parameters_0_(x1).</event>
+	<event
+		start="201"
+		end="9227"
+		title="kmeansCluster_0_BroadcastActorImage_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_BroadcastActorImage_0_(x1).</event>
+	<event
+		start="9227"
+		end="9228"
+		title="kmeansCluster_0_BroadcastStruck_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_BroadcastStruck_0_(x1).</event>
+	<event
+		start="9228"
+		end="9229"
+		title="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N_(x1).</event>
+	<event
+		start="9229"
+		end="9230"
+		title="BR_kmeansCluster_0_kmeansfunction_0__par (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_BR_kmeansCluster_0_kmeansfunction_0__par_(x1).</event>
+	<event
+		start="9230"
+		end="9231"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0_(x1).</event>
+	<event
+		start="9231"
+		end="9232"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_1_(x1).</event>
+	<event
+		start="9232"
+		end="9233"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_2_(x1).</event>
+	<event
+		start="9233"
+		end="22771"
+		title="BR_kmeansCluster_0_kmeansfunction_0__image (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_BR_kmeansCluster_0_kmeansfunction_0__image_(x1).</event>
+	<event
+		start="22771"
+		end="22871"
+		title="kmeansCluster_0_initializeCluster_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_initializeCluster_0_(x1).</event>
+	<event
+		start="22871"
+		end="22872"
+		title="kmeansCluster_0_BroadcastClusterCentroids_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_BroadcastClusterCentroids_0_(x1).</event>
+	<event
+		start="22872"
+		end="22874"
+		title="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids_(x1).</event>
+	<event
+		start="22874"
+		end="22974"
+		title="kmeansCluster_0_error_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_error_0_(x1).</event>
+	<event
+		start="22974"
+		end="22975"
+		title="BR_kmeansCluster_0_kmeansfunction_0__error (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_BR_kmeansCluster_0_kmeansfunction_0__error_(x1).</event>
+	<event
+		start="22975"
+		end="32001"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0_(x1).</event>
+	<event
+		start="32001"
+		end="41027"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_1_(x1).</event>
+	<event
+		start="41027"
+		end="50053"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_2_(x1).</event>
+	<event
+		start="50053"
+		end="50153"
+		title="kmeansCluster_0_kmeansfunction_0_computeDistance_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_0_(x1).</event>
+	<event
+		start="50153"
+		end="50224"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0_(x1).</event>
+	<event
+		start="50224"
+		end="50324"
+		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_0_(x1).</event>
+	<event
+		start="50324"
+		end="50325"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_0_(x1).</event>
+	<event
+		start="50325"
+		end="50425"
+		title="kmeansCluster_0_kmeansfunction_0_computeDistance_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_1_(x1).</event>
+	<event
+		start="50425"
+		end="50525"
+		title="kmeansCluster_0_kmeansfunction_0_computeError_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeError_0_(x1).</event>
+	<event
+		start="50525"
+		end="50596"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1_(x1).</event>
+	<event
+		start="50596"
+		end="50696"
+		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_1_(x1).</event>
+	<event
+		start="50696"
+		end="50697"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_1_(x1).</event>
+	<event
+		start="50697"
+		end="50797"
+		title="kmeansCluster_0_kmeansfunction_0_computeDistance_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_2_(x1).</event>
+	<event
+		start="50797"
+		end="50897"
+		title="kmeansCluster_0_kmeansfunction_0_computeError_1 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeError_1_(x1).</event>
+	<event
+		start="50897"
+		end="50968"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2_(x1).</event>
+	<event
+		start="50968"
+		end="51004"
+		title="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_RB_kmeansCluster_0_kmeansfunction_0__assignedCluster_(x1).</event>
+	<event
+		start="51004"
+		end="51104"
+		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_2_(x1).</event>
+	<event
+		start="51104"
+		end="51204"
+		title="write_results_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_write_results_0_(x1).</event>
+	<event
+		start="51204"
+		end="51205"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_2_(x1).</event>
+	<event
+		start="51205"
+		end="51305"
+		title="kmeansCluster_0_kmeansfunction_0_computeError_2 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeError_2_(x1).</event>
+	<event
+		start="51305"
+		end="51306"
+		title="kmeansCluster_end_out_kmeansfunction_out_BroadcastActorClusterCentroids_clusterCentroidsDistance (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_end_out_kmeansfunction_out_BroadcastActorClusterCentroids_clusterCentroidsDistance_(x1).</event>
+	<perfs>
+		work="51306"
+		span="0"
+		impl_length="51306"
+	impl_nbCores="1"
+		impl_nbUsedCores="1"
+		<core
+			id="Core0"
+			load="51306"
+			used_mem="1635336800"
+			>Core_Core0.</core>
+	</perfs>
+</data>

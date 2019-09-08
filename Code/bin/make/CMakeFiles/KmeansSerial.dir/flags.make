@@ -6,5 +6,5 @@ C_FLAGS = -std=gnu99 -O3 -DNDEBUG -Wall
 
 C_DEFINES = -DPROJECT_ROOT_PATH=\"/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code\"
 
-C_INCLUDES = -I/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/include -I/usr/include/SDL2 
+C_INCLUDES = -I/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/include -I/usr/include/SDL2 -I/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/lib/spider/include 
 

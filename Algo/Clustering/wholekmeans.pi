@@ -40,7 +40,7 @@
             <port kind="cfg_input" name="columns"/>
             <port kind="cfg_input" name="bands"/>
             <port kind="cfg_input" name="pixels"/>
-            <port annotation="NONE" expr="pixels*bands"
+            <port annotation="READ_ONLY" expr="pixels*bands"
                 kind="input" name="image"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="rows*columns"

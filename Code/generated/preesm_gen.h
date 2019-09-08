@@ -81,8 +81,8 @@
 
 #include "preesm.h"
 
+#include "kmeans.h"
 #include "read_par_and_img.h"
 #include "write_kmeans_results.h"
-#include "kmeans.h"
 
 #endif

@@ -25,6 +25,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../../include"
   "/usr/include/SDL2"
+  "../../lib/spider/include"
   )
 
 # Targets to which this target links.

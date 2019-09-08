@@ -5,21 +5,53 @@
         <architecture url="/KmeansSerialLast/Archi/1CoreX86.slam"/>
         <codegenDirectory url="/KmeansSerialLast/Code/generated"/>
     </files>
-    <constraints excelUrl=""/>
+    <constraints excelUrl="">
+        <constraintGroup>
+            <operator name="Core0"/>
+            <task name="wholekmeans/read_parameters"/>
+            <task name="wholekmeans/write_results"/>
+            <task name="wholekmeans/kmeansCluster/assignedCluster"/>
+            <task name="wholekmeans/kmeansCluster/par"/>
+            <task name="wholekmeans/kmeansCluster/image"/>
+            <task name="wholekmeans/kmeansCluster/initializeCluster"/>
+            <task name="wholekmeans/kmeansCluster/error"/>
+            <task name="wholekmeans/kmeansCluster/BroadcastStruck"/>
+            <task name="wholekmeans/kmeansCluster/BroadcastClusterCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/computeDistance"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/loop"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/par"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/clusterCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorPar"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/computeError"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorClusterCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/error"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorAssignedCluster"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/assignedCluster"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorImage"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorClusterCentroids_clusterCentroidsDistance__computeDistance_clusterCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction"/>
+            <task name="wholekmeans/kmeansCluster"/>
+            <task name="wholekmeans"/>
+            <task name="wholekmeans/kmeansCluster/BroadcastActorImage"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/image"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/middle"/>
+        </constraintGroup>
+    </constraints>
     <relativeconstraints excelUrl=""/>
     <timings excelUrl="">
-        <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>
+        <memcpyspeed opname="x86" setuptime="1" timeperunit="3.3333334E-5"/>
     </timings>
     <simuParams>
         <mainCore>Core0</mainCore>
         <mainComNode>shared_mem</mainComNode>
         <averageDataSize>1000</averageDataSize>
         <dataTypes>
+            <dataType name="uchar" size="1"/>
             <dataType name="char" size="1"/>
             <dataType name="int" size="4"/>
-            <dataType name="float" size="4"/>
-            <dataType name="double" size="8"/>
             <dataType name="parameters" size="16"/>
+            <dataType name="float" size="4"/>
         </dataTypes>
         <specialVertexOperators>
             <specialVertexOperator path="Core0"/>
