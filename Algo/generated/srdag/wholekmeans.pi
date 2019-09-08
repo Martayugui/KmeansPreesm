@@ -469,14 +469,14 @@
                     name="image" type="float "/>
                 <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
                 <param direction="OUT" isConfig="false"
-                    name="clusterCentroids" type="float "/>
+                    name="initialCentroids" type="float "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
             <port annotation="READ_ONLY" expr="33844224"
                 kind="input" name="image"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="output" name="initialCentroids"/>
         </node>
         <node id="kmeansCluster_0_BroadcastClusterCentroids_0" kind="broadcast">
             <port kind="cfg_input" name="bands"/>
@@ -492,13 +492,13 @@
                 <param direction="IN" isConfig="true" name="c" type="int"/>
                 <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
                 <param direction="IN" isConfig="false"
-                    name="clusterCentroids" type="float "/>
+                    name="initialCentroids" type="float "/>
                 <param direction="OUT" isConfig="false"
                     name="error" type="float "/>
             </loop>
             <port kind="cfg_input" name="c"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
         </node>
         <node id="kmeansCluster_0_BroadcastActorImage_0" kind="broadcast">
@@ -818,7 +818,7 @@
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="kmeansCluster_0_initializeCluster_0"
-            sourceport="clusterCentroids"
+            sourceport="initialCentroids"
             target="kmeansCluster_0_BroadcastClusterCentroids_0"
             targetport="clusterCentroids" type="float"/>
         <edge kind="fifo" source="kmeansCluster_0_error_0"
@@ -838,7 +838,7 @@
             source="kmeansCluster_0_BroadcastClusterCentroids_0"
             sourceport="clusterCentroidsError_1"
             target="kmeansCluster_0_error_0"
-            targetport="clusterCentroids" type="float"/>
+            targetport="initialCentroids" type="float"/>
         <edge kind="fifo"
             source="kmeansCluster_0_BroadcastClusterCentroids_0"
             sourceport="clusterCentroidskmeans_0"

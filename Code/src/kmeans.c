@@ -179,17 +179,16 @@ void computeError( int c,float *previousCentroids,float *clusterCentroids,struct
 void computeDistance(int rows,int columns,int pixels,int bands,int *N,float * image,struct parameters *par, float * clusterCentroids,float *initialCentroids, float *initialError,int *assignedCluster,float *previousCentroids) {
 
 	iter=iter+1;
-	if (error > par->minErr) {
-		 if (iter==1) {
-			 error=*initialError;
-			 for (int z = 0; z < par->k; z++) {
-				 for (int j = 0; j < bands; j++) {
-					clusterCentroids[bands*z + j]=initialCentroids[bands*z + j];
-				}
-			 }
+	if (iter==1) {
+		error=*initialError;
+		 for (int z = 0; z < par->k; z++) {
+			 for (int j = 0; j < bands; j++) {
+				clusterCentroids[bands*z + j]=initialCentroids[bands*z + j];
+			}
 		 }
-
-		 printf("\n");
+	 }
+	if (error > par->minErr) {
+     	 printf("\n");
 		 printf("N: %f",error);
 		 printf("\n");
 		 memcpy(previousCentroids, clusterCentroids, par->k*bands * sizeof(float));
