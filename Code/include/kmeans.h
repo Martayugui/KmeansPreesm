@@ -6,6 +6,7 @@
 #include <string.h>
 #include "preesm.h"
 
+
 #define clustervalues PROJECT_ROOT_PATH "/dat/clusterCentroid.txt"
 
 void kmeansfunction(int rows, int columns, int bands,int pixels,struct parameters * par, float * image, float * error, float * clusterCentroids, int * assignedCluster);

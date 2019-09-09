@@ -55,9 +55,9 @@
         <node id="loop" kind="actor" period="0">
             <data key="graph_desc">Code/include/kmeans.h</data>
             <loop name="loop">
-                <param direction="OUT" isConfig="false" name="N" type="int "/>
+                <param direction="OUT" isConfig="false" name="N" type="char "/>
             </loop>
-            <port annotation="NONE" expr="12" kind="output" name="N"/>
+            <port annotation="NONE" expr="16" kind="output" name="N"/>
         </node>
         <node id="image" kind="src">
             <port annotation="NONE" expr="pixels*bands"

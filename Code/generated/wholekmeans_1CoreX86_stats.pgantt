@@ -72,203 +72,252 @@
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_2_(x1).</event>
 	<event
 		start="9233"
-		end="22771"
+		end="9234"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_3_(x1).</event>
+	<event
+		start="9234"
+		end="27285"
 		title="BR_kmeansCluster_0_kmeansfunction_0__image (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_BR_kmeansCluster_0_kmeansfunction_0__image_(x1).</event>
 	<event
-		start="22771"
-		end="22871"
+		start="27285"
+		end="27385"
 		title="kmeansCluster_0_initializeCluster_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_initializeCluster_0_(x1).</event>
 	<event
-		start="22871"
-		end="22872"
+		start="27385"
+		end="27386"
 		title="kmeansCluster_0_BroadcastClusterCentroids_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_BroadcastClusterCentroids_0_(x1).</event>
 	<event
-		start="22872"
-		end="22874"
+		start="27386"
+		end="27388"
 		title="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids_(x1).</event>
 	<event
-		start="22874"
-		end="22974"
+		start="27388"
+		end="27488"
 		title="kmeansCluster_0_error_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_error_0_(x1).</event>
 	<event
-		start="22974"
-		end="22975"
+		start="27488"
+		end="27489"
 		title="BR_kmeansCluster_0_kmeansfunction_0__error (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_BR_kmeansCluster_0_kmeansfunction_0__error_(x1).</event>
 	<event
-		start="22975"
-		end="32001"
+		start="27489"
+		end="36515"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0_(x1).</event>
 	<event
-		start="32001"
-		end="41027"
+		start="36515"
+		end="45541"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_1_(x1).</event>
 	<event
-		start="41027"
-		end="50053"
+		start="45541"
+		end="54567"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_2_(x1).</event>
 	<event
-		start="50053"
-		end="50153"
+		start="54567"
+		end="63593"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_3_(x1).</event>
+	<event
+		start="63593"
+		end="63693"
 		title="kmeansCluster_0_kmeansfunction_0_computeDistance_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_0_(x1).</event>
 	<event
-		start="50153"
-		end="50224"
+		start="63693"
+		end="63764"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0_(x1).</event>
 	<event
-		start="50224"
-		end="50324"
+		start="63764"
+		end="63864"
 		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_0_(x1).</event>
 	<event
-		start="50324"
-		end="50325"
+		start="63864"
+		end="63865"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_0_(x1).</event>
 	<event
-		start="50325"
-		end="50425"
+		start="63865"
+		end="63965"
 		title="kmeansCluster_0_kmeansfunction_0_computeDistance_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_1_(x1).</event>
 	<event
-		start="50425"
-		end="50525"
+		start="63965"
+		end="64065"
 		title="kmeansCluster_0_kmeansfunction_0_computeError_0 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeError_0_(x1).</event>
 	<event
-		start="50525"
-		end="50596"
+		start="64065"
+		end="64136"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1_(x1).</event>
 	<event
-		start="50596"
-		end="50696"
+		start="64136"
+		end="64236"
 		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_1_(x1).</event>
 	<event
-		start="50696"
-		end="50697"
+		start="64236"
+		end="64237"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_1_(x1).</event>
 	<event
-		start="50697"
-		end="50797"
+		start="64237"
+		end="64337"
 		title="kmeansCluster_0_kmeansfunction_0_computeDistance_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_2_(x1).</event>
 	<event
-		start="50797"
-		end="50897"
+		start="64337"
+		end="64437"
 		title="kmeansCluster_0_kmeansfunction_0_computeError_1 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeError_1_(x1).</event>
 	<event
-		start="50897"
-		end="50968"
+		start="64437"
+		end="64508"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2_(x1).</event>
 	<event
-		start="50968"
-		end="51004"
-		title="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster (x1)"
-		mapping="Core0"
-		color="#c896fa"
-		>Step_RB_kmeansCluster_0_kmeansfunction_0__assignedCluster_(x1).</event>
-	<event
-		start="51004"
-		end="51104"
+		start="64508"
+		end="64608"
 		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_2_(x1).</event>
 	<event
-		start="51104"
-		end="51204"
-		title="write_results_0 (x1)"
-		mapping="Core0"
-		color="#c896fa"
-		>Step_write_results_0_(x1).</event>
-	<event
-		start="51204"
-		end="51205"
+		start="64608"
+		end="64609"
 		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_2_(x1).</event>
 	<event
-		start="51205"
-		end="51305"
+		start="64609"
+		end="64709"
+		title="kmeansCluster_0_kmeansfunction_0_computeDistance_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeDistance_3_(x1).</event>
+	<event
+		start="64709"
+		end="64809"
 		title="kmeansCluster_0_kmeansfunction_0_computeError_2 (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_0_kmeansfunction_0_computeError_2_(x1).</event>
 	<event
-		start="51305"
-		end="51306"
+		start="64809"
+		end="64880"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3_(x1).</event>
+	<event
+		start="64880"
+		end="64916"
+		title="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_RB_kmeansCluster_0_kmeansfunction_0__assignedCluster_(x1).</event>
+	<event
+		start="64916"
+		end="65016"
+		title="kmeansCluster_0_kmeansfunction_0_updateCentroids_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_updateCentroids_3_(x1).</event>
+	<event
+		start="65016"
+		end="65116"
+		title="write_results_0 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_write_results_0_(x1).</event>
+	<event
+		start="65116"
+		end="65117"
+		title="kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_BroadcastActorClusterCentroids_3_(x1).</event>
+	<event
+		start="65117"
+		end="65217"
+		title="kmeansCluster_0_kmeansfunction_0_computeError_3 (x1)"
+		mapping="Core0"
+		color="#c896fa"
+		>Step_kmeansCluster_0_kmeansfunction_0_computeError_3_(x1).</event>
+	<event
+		start="65217"
+		end="65218"
 		title="kmeansCluster_end_out_kmeansfunction_out_BroadcastActorClusterCentroids_clusterCentroidsDistance (x1)"
 		mapping="Core0"
 		color="#c896fa"
 		>Step_kmeansCluster_end_out_kmeansfunction_out_BroadcastActorClusterCentroids_clusterCentroidsDistance_(x1).</event>
 	<perfs>
-		work="51306"
+		work="65218"
 		span="0"
-		impl_length="51306"
+		impl_length="65218"
 	impl_nbCores="1"
 		impl_nbUsedCores="1"
 		<core
 			id="Core0"
-			load="51306"
-			used_mem="1635336800"
+			load="65218"
+			used_mem="2044702896"
 			>Core_Core0.</core>
 	</perfs>
 </data>
