@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <graph edgedefault="directed">
+        <data key="name">interface</data>
+        <node id="fatherActor_0_B_0" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorB">
+                <param direction="IN" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="output" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="value"/>
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+            <port annotation="NONE" expr="20" kind="output" name="output"/>
+        </node>
+        <node id="fatherActor_0_B_1" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorB">
+                <param direction="IN" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="output" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="value"/>
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+            <port annotation="NONE" expr="20" kind="output" name="output"/>
+        </node>
+        <node id="fatherActor_0_B_2" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorB">
+                <param direction="IN" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="output" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="value"/>
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+            <port annotation="NONE" expr="20" kind="output" name="output"/>
+        </node>
+        <node id="fatherActor_0_B_3" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorB">
+                <param direction="IN" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="output" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="value"/>
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+            <port annotation="NONE" expr="20" kind="output" name="output"/>
+        </node>
+        <node id="fatherActor_0_B_4" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorB">
+                <param direction="IN" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="output" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="value"/>
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+            <port annotation="NONE" expr="20" kind="output" name="output"/>
+        </node>
+        <node id="fatherActor_0_A_0" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorA">
+                <param direction="IN" isConfig="false"
+                    name="input" type="int "/>
+                <param direction="IN" isConfig="false" name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="input"/>
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="4" kind="output" name="value"/>
+        </node>
+        <node id="fatherActor_0_A_1" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorA">
+                <param direction="IN" isConfig="false"
+                    name="input" type="int "/>
+                <param direction="IN" isConfig="false" name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="input"/>
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="4" kind="output" name="value"/>
+        </node>
+        <node id="fatherActor_0_A_2" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorA">
+                <param direction="IN" isConfig="false"
+                    name="input" type="int "/>
+                <param direction="IN" isConfig="false" name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="input"/>
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="4" kind="output" name="value"/>
+        </node>
+        <node id="fatherActor_0_A_3" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorA">
+                <param direction="IN" isConfig="false"
+                    name="input" type="int "/>
+                <param direction="IN" isConfig="false" name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="input"/>
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="4" kind="output" name="value"/>
+        </node>
+        <node id="fatherActor_0_A_4" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="actorA">
+                <param direction="IN" isConfig="false"
+                    name="input" type="int "/>
+                <param direction="IN" isConfig="false" name="sum" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="value" type="int "/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="input" name="input"/>
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="4" kind="output" name="value"/>
+        </node>
+        <node id="fatherActor_0_I_0" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="loop">
+                <param direction="OUT" isConfig="false" name="N" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="20" kind="output" name="N"/>
+        </node>
+        <node id="fatherActor_0_explode_fatherActor_0_I_0_N" kind="fork">
+            <port annotation="READ_ONLY" expr="20" kind="input" name="N"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_0"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_1"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_2"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_3"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_4"/>
+        </node>
+        <node id="BR_fatherActor_0__interfaceInput" kind="broadcast">
+            <port annotation="READ_ONLY" expr="4" kind="input" name="interfaceInput"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="interfaceInput_0_4"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="interfaceInput_1_4"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="interfaceInput_2_4"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="interfaceInput_3_4"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="interfaceInput_4_4"/>
+        </node>
+        <node id="RB_fatherActor_0__interfaceOutput" kind="roundbuffer">
+            <port annotation="READ_ONLY" expr="20" kind="input" name="interfaceOutput_0_4"/>
+            <port annotation="READ_ONLY" expr="20" kind="input" name="interfaceOutput_1_4"/>
+            <port annotation="READ_ONLY" expr="20" kind="input" name="interfaceOutput_2_4"/>
+            <port annotation="READ_ONLY" expr="20" kind="input" name="interfaceOutput_3_4"/>
+            <port annotation="READ_ONLY" expr="20" kind="input" name="interfaceOutput_4_4"/>
+            <port annotation="WRITE_ONLY" expr="20" kind="output" name="interfaceOutput"/>
+        </node>
+        <node id="fatherActor_init_in_A_sum"
+            init_end_ref="fatherActor_end_out_B_sum" kind="init">
+            <port annotation="NONE" expr="4" kind="output" name="sum"/>
+        </node>
+        <node id="fatherActor_end_out_B_sum"
+            init_end_ref="fatherActor_init_in_A_sum" kind="end">
+            <port annotation="NONE" expr="4" kind="input" name="sum"/>
+        </node>
+        <node id="inputActor_0" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="inputActor">
+                <param direction="OUT" isConfig="false"
+                    name="Interface" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="4" kind="output" name="Interface"/>
+        </node>
+        <node id="outputActor_0" kind="actor" period="0">
+            <data key="graph_desc">tests/Code/include/testLoop.h</data>
+            <loop name="FinalActor">
+                <param direction="IN" isConfig="false"
+                    name="interfaceOutput" type="int "/>
+            </loop>
+            <port annotation="NONE" expr="20" kind="input" name="interfaceOutput"/>
+        </node>
+        <edge kind="fifo" source="fatherActor_0_B_0"
+            sourceport="sum" target="fatherActor_0_A_1"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_1"
+            sourceport="sum" target="fatherActor_0_A_2"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_2"
+            sourceport="sum" target="fatherActor_0_A_3"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_3"
+            sourceport="sum" target="fatherActor_0_A_4"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_A_0"
+            sourceport="value" target="fatherActor_0_B_0"
+            targetport="value" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_A_1"
+            sourceport="value" target="fatherActor_0_B_1"
+            targetport="value" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_A_2"
+            sourceport="value" target="fatherActor_0_B_2"
+            targetport="value" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_A_3"
+            sourceport="value" target="fatherActor_0_B_3"
+            targetport="value" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_A_4"
+            sourceport="value" target="fatherActor_0_B_4"
+            targetport="value" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_I_0"
+            sourceport="N"
+            target="fatherActor_0_explode_fatherActor_0_I_0_N"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="fatherActor_0_explode_fatherActor_0_I_0_N"
+            sourceport="N_0" target="fatherActor_0_A_0"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="fatherActor_0_explode_fatherActor_0_I_0_N"
+            sourceport="N_1" target="fatherActor_0_A_1"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="fatherActor_0_explode_fatherActor_0_I_0_N"
+            sourceport="N_2" target="fatherActor_0_A_2"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="fatherActor_0_explode_fatherActor_0_I_0_N"
+            sourceport="N_3" target="fatherActor_0_A_3"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="fatherActor_0_explode_fatherActor_0_I_0_N"
+            sourceport="N_4" target="fatherActor_0_A_4"
+            targetport="N" type="int"/>
+        <edge kind="fifo"
+            source="BR_fatherActor_0__interfaceInput"
+            sourceport="interfaceInput_0_4"
+            target="fatherActor_0_A_0" targetport="input" type="int"/>
+        <edge kind="fifo"
+            source="BR_fatherActor_0__interfaceInput"
+            sourceport="interfaceInput_1_4"
+            target="fatherActor_0_A_1" targetport="input" type="int"/>
+        <edge kind="fifo"
+            source="BR_fatherActor_0__interfaceInput"
+            sourceport="interfaceInput_2_4"
+            target="fatherActor_0_A_2" targetport="input" type="int"/>
+        <edge kind="fifo"
+            source="BR_fatherActor_0__interfaceInput"
+            sourceport="interfaceInput_3_4"
+            target="fatherActor_0_A_3" targetport="input" type="int"/>
+        <edge kind="fifo"
+            source="BR_fatherActor_0__interfaceInput"
+            sourceport="interfaceInput_4_4"
+            target="fatherActor_0_A_4" targetport="input" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_0"
+            sourceport="output"
+            target="RB_fatherActor_0__interfaceOutput"
+            targetport="interfaceOutput_0_4" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_1"
+            sourceport="output"
+            target="RB_fatherActor_0__interfaceOutput"
+            targetport="interfaceOutput_1_4" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_2"
+            sourceport="output"
+            target="RB_fatherActor_0__interfaceOutput"
+            targetport="interfaceOutput_2_4" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_3"
+            sourceport="output"
+            target="RB_fatherActor_0__interfaceOutput"
+            targetport="interfaceOutput_3_4" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_4"
+            sourceport="output"
+            target="RB_fatherActor_0__interfaceOutput"
+            targetport="interfaceOutput_4_4" type="int"/>
+        <edge kind="fifo" source="fatherActor_init_in_A_sum"
+            sourceport="sum" target="fatherActor_0_A_0"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="fatherActor_0_B_4"
+            sourceport="sum" target="fatherActor_end_out_B_sum"
+            targetport="sum" type="int"/>
+        <edge kind="fifo" source="inputActor_0"
+            sourceport="Interface"
+            target="BR_fatherActor_0__interfaceInput"
+            targetport="interfaceInput" type="int"/>
+        <edge kind="fifo"
+            source="RB_fatherActor_0__interfaceOutput"
+            sourceport="interfaceOutput" target="outputActor_0"
+            targetport="interfaceOutput" type="int"/>
+    </graph>
+</graphml>

@@ -116,6 +116,7 @@ void writeResults (int rows, int columns, int *assignedCluster)  {
 		fwrite(bmppad, 1, (4 - (rows * 3) % 4) % 4, f);
 	}
 	fclose(f);
+
 }
 
 

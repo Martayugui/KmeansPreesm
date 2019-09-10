@@ -1,4 +1,4 @@
-The system is: Linux - 4.15.0-58-generic - x86_64
+The system is: Linux - 4.15.0-60-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/gdem/Downloads/preesm-3.
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2e86f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2e86f.dir/build.make CMakeFiles/cmTC_2e86f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_250d0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_250d0.dir/build.make CMakeFiles/cmTC_250d0.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2e86f.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_2e86f.dir/testCCompiler.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_2e86f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e86f.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2e86f.dir/testCCompiler.c.o  -o cmTC_2e86f 
+Building C object CMakeFiles/cmTC_250d0.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_250d0.dir/testCCompiler.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_250d0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_250d0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_250d0.dir/testCCompiler.c.o  -o cmTC_250d0 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_39bb6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_39bb6.dir/build.make CMakeFiles/cmTC_39bb6.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_9ac86/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9ac86.dir/build.make CMakeFiles/cmTC_9ac86.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_39bb6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39bb6.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o  -o cmTC_39bb6 
+Building C object CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_9ac86
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ac86.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o  -o cmTC_9ac86 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_39bb6' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnTt1jB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_39bb6 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_39bb6' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9ac86' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBFcUxA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9ac86 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9ac86' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +71,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_39bb6/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_39bb6.dir/build.make CMakeFiles/cmTC_39bb6.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9ac86/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_9ac86.dir/build.make CMakeFiles/cmTC_9ac86.dir/build]
   ignore line: [make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_39bb6]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39bb6.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o  -o cmTC_39bb6 ]
+  ignore line: [Building C object CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_9ac86]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ac86.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o  -o cmTC_9ac86 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_39bb6' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnTt1jB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_39bb6 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9ac86' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBFcUxA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9ac86 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccnTt1jB.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccBFcUxA.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_39bb6] ==> ignore
+    arg [cmTC_9ac86] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_39bb6.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_9ac86.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -160,14 +160,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_338bb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_338bb.dir/build.make CMakeFiles/cmTC_338bb.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_af7ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_af7ad.dir/build.make CMakeFiles/cmTC_af7ad.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_338bb.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_338bb.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
-Linking C executable cmTC_338bb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_338bb.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_338bb.dir/feature_tests.c.o  -o cmTC_338bb 
+Building C object CMakeFiles/cmTC_af7ad.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_af7ad.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
+Linking C executable cmTC_af7ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af7ad.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_af7ad.dir/feature_tests.c.o  -o cmTC_af7ad 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -180,14 +180,14 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5f2e6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5f2e6.dir/build.make CMakeFiles/cmTC_5f2e6.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_eaedd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eaedd.dir/build.make CMakeFiles/cmTC_eaedd.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5f2e6.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_5f2e6.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5f2e6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f2e6.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5f2e6.dir/feature_tests.c.o  -o cmTC_5f2e6 
+Building C object CMakeFiles/cmTC_eaedd.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_eaedd.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
+Linking C executable cmTC_eaedd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eaedd.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_eaedd.dir/feature_tests.c.o  -o cmTC_eaedd 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -200,14 +200,14 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9ebaf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9ebaf.dir/build.make CMakeFiles/cmTC_9ebaf.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a5e9f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a5e9f.dir/build.make CMakeFiles/cmTC_a5e9f.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9ebaf.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_9ebaf.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
-Linking C executable cmTC_9ebaf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ebaf.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9ebaf.dir/feature_tests.c.o  -o cmTC_9ebaf 
+Building C object CMakeFiles/cmTC_a5e9f.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_a5e9f.dir/feature_tests.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a5e9f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5e9f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a5e9f.dir/feature_tests.c.o  -o cmTC_a5e9f 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -218,28 +218,28 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e2fb0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e2fb0.dir/build.make CMakeFiles/cmTC_e2fb0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_89b17/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89b17.dir/build.make CMakeFiles/cmTC_89b17.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e2fb0.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_e2fb0.dir/testCXXCompiler.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_e2fb0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2fb0.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e2fb0.dir/testCXXCompiler.cxx.o  -o cmTC_e2fb0 
+Building CXX object CMakeFiles/cmTC_89b17.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_89b17.dir/testCXXCompiler.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_89b17
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89b17.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_89b17.dir/testCXXCompiler.cxx.o  -o cmTC_89b17 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_654ea/fast"
-/usr/bin/make -f CMakeFiles/cmTC_654ea.dir/build.make CMakeFiles/cmTC_654ea.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_83930/fast"
+/usr/bin/make -f CMakeFiles/cmTC_83930.dir/build.make CMakeFiles/cmTC_83930.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_654ea
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_654ea.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_654ea 
+Building CXX object CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_83930
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83930.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_83930 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -251,9 +251,9 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_654ea' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccANHN4w.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_654ea /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_654ea' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_83930' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1BG6ql.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_83930 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_83930' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -261,14 +261,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_654ea/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_654ea.dir/build.make CMakeFiles/cmTC_654ea.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_83930/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_83930.dir/build.make CMakeFiles/cmTC_83930.dir/build]
   ignore line: [make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_654ea]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_654ea.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_654ea ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_83930]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83930.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_83930 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -280,13 +280,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_654ea' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccANHN4w.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_654ea /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_83930' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1BG6ql.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_83930 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccANHN4w.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc1BG6ql.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_654ea] ==> ignore
+    arg [cmTC_83930] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -318,7 +318,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_654ea.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_83930.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -346,14 +346,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c1f7b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c1f7b.dir/build.make CMakeFiles/cmTC_c1f7b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3a7d1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3a7d1.dir/build.make CMakeFiles/cmTC_3a7d1.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c1f7b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_c1f7b.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_c1f7b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1f7b.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c1f7b.dir/feature_tests.cxx.o  -o cmTC_c1f7b 
+Building CXX object CMakeFiles/cmTC_3a7d1.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_3a7d1.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3a7d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a7d1.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3a7d1.dir/feature_tests.cxx.o  -o cmTC_3a7d1 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -419,14 +419,14 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_92463/fast"
-/usr/bin/make -f CMakeFiles/cmTC_92463.dir/build.make CMakeFiles/cmTC_92463.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2ffac/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2ffac.dir/build.make CMakeFiles/cmTC_2ffac.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_92463.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_92463.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_92463
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92463.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_92463.dir/feature_tests.cxx.o  -o cmTC_92463 
+Building CXX object CMakeFiles/cmTC_2ffac.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_2ffac.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2ffac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ffac.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_2ffac.dir/feature_tests.cxx.o  -o cmTC_2ffac 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -492,14 +492,14 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_868f2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_868f2.dir/build.make CMakeFiles/cmTC_868f2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a2998/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a2998.dir/build.make CMakeFiles/cmTC_a2998.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_868f2.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_868f2.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_868f2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_868f2.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_868f2.dir/feature_tests.cxx.o  -o cmTC_868f2 
+Building CXX object CMakeFiles/cmTC_a2998.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_a2998.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a2998
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2998.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a2998.dir/feature_tests.cxx.o  -o cmTC_a2998 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -565,14 +565,14 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a6de3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a6de3.dir/build.make CMakeFiles/cmTC_a6de3.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a672c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a672c.dir/build.make CMakeFiles/cmTC_a672c.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a6de3.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_a6de3.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_a6de3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6de3.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a6de3.dir/feature_tests.cxx.o  -o cmTC_a6de3 
+Building CXX object CMakeFiles/cmTC_a672c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_a672c.dir/feature_tests.cxx.o -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a672c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a672c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a672c.dir/feature_tests.cxx.o  -o cmTC_a672c 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
@@ -636,28 +636,28 @@ make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/w
 Determining if files pthread.h exist passed with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a9310/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a9310.dir/build.make CMakeFiles/cmTC_a9310.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a51a4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a51a4.dir/build.make CMakeFiles/cmTC_a51a4.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a9310.dir/CheckIncludeFiles.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a9310.dir/CheckIncludeFiles.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTC_a9310
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9310.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a9310.dir/CheckIncludeFiles.c.o  -o cmTC_a9310 
+Building C object CMakeFiles/cmTC_a51a4.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a51a4.dir/CheckIncludeFiles.c.o   -c /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_a51a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a51a4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a51a4.dir/CheckIncludeFiles.c.o  -o cmTC_a51a4 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_39484/fast"
-/usr/bin/make -f CMakeFiles/cmTC_39484.dir/build.make CMakeFiles/cmTC_39484.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d4a5e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d4a5e.dir/build.make CMakeFiles/cmTC_d4a5e.dir/build
 make[1]: Entering directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_39484.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_39484.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_39484
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39484.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_39484.dir/CheckFunctionExists.c.o  -o cmTC_39484 -lpthread 
+Building C object CMakeFiles/cmTC_d4a5e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d4a5e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d4a5e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4a5e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d4a5e.dir/CheckFunctionExists.c.o  -o cmTC_d4a5e -lpthread 
 make[1]: Leaving directory '/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/CMakeFiles/CMakeTmp'
 
 

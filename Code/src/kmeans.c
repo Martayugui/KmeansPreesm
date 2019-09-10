@@ -17,10 +17,9 @@
 #include "kmeans.h"
 #include "read_par_and_img.h"
 
-static FILE *p;
-static int iter=0;
-static float error;
-static int *assignedClusterp;
+int n=0;
+float error;
+
 
 
 void kmeansfunction(int rows, int columns, int bands,int pixels,struct parameters * par, float * image,  float * error,float * clusterCentroids, int * assignedCluster) {
@@ -45,7 +44,6 @@ void kmeansfunction(int rows, int columns, int bands,int pixels,struct parameter
 /* assignes an initial value to the centroids: k (number of clusters, one of the parameters) random non-repeated numbers are extracted as indices;
 pixels of preProcessedImage corresponding to these indices are the first centroids of the clusters */
 void initializeCluster(int pixels, int bands, float * image,struct parameters * par,float *initialCentroids) {
-	assignedClusterp = (float *)malloc(pixels*sizeof(int));
 	/*p = fopen(clustervalues, "r");
 	if (!p) {
 		perror("File opening failed");
@@ -179,8 +177,8 @@ void computeError( int c,float *previousCentroids,float *clusterCentroids,struct
  assignedCluster is filled  with the number of cluster to which each pixel is assigned */
 void computeDistance(int rows,int columns,int pixels,int bands,int *N,float * image,struct parameters *par, float * clusterCentroids,float *initialCentroids, float *initialError,int *assignedCluster,float *previousCentroids) {
 
-	iter=iter+1;
-	if (iter==1) {
+	n=n+1;
+	if (n==1) {
 		error=*initialError;
 		 for (int z = 0; z < par->k; z++) {
 			 for (int j = 0; j < bands; j++) {
@@ -188,10 +186,13 @@ void computeDistance(int rows,int columns,int pixels,int bands,int *N,float * im
 			}
 		 }
 	 }
+
+	printf("\n");
+	printf("N: %f",error);
+	printf("\n");
+
 	if (error > par->minErr) {
-     	 printf("\n");
-		 printf("N: %f",error);
-		 printf("\n");
+
 		 memcpy(previousCentroids, clusterCentroids, par->k*bands * sizeof(float));
 		float centroidDistances[pixels];
 		for (int i = 0; i < pixels; i++) {
@@ -206,16 +207,18 @@ void computeDistance(int rows,int columns,int pixels,int bands,int *N,float * im
 				}
 				centroidDistances[j] = (acosf(p / (sqrtf(n1)*sqrtf(n2))))*180.0/3.14;
 			}
-					assignedClusterp[i] = findMinimum(centroidDistances, par->k)+1;
+					assignedCluster[i] = findMinimum(centroidDistances, par->k)+1;
 		}
 	}
 
 
 	for (int p = 0; p < rows; p++) {
-		for (int q = 0; q < columns; q++) {
-			assignedCluster[rows*q+p]=assignedClusterp[rows*q+p];
+			for (int q = 0; q < columns; q++) {
+			  if (p==0){
+				 printf("%d\t", assignedCluster[rows*q+p]);
+			  }
+			}
 		}
-	}
 }
 
 /* finds the minimum index of each line of centroidDistances, that is the cluster whose centroid is at the shortest distance from the pixel under examination */

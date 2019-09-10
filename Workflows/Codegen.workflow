@@ -14,7 +14,7 @@
     <dftools:task
         pluginId="org.ietr.preesm.memory.allocation.MemoryAllocatorTask" taskId="Memory Allocation">
         <dftools:data key="variables">
-            <dftools:variable name="Allocator(s)" value="Basic"/>
+            <dftools:variable name="Allocator(s)" value="FirstFit"/>
             <dftools:variable name="Best/First Fit order" value="LargestFirst"/>
             <dftools:variable name="Data alignment" value="None"/>
             <dftools:variable name="Distribution" value="SharedOnly"/>
@@ -55,6 +55,22 @@
             <dftools:variable name="path" value="/Algo/generated/srdag"/>
         </dftools:data>
     </dftools:task>
+    <dftools:task
+        pluginId="org.ietr.preesm.memory.bounds.MemoryBoundsEstimator" taskId="Memory Bounds Estimator">
+        <dftools:data key="variables">
+            <dftools:variable name="Solver" value="Heuristic"/>
+            <dftools:variable name="Verbose" value="False"/>
+        </dftools:data>
+    </dftools:task>
+    <dftools:task
+        pluginId="org.ietr.preesm.memory.exclusiongraph.MemExUpdater" taskId="MEG Updater">
+        <dftools:data key="variables">
+            <dftools:variable name="Suppr Fork/Join" value="False"/>
+            <dftools:variable
+                name="Update with MemObject lifetime" value="False"/>
+            <dftools:variable name="Verbose" value="True"/>
+        </dftools:data>
+    </dftools:task>
     <dftools:dataTransfer from="scenario" sourceport="scenario"
         targetport="scenario" to="Display Gantt"/>
     <dftools:dataTransfer from="scenario" sourceport="scenario"
@@ -87,4 +103,10 @@
         targetport="PiMM" to="PiSDF Scheduling"/>
     <dftools:dataTransfer from="PiMM2SrDAG" sourceport="PiMM"
         targetport="PiMM" to="PiSDF Export"/>
+    <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
+        targetport="MemEx" to="Memory Bounds Estimator"/>
+    <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
+        targetport="MemEx" to="MEG Updater"/>
+    <dftools:dataTransfer from="PiSDF Scheduling"
+        sourceport="DAG" targetport="DAG" to="MEG Updater"/>
 </dftools:workflow>
