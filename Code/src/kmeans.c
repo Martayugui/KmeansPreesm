@@ -18,8 +18,6 @@
 #include "read_par_and_img.h"
 
 int n=0;
-float error;
-
 
 
 void kmeansfunction(int rows, int columns, int bands,int pixels,struct parameters * par, float * image,  float * error,float * clusterCentroids, int * assignedCluster) {
@@ -112,62 +110,44 @@ fclose(p);*/
 /* calculates error between current and previous centroids:
 error is mean of the absolute value of the member-to-member difference of the two vectors */
 
-void computeErrorInitialization(int c,struct parameters * par,float *initialCentroids,float * error) {
-
-
-/*	for (int z = 0; z < par->k; z++) {
-					for (int j = 0; j < c; j++) {
-							printf("%f",clusterCentroids[c*z + j]);
-					}
-			}
-		printf("\n");*/
-
-	/*printf("value2:%d\n",par->k);
-	printf("pepe");
-	printf("%f\n",par->minErr);*/
-	/*float previousCentroids[24*c];
-	float  err=0;
-	error=&err;*/
-	float s = 0;
-	float previousCentroids[par->k*c];
-	memset(previousCentroids, 0, par->k*c * sizeof(float));
-	for (int i = 0; i < par->k ; i++) {
-		for (int j = 0; j < c; j++) {
-			s += fabs(previousCentroids[c*i + j] - initialCentroids[c*i + j]);
-		}
-	}
-
-	*error= s / (par->k*c);
-
-/*	printf("\n");
-	printf("%f",*error);
-	printf("\n");*/
-
-
-	/*//Testing clusterCentroids
-		printf("\n");
-		printf("Compute error function");
-		printf("\n");
-		for (int z = 0; z < 24; z++) {
-					for (int j = 0; j < c; j++) {
-							printf("%f",clusterCentroids[c*z + j]);
-					}
-			}
-		printf("\n");*/
-
-
-}
-
-void computeError( int c,float *previousCentroids,float *clusterCentroids,struct parameters *par) {
+void computeError( int c,int *N,float *initialCentroids,float *clusterCentroids,struct parameters *par,float *error,float *previousCentroids,float *p)  {
 
 
 	float s = 0;
-	for (int i = 0; i < par->k ; i++) {
-		for (int j = 0; j < c; j++) {
-			s += fabs(previousCentroids[c*i + j] - clusterCentroids[c*i + j]);
-		}
-	}
-	error = s / (par->k*c);
+    n=n+1;
+    if (n==1)  {
+    	memset(previousCentroids, 0, par->k*c * sizeof(float));
+		 for (int z = 0; z < par->k; z++) {
+			 for (int j = 0; j < c; j++) {
+				clusterCentroids[c*z + j]=initialCentroids[c*z + j];
+
+			}
+		 }
+
+		 for (int i = 0; i < par->k ; i++) {
+				for (int j = 0; j < c; j++) {
+					s += fabs(previousCentroids[c*i + j] - clusterCentroids[c*i + j]);
+				}
+		 }
+
+
+		 *error= s / (par->k*c);
+		  memcpy(previousCentroids, clusterCentroids, par->k*c * sizeof(float));
+    }
+    else {
+    	memset(previousCentroids,p, par->k*c * sizeof(float));
+		 for (int i = 0; i < par->k ; i++) {
+				for (int j = 0; j < c; j++) {
+					s += fabs(previousCentroids[c*i + j] - clusterCentroids[c*i + j]);
+				}
+		 }
+
+
+		 *error= s / (par->k*c);
+	 	  memcpy(previousCentroids, clusterCentroids, par->k*c * sizeof(float));
+
+    }
+
 }
 
 
@@ -175,25 +155,15 @@ void computeError( int c,float *previousCentroids,float *clusterCentroids,struct
  as a function of distance is used the spectral angle;
  centroiDistances is filled with the calculate distances between every pixel and every centroid;
  assignedCluster is filled  with the number of cluster to which each pixel is assigned */
-void computeDistance(int rows,int columns,int pixels,int bands,int *N,float * image,struct parameters *par, float * clusterCentroids,float *initialCentroids, float *initialError,int *assignedCluster,float *previousCentroids) {
+void computeDistance(int rows,int columns,int pixels,int bands,float * image,struct parameters *par, float * clusterCentroids,int *assignedCluster,float *error,float *p2) {
 
-	n=n+1;
-	if (n==1) {
-		error=*initialError;
-		 for (int z = 0; z < par->k; z++) {
-			 for (int j = 0; j < bands; j++) {
-				clusterCentroids[bands*z + j]=initialCentroids[bands*z + j];
-			}
-		 }
-	 }
 
 	printf("\n");
-	printf("N: %f",error);
+	printf("N: %f",*error);
 	printf("\n");
 
-	if (error > par->minErr) {
-
-		 memcpy(previousCentroids, clusterCentroids, par->k*bands * sizeof(float));
+	if (*error > par->minErr) {
+		memset(p2, clusterCentroids, par->k*bands * sizeof(float));
 		float centroidDistances[pixels];
 		for (int i = 0; i < pixels; i++) {
 					for (int j = 0; j < par->k; j++) {
@@ -235,9 +205,10 @@ int findMinimum(float *vet, int size) {
 }
 
 /* updates the centroids: they are calculated as mean of the elements of the cluster*/
-void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float * image,float * clusterCentroids) {
+void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float *image,float *error,float * clusterCentroids,float *p,float *p2) {
 
-  if (error > par->minErr) {
+  if (*error > par->minErr) {
+	  memset(p, p2, par->k*bands * sizeof(float));
 		int n;
 		float sumperb;
 		for (int z = 0; z < par->k; z++) {

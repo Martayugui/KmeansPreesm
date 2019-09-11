@@ -24,7 +24,6 @@
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="READ_ONLY" expr="pixels*bands"
                 kind="input" name="image"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="columns*rows"
                 kind="output" name="assignedCluster"/>
@@ -56,32 +55,10 @@
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="24*bands" kind="output" name="initialCentroids"/>
         </node>
-        <node id="error" kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="computeErrorInitialization">
-                <param direction="IN" isConfig="true" name="c" type="int"/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="IN" isConfig="false"
-                    name="initialCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="error" type="float "/>
-            </loop>
-            <port kind="cfg_input" name="c"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="24*c" kind="input" name="initialCentroids"/>
-            <port annotation="NONE" expr="4" kind="output" name="error"/>
-        </node>
         <node id="BroadcastStruck" kind="broadcast">
             <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="16" kind="output" name="parError"/>
-            <port annotation="NONE" expr="16" kind="output" name="parKmeansCluster"/>
             <port annotation="NONE" expr="16" kind="output" name="parInitialization"/>
-        </node>
-        <node id="BroadcastClusterCentroids" kind="broadcast">
-            <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroidskmeans"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroidsError"/>
+            <port annotation="NONE" expr="16" kind="output" name="parKmeansCluster"/>
         </node>
         <node id="BroadcastActorImage" kind="broadcast">
             <port kind="cfg_input" name="pixels"/>
@@ -101,24 +78,9 @@
         <edge kind="fifo" source="BroadcastStruck"
             sourceport="parKmeansCluster" target="kmeansfunction"
             targetport="par" type="parameters"/>
-        <edge kind="fifo" source="initializeCluster"
-            sourceport="initialCentroids"
-            target="BroadcastClusterCentroids"
-            targetport="clusterCentroids" type="float"/>
-        <edge kind="fifo" source="error" sourceport="error"
-            target="kmeansfunction" targetport="error" type="float"/>
         <edge kind="fifo" source="BroadcastStruck"
-            sourceport="parError" target="initializeCluster"
-            targetport="par" type="parameters"/>
-        <edge kind="fifo" source="BroadcastStruck"
-            sourceport="parInitialization" target="error"
-            targetport="par" type="parameters"/>
-        <edge kind="fifo" source="BroadcastClusterCentroids"
-            sourceport="clusterCentroidsError" target="error"
-            targetport="initialCentroids" type="float"/>
-        <edge kind="fifo" source="BroadcastClusterCentroids"
-            sourceport="clusterCentroidskmeans"
-            target="kmeansfunction" targetport="clusterCentroids" type="float"/>
+            sourceport="parInitialization"
+            target="initializeCluster" targetport="par" type="parameters"/>
         <edge kind="fifo" source="image" sourceport="image"
             target="BroadcastActorImage" targetport="image" type="float"/>
         <edge kind="fifo" source="BroadcastActorImage"
@@ -127,6 +89,9 @@
         <edge kind="fifo" source="BroadcastActorImage"
             sourceport="imageKmeans" target="kmeansfunction"
             targetport="image" type="float"/>
+        <edge kind="fifo" source="initializeCluster"
+            sourceport="initialCentroids" target="kmeansfunction"
+            targetport="clusterCentroids" type="float"/>
         <edge kind="dependency" source="columns"
             target="kmeansfunction" targetport="columns"/>
         <edge kind="dependency" source="bands"
@@ -136,7 +101,6 @@
         <edge kind="dependency" source="pixels" target="image"/>
         <edge kind="dependency" source="bands" target="image"/>
         <edge kind="dependency" source="columns" target="assignedCluster"/>
-        <edge kind="dependency" source="bands" target="error" targetport="c"/>
         <edge kind="dependency" source="pixels"
             target="initializeCluster" targetport="pixels"/>
         <edge kind="dependency" source="bands"
@@ -144,8 +108,6 @@
         <edge kind="dependency" source="rows" target="assignedCluster"/>
         <edge kind="dependency" source="rows"
             target="kmeansfunction" targetport="rows"/>
-        <edge kind="dependency" source="bands"
-            target="BroadcastClusterCentroids" targetport="bands"/>
         <edge kind="dependency" source="pixels"
             target="BroadcastActorImage" targetport="pixels"/>
         <edge kind="dependency" source="bands"
