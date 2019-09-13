@@ -44,6 +44,10 @@
                     name="clusterCentroids" type="float "/>
                 <param direction="OUT" isConfig="false" name="p" type="float "/>
                 <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
@@ -54,8 +58,10 @@
             <port annotation="NONE" expr="33844224" kind="input" name="image"/>
             <port annotation="NONE" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_updateCentroids_1"
@@ -80,6 +86,10 @@
                     name="clusterCentroids" type="float "/>
                 <param direction="OUT" isConfig="false" name="p" type="float "/>
                 <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
@@ -90,8 +100,10 @@
             <port annotation="NONE" expr="33844224" kind="input" name="image"/>
             <port annotation="NONE" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_updateCentroids_2"
@@ -116,6 +128,10 @@
                     name="clusterCentroids" type="float "/>
                 <param direction="OUT" isConfig="false" name="p" type="float "/>
                 <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
@@ -126,8 +142,10 @@
             <port annotation="NONE" expr="33844224" kind="input" name="image"/>
             <port annotation="NONE" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
@@ -152,6 +170,10 @@
                     name="clusterCentroids" type="float "/>
                 <param direction="OUT" isConfig="false" name="p" type="float "/>
                 <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
@@ -162,8 +184,178 @@
             <port annotation="NONE" expr="33844224" kind="input" name="image"/>
             <port annotation="NONE" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="updateClusterCentroids">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="updateClusterCentroids">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="updateClusterCentroids">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="updateClusterCentroids">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p2"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="3072" kind="output" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_computeError_0"
@@ -182,15 +374,21 @@
                 <param direction="OUT" isConfig="false"
                     name="previousCentroids" type="float "/>
                 <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="c"/>
-            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
             <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
             <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_computeError_1"
@@ -209,15 +407,21 @@
                 <param direction="OUT" isConfig="false"
                     name="previousCentroids" type="float "/>
                 <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="c"/>
-            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
             <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
             <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_computeError_2"
@@ -236,15 +440,21 @@
                 <param direction="OUT" isConfig="false"
                     name="previousCentroids" type="float "/>
                 <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="c"/>
-            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
             <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
             <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_computeError_3"
@@ -263,22 +473,612 @@
                 <param direction="OUT" isConfig="false"
                     name="previousCentroids" type="float "/>
                 <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="c"/>
-            <port annotation="NONE" expr="4" kind="input" name="N"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
             <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
             <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
             <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeError">
+                <param direction="IN" isConfig="true" name="c" type="int"/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="initialCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="OUT" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="previousCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="c"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
+            <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="4" kind="output" name="error"/>
+            <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeError">
+                <param direction="IN" isConfig="true" name="c" type="int"/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="initialCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="OUT" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="previousCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="c"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
+            <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="4" kind="output" name="error"/>
+            <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeError">
+                <param direction="IN" isConfig="true" name="c" type="int"/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="initialCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="OUT" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="previousCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="c"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
+            <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="4" kind="output" name="error"/>
+            <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeError">
+                <param direction="IN" isConfig="true" name="c" type="int"/>
+                <param direction="IN" isConfig="false" name="N" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="initialCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="OUT" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="previousCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="p" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="c"/>
+            <port annotation="NONE" expr="1" kind="input" name="N"/>
+            <port annotation="NONE" expr="3072" kind="input" name="initialCentroids"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="3072" kind="input" name="p"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="4" kind="output" name="error"/>
+            <port annotation="NONE" expr="3072" kind="output" name="previousCentroids"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_4" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_5" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_6" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_7" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterUpdate_0"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterInterface_1"/>
+            <port annotation="WRITE_ONLY" expr="264408"
+                kind="output" name="assignedClusterLoop_2_2_2"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_1"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_2"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            kind="actor" period="0">
+            <data key="graph_desc">Code/include/kmeans.h</data>
+            <loop name="computeDistance">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroids" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="error" type="float "/>
+                <param direction="OUT" isConfig="false" name="p2" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="iterin" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="iterout" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="assignedClusterIn" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
+            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterIn"/>
+            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node id="BR_kmeansCluster_0_kmeansfunction_0__par" kind="broadcast">
             <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
-            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_0_3"/>
-            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_1_3"/>
-            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_2_3"/>
-            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_3_3"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_0_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_1_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_2_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_3_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_4_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_5_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_6_7"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="par_7_7"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0" kind="broadcast">
@@ -309,195 +1109,51 @@
             <port annotation="WRITE_ONLY" expr="16" kind="output" name="parError_2"/>
         </node>
         <node
-            id="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
-            kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="computeDistance">
-                <param direction="IN" isConfig="true" name="rows" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="columns" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="pixels" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="bands" type="int"/>
-                <param direction="IN" isConfig="false"
-                    name="image" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="IN" isConfig="false"
-                    name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="error" type="float "/>
-                <param direction="OUT" isConfig="false" name="p2" type="float "/>
-            </loop>
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port kind="cfg_input" name="pixels"/>
-            <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
-            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_4" kind="broadcast">
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parUpdate_1"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parError_2"/>
         </node>
         <node
-            id="kmeansCluster_0_kmeansfunction_0_computeDistance_1"
-            kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="computeDistance">
-                <param direction="IN" isConfig="true" name="rows" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="columns" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="pixels" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="bands" type="int"/>
-                <param direction="IN" isConfig="false"
-                    name="image" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="IN" isConfig="false"
-                    name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="error" type="float "/>
-                <param direction="OUT" isConfig="false" name="p2" type="float "/>
-            </loop>
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port kind="cfg_input" name="pixels"/>
-            <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
-            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_5" kind="broadcast">
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parUpdate_1"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parError_2"/>
         </node>
         <node
-            id="kmeansCluster_0_kmeansfunction_0_computeDistance_2"
-            kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="computeDistance">
-                <param direction="IN" isConfig="true" name="rows" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="columns" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="pixels" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="bands" type="int"/>
-                <param direction="IN" isConfig="false"
-                    name="image" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="IN" isConfig="false"
-                    name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="error" type="float "/>
-                <param direction="OUT" isConfig="false" name="p2" type="float "/>
-            </loop>
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port kind="cfg_input" name="pixels"/>
-            <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
-            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_6" kind="broadcast">
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parUpdate_1"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parError_2"/>
         </node>
         <node
-            id="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
-            kind="actor" period="0">
-            <data key="graph_desc">Code/include/kmeans.h</data>
-            <loop name="computeDistance">
-                <param direction="IN" isConfig="true" name="rows" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="columns" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="pixels" type="int"/>
-                <param direction="IN" isConfig="true"
-                    name="bands" type="int"/>
-                <param direction="IN" isConfig="false"
-                    name="image" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
-                <param direction="IN" isConfig="false"
-                    name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="error" type="float "/>
-                <param direction="OUT" isConfig="false" name="p2" type="float "/>
-            </loop>
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port kind="cfg_input" name="pixels"/>
-            <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="33844224" kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="3072" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="264408" kind="output" name="assignedCluster"/>
-            <port annotation="NONE" expr="3072" kind="output" name="p2"/>
-        </node>
-        <node
-            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0" kind="broadcast">
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterUpdate_0"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterInterface_1"/>
-        </node>
-        <node
-            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1" kind="broadcast">
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterUpdate_0"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterInterface_1"/>
-        </node>
-        <node
-            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2" kind="broadcast">
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterUpdate_0"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterInterface_1"/>
-        </node>
-        <node
-            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3" kind="broadcast">
-            <port kind="cfg_input" name="rows"/>
-            <port kind="cfg_input" name="columns"/>
-            <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterUpdate_0"/>
-            <port annotation="WRITE_ONLY" expr="264408"
-                kind="output" name="assignedClusterInterface_1"/>
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_7" kind="broadcast">
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parUpdate_1"/>
+            <port annotation="WRITE_ONLY" expr="16" kind="output" name="parError_2"/>
         </node>
         <node
             id="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster" kind="roundbuffer">
             <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster_0_3"/>
+                kind="input" name="assignedCluster_0_7"/>
             <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster_1_3"/>
+                kind="input" name="assignedCluster_1_7"/>
             <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster_2_3"/>
+                kind="input" name="assignedCluster_2_7"/>
             <port annotation="READ_ONLY" expr="264408"
-                kind="input" name="assignedCluster_3_3"/>
+                kind="input" name="assignedCluster_3_7"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster_4_7"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster_5_7"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster_6_7"/>
+            <port annotation="READ_ONLY" expr="264408"
+                kind="input" name="assignedCluster_7_7"/>
             <port annotation="WRITE_ONLY" expr="264408"
                 kind="output" name="assignedCluster"/>
         </node>
@@ -505,13 +1161,21 @@
             <port annotation="READ_ONLY" expr="33844224"
                 kind="input" name="image"/>
             <port annotation="WRITE_ONLY" expr="33844224"
-                kind="output" name="image_0_3"/>
+                kind="output" name="image_0_7"/>
             <port annotation="WRITE_ONLY" expr="33844224"
-                kind="output" name="image_1_3"/>
+                kind="output" name="image_1_7"/>
             <port annotation="WRITE_ONLY" expr="33844224"
-                kind="output" name="image_2_3"/>
+                kind="output" name="image_2_7"/>
             <port annotation="WRITE_ONLY" expr="33844224"
-                kind="output" name="image_3_3"/>
+                kind="output" name="image_3_7"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="image_4_7"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="image_5_7"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="image_6_7"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="image_7_7"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0" kind="broadcast">
@@ -557,21 +1221,69 @@
             <port annotation="WRITE_ONLY" expr="33844224"
                 kind="output" name="imageUpdate_1"/>
         </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_4" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="33844224"
+                kind="input" name="image"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_5" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="33844224"
+                kind="input" name="image"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_6" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="33844224"
+                kind="input" name="image"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_7" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="33844224"
+                kind="input" name="image"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="33844224"
+                kind="output" name="imageUpdate_1"/>
+        </node>
         <node id="kmeansCluster_0_kmeansfunction_0_loop_0"
             kind="actor" period="0">
             <data key="graph_desc">Code/include/kmeans.h</data>
             <loop name="loop">
-                <param direction="OUT" isConfig="false" name="N" type="int "/>
+                <param direction="OUT" isConfig="false" name="N" type="char "/>
             </loop>
-            <port annotation="NONE" expr="16" kind="output" name="N"/>
+            <port annotation="NONE" expr="8" kind="output" name="N"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N" kind="fork">
-            <port annotation="READ_ONLY" expr="16" kind="input" name="N"/>
-            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_0"/>
-            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_1"/>
-            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_2"/>
-            <port annotation="WRITE_ONLY" expr="4" kind="output" name="N_3"/>
+            <port annotation="READ_ONLY" expr="8" kind="input" name="N"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_0"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_1"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_2"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_3"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_4"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_5"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_6"/>
+            <port annotation="WRITE_ONLY" expr="1" kind="output" name="N_7"/>
         </node>
         <node
             id="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_0" kind="broadcast">
@@ -598,16 +1310,48 @@
             <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorUpdate_1"/>
         </node>
         <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_4" kind="broadcast">
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_5" kind="broadcast">
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_6" kind="broadcast">
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorUpdate_1"/>
+        </node>
+        <node
+            id="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_7" kind="broadcast">
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorDistance_0"/>
+            <port annotation="WRITE_ONLY" expr="4" kind="output" name="errorUpdate_1"/>
+        </node>
+        <node
             id="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids" kind="broadcast">
             <port annotation="READ_ONLY" expr="3072" kind="input" name="clusterCentroids"/>
             <port annotation="WRITE_ONLY" expr="3072"
-                kind="output" name="clusterCentroids_0_3"/>
+                kind="output" name="clusterCentroids_0_7"/>
             <port annotation="WRITE_ONLY" expr="3072"
-                kind="output" name="clusterCentroids_1_3"/>
+                kind="output" name="clusterCentroids_1_7"/>
             <port annotation="WRITE_ONLY" expr="3072"
-                kind="output" name="clusterCentroids_2_3"/>
+                kind="output" name="clusterCentroids_2_7"/>
             <port annotation="WRITE_ONLY" expr="3072"
-                kind="output" name="clusterCentroids_3_3"/>
+                kind="output" name="clusterCentroids_3_7"/>
+            <port annotation="WRITE_ONLY" expr="3072"
+                kind="output" name="clusterCentroids_4_7"/>
+            <port annotation="WRITE_ONLY" expr="3072"
+                kind="output" name="clusterCentroids_5_7"/>
+            <port annotation="WRITE_ONLY" expr="3072"
+                kind="output" name="clusterCentroids_6_7"/>
+            <port annotation="WRITE_ONLY" expr="3072"
+                kind="output" name="clusterCentroids_7_7"/>
         </node>
         <node id="kmeansCluster_0_BroadcastStruck_0" kind="broadcast">
             <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
@@ -665,6 +1409,26 @@
             init_end_ref="kmeansCluster_init_in_kmeansfunction_in_computeError_p" kind="end">
             <port annotation="NONE" expr="3072" kind="input" name="p"/>
         </node>
+        <node
+            id="kmeansCluster_init_in_kmeansfunction_in_computeError_iterin"
+            init_end_ref="kmeansCluster_end_out_kmeansfunction_out_updateCentroids_iterout" kind="init">
+            <port annotation="NONE" expr="4" kind="output" name="iterin"/>
+        </node>
+        <node
+            id="kmeansCluster_end_out_kmeansfunction_out_updateCentroids_iterout"
+            init_end_ref="kmeansCluster_init_in_kmeansfunction_in_computeError_iterin" kind="end">
+            <port annotation="NONE" expr="4" kind="input" name="iterout"/>
+        </node>
+        <node
+            id="kmeansCluster_init_in_kmeansfunction_in_computeDistance_assignedClusterIn"
+            init_end_ref="kmeansCluster_end_out_kmeansfunction_out_BroadcastActorAssignedCluster_assignedClusterLoop" kind="init">
+            <port annotation="NONE" expr="264408" kind="output" name="assignedClusterIn"/>
+        </node>
+        <node
+            id="kmeansCluster_end_out_kmeansfunction_out_BroadcastActorAssignedCluster_assignedClusterLoop"
+            init_end_ref="kmeansCluster_init_in_kmeansfunction_in_computeDistance_assignedClusterIn" kind="end">
+            <port annotation="NONE" expr="264408" kind="input" name="assignedClusterLoop_2_2"/>
+        </node>
         <node id="read_parameters_0" kind="actor" period="0">
             <data key="graph_desc">Code/include/read_par_and_img.h</data>
             <loop name="readParAndImg">
@@ -716,6 +1480,26 @@
             target="kmeansCluster_0_kmeansfunction_0_computeError_3"
             targetport="clusterCentroids" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            sourceport="clusterCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            sourceport="clusterCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            sourceport="clusterCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            sourceport="clusterCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
             sourceport="p"
             target="kmeansCluster_0_kmeansfunction_0_computeError_1"
@@ -731,24 +1515,134 @@
             target="kmeansCluster_0_kmeansfunction_0_computeError_3"
             targetport="p" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            sourceport="p"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="p" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            sourceport="p"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="p" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            sourceport="p"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="p" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            sourceport="p"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            targetport="p" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_1"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_1"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_2"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_2"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_3"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_1"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_2"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_4"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_5"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_6"
+            sourceport="assignedClusterLoop_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__par"
-            sourceport="par_0_3"
+            sourceport="par_0_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__par"
-            sourceport="par_1_3"
+            sourceport="par_1_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_1"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__par"
-            sourceport="par_2_3"
+            sourceport="par_2_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_2"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__par"
-            sourceport="par_3_3"
+            sourceport="par_3_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_3"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__par"
+            sourceport="par_4_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_4"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__par"
+            sourceport="par_5_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_5"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__par"
+            sourceport="par_6_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_6"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__par"
+            sourceport="par_7_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_7"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0"
@@ -771,6 +1665,26 @@
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_4"
+            sourceport="parDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_5"
+            sourceport="parDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_6"
+            sourceport="parDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_7"
+            sourceport="parDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0"
             sourceport="parUpdate_1"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
@@ -789,6 +1703,26 @@
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_3"
             sourceport="parUpdate_1"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_4"
+            sourceport="parUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_5"
+            sourceport="parUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_6"
+            sourceport="parUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_7"
+            sourceport="parUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
@@ -811,6 +1745,26 @@
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3"
             targetport="assignedCluster" type="int"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            sourceport="assignedCluster"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_4"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            sourceport="assignedCluster"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_5"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            sourceport="assignedCluster"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_6"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            sourceport="assignedCluster"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_7"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0"
             sourceport="assignedClusterUpdate_0"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
@@ -831,44 +1785,104 @@
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
             targetport="assignedCluster" type="int"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_4"
+            sourceport="assignedClusterUpdate_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_5"
+            sourceport="assignedClusterUpdate_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_6"
+            sourceport="assignedClusterUpdate_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_7"
+            sourceport="assignedClusterUpdate_0"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            targetport="assignedCluster" type="int"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_0"
             sourceport="assignedClusterInterface_1"
             target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
-            targetport="assignedCluster_0_3" type="int"/>
+            targetport="assignedCluster_0_7" type="int"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_1"
             sourceport="assignedClusterInterface_1"
             target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
-            targetport="assignedCluster_1_3" type="int"/>
+            targetport="assignedCluster_1_7" type="int"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_2"
             sourceport="assignedClusterInterface_1"
             target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
-            targetport="assignedCluster_2_3" type="int"/>
+            targetport="assignedCluster_2_7" type="int"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_3"
             sourceport="assignedClusterInterface_1"
             target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
-            targetport="assignedCluster_3_3" type="int"/>
+            targetport="assignedCluster_3_7" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_4"
+            sourceport="assignedClusterInterface_1"
+            target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
+            targetport="assignedCluster_4_7" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_5"
+            sourceport="assignedClusterInterface_1"
+            target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
+            targetport="assignedCluster_5_7" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_6"
+            sourceport="assignedClusterInterface_1"
+            target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
+            targetport="assignedCluster_6_7" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_7"
+            sourceport="assignedClusterInterface_1"
+            target="RB_kmeansCluster_0_kmeansfunction_0__assignedCluster"
+            targetport="assignedCluster_7_7" type="int"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__image"
-            sourceport="image_0_3"
+            sourceport="image_0_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0"
             targetport="image" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__image"
-            sourceport="image_1_3"
+            sourceport="image_1_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_1"
             targetport="image" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__image"
-            sourceport="image_2_3"
+            sourceport="image_2_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_2"
             targetport="image" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__image"
-            sourceport="image_3_3"
+            sourceport="image_3_7"
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_3"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__image"
+            sourceport="image_4_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_4"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__image"
+            sourceport="image_5_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_5"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__image"
+            sourceport="image_6_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_6"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__image"
+            sourceport="image_7_7"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_7"
             targetport="image" type="float"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0"
@@ -891,6 +1905,26 @@
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
             targetport="image" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_4"
+            sourceport="imageDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_5"
+            sourceport="imageDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_6"
+            sourceport="imageDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_7"
+            sourceport="imageDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_0"
             sourceport="imageUpdate_1"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
@@ -911,30 +1945,70 @@
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
             targetport="image" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_4"
+            sourceport="imageUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_5"
+            sourceport="imageUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_6"
+            sourceport="imageUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorImage_7"
+            sourceport="imageUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_loop_0"
             sourceport="N"
             target="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
-            targetport="N" type="int"/>
+            targetport="N" type="char"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
             sourceport="N_0"
             target="kmeansCluster_0_kmeansfunction_0_computeError_0"
-            targetport="N" type="int"/>
+            targetport="N" type="char"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
             sourceport="N_1"
             target="kmeansCluster_0_kmeansfunction_0_computeError_1"
-            targetport="N" type="int"/>
+            targetport="N" type="char"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
             sourceport="N_2"
             target="kmeansCluster_0_kmeansfunction_0_computeError_2"
-            targetport="N" type="int"/>
+            targetport="N" type="char"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
             sourceport="N_3"
             target="kmeansCluster_0_kmeansfunction_0_computeError_3"
-            targetport="N" type="int"/>
+            targetport="N" type="char"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
+            sourceport="N_4"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="N" type="char"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
+            sourceport="N_5"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="N" type="char"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
+            sourceport="N_6"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="N" type="char"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_explode_kmeansCluster_0_kmeansfunction_0_loop_0_N"
+            sourceport="N_7"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            targetport="N" type="char"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_computeError_0"
             sourceport="error"
@@ -956,6 +2030,26 @@
             target="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_3"
             targetport="error" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            sourceport="error"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_4"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            sourceport="error"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_5"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            sourceport="error"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_6"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            sourceport="error"
+            target="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_7"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_0"
             sourceport="errorDistance_0"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
@@ -976,6 +2070,26 @@
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
             targetport="error" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_4"
+            sourceport="errorDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_5"
+            sourceport="errorDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_6"
+            sourceport="errorDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_7"
+            sourceport="errorDistance_0"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_0"
             sourceport="errorUpdate_1"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
@@ -994,6 +2108,26 @@
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_3"
             sourceport="errorUpdate_1"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_4"
+            sourceport="errorUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_5"
+            sourceport="errorUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_6"
+            sourceport="errorUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="error" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorError_7"
+            sourceport="errorUpdate_1"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
             targetport="error" type="float"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_0"
@@ -1016,6 +2150,26 @@
             target="kmeansCluster_0_kmeansfunction_0_computeError_3"
             targetport="par" type="parameters"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_4"
+            sourceport="parError_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_5"
+            sourceport="parError_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_6"
+            sourceport="parError_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorPar_7"
+            sourceport="parError_2"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            targetport="par" type="parameters"/>
+        <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_computeError_0"
             sourceport="previousCentroids"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
@@ -1036,24 +2190,64 @@
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
             targetport="clusterCentroids" type="float"/>
         <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            sourceport="previousCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            sourceport="previousCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            sourceport="previousCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            sourceport="previousCentroids"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
-            sourceport="clusterCentroids_0_3"
+            sourceport="clusterCentroids_0_7"
             target="kmeansCluster_0_kmeansfunction_0_computeError_0"
             targetport="initialCentroids" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
-            sourceport="clusterCentroids_1_3"
+            sourceport="clusterCentroids_1_7"
             target="kmeansCluster_0_kmeansfunction_0_computeError_1"
             targetport="initialCentroids" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
-            sourceport="clusterCentroids_2_3"
+            sourceport="clusterCentroids_2_7"
             target="kmeansCluster_0_kmeansfunction_0_computeError_2"
             targetport="initialCentroids" type="float"/>
         <edge kind="fifo"
             source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
-            sourceport="clusterCentroids_3_3"
+            sourceport="clusterCentroids_3_7"
             target="kmeansCluster_0_kmeansfunction_0_computeError_3"
+            targetport="initialCentroids" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
+            sourceport="clusterCentroids_4_7"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            targetport="initialCentroids" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
+            sourceport="clusterCentroids_5_7"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            targetport="initialCentroids" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
+            sourceport="clusterCentroids_6_7"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            targetport="initialCentroids" type="float"/>
+        <edge kind="fifo"
+            source="BR_kmeansCluster_0_kmeansfunction_0__clusterCentroids"
+            sourceport="clusterCentroids_7_7"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7"
             targetport="initialCentroids" type="float"/>
         <edge kind="fifo"
             source="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
@@ -1075,6 +2269,106 @@
             sourceport="p2"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
             targetport="p2" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            sourceport="p2"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="p2" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            sourceport="p2"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="p2" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            sourceport="p2"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="p2" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            sourceport="p2"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            targetport="p2" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_0"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_1"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_1"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_2"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_2"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_3"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_4"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_5"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_6"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeError_7"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_0"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_1"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_1"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_2"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_2"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_3"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_4"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_5"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_6"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_computeDistance_7"
+            sourceport="iterout"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            targetport="iterin" type="int"/>
         <edge kind="fifo"
             source="kmeansCluster_0_BroadcastStruck_0"
             sourceport="parKmeansCluster_1"
@@ -1106,7 +2400,7 @@
             target="kmeansCluster_0_kmeansfunction_0_computeError_0"
             targetport="clusterCentroids" type="float"/>
         <edge kind="fifo"
-            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
             sourceport="clusterCentroids"
             target="kmeansCluster_end_out_kmeansfunction_out_updateCentroids_clusterCentroids"
             targetport="clusterCentroids" type="float"/>
@@ -1116,10 +2410,30 @@
             target="kmeansCluster_0_kmeansfunction_0_computeError_0"
             targetport="p" type="float"/>
         <edge kind="fifo"
-            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_3"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
             sourceport="p"
             target="kmeansCluster_end_out_kmeansfunction_out_updateCentroids_p"
             targetport="p" type="float"/>
+        <edge kind="fifo"
+            source="kmeansCluster_init_in_kmeansfunction_in_computeError_iterin"
+            sourceport="iterin"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_0"
+            targetport="iterin" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_updateCentroids_7"
+            sourceport="iterout"
+            target="kmeansCluster_end_out_kmeansfunction_out_updateCentroids_iterout"
+            targetport="iterout" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_init_in_kmeansfunction_in_computeDistance_assignedClusterIn"
+            sourceport="assignedClusterIn"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_0"
+            targetport="assignedClusterIn" type="int"/>
+        <edge kind="fifo"
+            source="kmeansCluster_0_kmeansfunction_0_BroadcastActorAssignedCluster_7"
+            sourceport="assignedClusterLoop_2_2_2"
+            target="kmeansCluster_end_out_kmeansfunction_out_BroadcastActorAssignedCluster_assignedClusterLoop"
+            targetport="assignedClusterLoop_2_2" type="int"/>
         <edge kind="fifo" source="read_parameters_0"
             sourceport="image"
             target="kmeansCluster_0_BroadcastActorImage_0"
@@ -1181,6 +2495,54 @@
             source="kmeansCluster_0_kmeansfunction__columns"
             target="kmeansCluster_0_kmeansfunction_0_updateCentroids_3" targetport="columns"/>
         <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_4" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_5" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_6" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_updateCentroids_7" targetport="columns"/>
+        <edge kind="dependency"
             source="kmeansCluster_0_kmeansfunction__bands"
             target="kmeansCluster_0_kmeansfunction_0_computeError_0" targetport="c"/>
         <edge kind="dependency"
@@ -1192,6 +2554,18 @@
         <edge kind="dependency"
             source="kmeansCluster_0_kmeansfunction__bands"
             target="kmeansCluster_0_kmeansfunction_0_computeError_3" targetport="c"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_4" targetport="c"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_5" targetport="c"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_6" targetport="c"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeError_7" targetport="c"/>
         <edge kind="dependency"
             source="kmeansCluster_0_kmeansfunction__rows"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_0" targetport="rows"/>
@@ -1240,6 +2614,54 @@
         <edge kind="dependency"
             source="kmeansCluster_0_kmeansfunction__bands"
             target="kmeansCluster_0_kmeansfunction_0_computeDistance_3" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_4" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_5" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_6" targetport="bands"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__rows"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7" targetport="rows"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__columns"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7" targetport="columns"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__pixels"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7" targetport="pixels"/>
+        <edge kind="dependency"
+            source="kmeansCluster_0_kmeansfunction__bands"
+            target="kmeansCluster_0_kmeansfunction_0_computeDistance_7" targetport="bands"/>
         <edge kind="dependency" source="kmeansCluster__pixels"
             target="kmeansCluster_0_initializeCluster_0" targetport="pixels"/>
         <edge kind="dependency" source="kmeansCluster__bands"
