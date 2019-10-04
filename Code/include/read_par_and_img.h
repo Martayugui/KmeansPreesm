@@ -17,9 +17,9 @@ typedef  struct parameters {
 
 #define namefile PROJECT_ROOT_PATH "/dat/Parameters.txt"
 //#define nameimage PROJECT_ROOT_PATH "/dat/Op4C3.txt"
-//#define nameimage PROJECT_ROOT_PATH "/dat/Op20C1.bin"
+#define nameimage PROJECT_ROOT_PATH "/dat/Op20C1.bin"
 #define txtfile PROJECT_ROOT_PATH "/dat/image.txt"
-#define nameimage PROJECT_ROOT_PATH "/dat/Op8C2.bin"
+//#define nameimage PROJECT_ROOT_PATH "/dat/Op8C2.bin"
 
 
 

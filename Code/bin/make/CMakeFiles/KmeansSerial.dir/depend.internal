@@ -6,50 +6,66 @@ CMakeFiles/KmeansSerial.dir/generated/Core0.c.o
  ../../include/preesm.h
  ../../include/read_par_and_img.h
  ../../include/write_kmeans_results.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/Core0.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/Core0.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
 CMakeFiles/KmeansSerial.dir/generated/communication.c.o
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
+ ../../include/kmeans.h
+ ../../include/preesm.h
+ ../../include/read_par_and_img.h
+ ../../include/write_kmeans_results.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
 CMakeFiles/KmeansSerial.dir/generated/dump.c.o
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
+ ../../include/kmeans.h
+ ../../include/preesm.h
+ ../../include/read_par_and_img.h
+ ../../include/write_kmeans_results.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
 CMakeFiles/KmeansSerial.dir/generated/fifo.c.o
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
 CMakeFiles/KmeansSerial.dir/generated/mac_barrier.c.o
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
 CMakeFiles/KmeansSerial.dir/generated/main.c.o
  ../../include/kmeans.h
  ../../include/preesm.h
  ../../include/read_par_and_img.h
  ../../include/write_kmeans_results.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/main.c
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/communication.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/dump.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/fifo.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/mac_barrier.h
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/main.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/generated/preesm_gen.h
 CMakeFiles/KmeansSerial.dir/src/kmeans.c.o
  ../../include/kmeans.h
  ../../include/preesm.h
  ../../include/read_par_and_img.h
  ../../include/write_kmeans_results.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/kmeans.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/kmeans.c
 CMakeFiles/KmeansSerial.dir/src/read_par_and_img.c.o
  ../../include/kmeans.h
  ../../include/preesm.h
  ../../include/read_par_and_img.h
  ../../include/write_kmeans_results.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/read_par_and_img.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/read_par_and_img.c
 CMakeFiles/KmeansSerial.dir/src/write_kmeans_results.c.o
  ../../include/kmeans.h
  ../../include/preesm.h
  ../../include/read_par_and_img.h
  ../../include/write_kmeans_results.h
- /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/write_kmeans_results.c
+ /home/gdem/Downloads/preesm-3.17.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/src/write_kmeans_results.c

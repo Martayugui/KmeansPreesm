@@ -11,8 +11,7 @@
    Global Variable
 
    ======================================================================*/
-static FILE *f;
-static FILE *fp;
+
 
 
 /* Colors' references https://web.njit.edu/~kevin/rgb.txt.html
@@ -47,7 +46,8 @@ const int COLOR_MAP[25][3] =
 };
 
 void writeResults (int rows, int columns, int *assignedCluster)  {
-
+	FILE *f;
+	FILE *fp;
 	int p;
 	int q;
 

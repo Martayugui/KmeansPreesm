@@ -31,10 +31,11 @@
             <task name="wholekmeans/kmeansCluster/kmeansfunction"/>
             <task name="wholekmeans/kmeansCluster"/>
             <task name="wholekmeans"/>
-            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids_clusterCentroids__computeError_previousCentroids"/>
-            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids_p__computeError_p"/>
-            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids_iterout__computeError_niterin"/>
-            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids_assignedClusterout__computeDistance_assignedClusterIn"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/computeError_iterout__computeError_iterin"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorError_errorComputeErrror__computeError_errorIn"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/updateCentroids_clusterCentroids__computeError_clusterCentroids"/>
+            <task name="wholekmeans/kmeansCluster/kmeansfunction/BroadcastActorCentroids_clusterCentroidsError__computeError_previousCentroids"/>
         </constraintGroup>
     </constraints>
     <relativeconstraints excelUrl=""/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dftools:workflow errorOnWarning="true" verboseLevel="INFO" xmlns:dftools="http://net.sf.dftools">
+<dftools:workflow errorOnWarning="false" verboseLevel="INFO" xmlns:dftools="http://net.sf.dftools">
     <dftools:scenario pluginId="org.ietr.preesm.scenario.task"/>
     <dftools:task pluginId="org.ietr.preesm.plugin.mapper.plot" taskId="Display Gantt">
         <dftools:data key="variables"/>
@@ -14,8 +14,8 @@
     <dftools:task
         pluginId="org.ietr.preesm.memory.allocation.MemoryAllocatorTask" taskId="Memory Allocation">
         <dftools:data key="variables">
-            <dftools:variable name="Allocator(s)" value="FirstFit"/>
-            <dftools:variable name="Best/First Fit order" value="LargestFirst"/>
+            <dftools:variable name="Allocator(s)" value="BestFit"/>
+            <dftools:variable name="Best/First Fit order" value="Shuffle"/>
             <dftools:variable name="Data alignment" value="None"/>
             <dftools:variable name="Distribution" value="SharedOnly"/>
             <dftools:variable name="Merge broadcasts" value="True"/>
@@ -52,6 +52,7 @@
     </dftools:task>
     <dftools:task pluginId="pisdf-export" taskId="PiSDF Export">
         <dftools:data key="variables">
+            <dftools:variable name="hierarchical" value="true"/>
             <dftools:variable name="path" value="/Algo/generated/srdag"/>
         </dftools:data>
     </dftools:task>
@@ -97,8 +98,6 @@
         sourceport="architecture" targetport="architecture" to="PiSDF Scheduling"/>
     <dftools:dataTransfer from="scenario" sourceport="scenario"
         targetport="scenario" to="PiSDF Scheduling"/>
-    <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
-        targetport="MemEx" to="Memory Allocation"/>
     <dftools:dataTransfer from="PiMM2SrDAG" sourceport="PiMM"
         targetport="PiMM" to="PiSDF Scheduling"/>
     <dftools:dataTransfer from="PiMM2SrDAG" sourceport="PiMM"
@@ -107,6 +106,8 @@
         targetport="MemEx" to="Memory Bounds Estimator"/>
     <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
         targetport="MemEx" to="MEG Updater"/>
+    <dftools:dataTransfer from="MEG Updater" sourceport="MemEx"
+        targetport="MemEx" to="Memory Allocation"/>
     <dftools:dataTransfer from="PiSDF Scheduling"
         sourceport="DAG" targetport="DAG" to="MEG Updater"/>
 </dftools:workflow>

@@ -11,6 +11,6 @@
       <vertex id="PiSDF Scheduling" x="390" y="313"/>
       <vertex id="PiSDF Export" x="390" y="194"/>
       <vertex id="Memory Bounds Estimator" x="978" y="282"/>
-      <vertex id="MEG Updater" x="504" y="47"/>
+      <vertex id="MEG Updater" x="741" y="374"/>
    </vertices>
 </layout>

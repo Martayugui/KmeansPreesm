@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <graph edgedefault="directed">
+        <data key="name">top_HSI_cancer_detection</data>
+        <node expr="124033"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__pixels" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__bands" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bandsCovarianceMatrixA" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bandsCovarianceMatrixB" kind="param"/>
+        <node expr="124033"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pixels" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bands" kind="param"/>
+        <node expr="1"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pcs" kind="param"/>
+        <node expr="124033"
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pixelsParallelismProjection" kind="param"/>
+        <node expr="377"
+            id="HSI_cancer_detection_0_DimensionalityReduction__rows" kind="param"/>
+        <node expr="329"
+            id="HSI_cancer_detection_0_DimensionalityReduction__columns" kind="param"/>
+        <node expr="1"
+            id="HSI_cancer_detection_0_DimensionalityReduction__pcs" kind="param"/>
+        <node expr="124033"
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM__pixels" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM__bands" kind="param"/>
+        <node expr="4"
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM__numClasses" kind="param"/>
+        <node expr="128"
+            id="HSI_cancer_detection_0_SupervisedClassification__bands" kind="param"/>
+        <node expr="4"
+            id="HSI_cancer_detection_0_SupervisedClassification__numClasses" kind="param"/>
+        <node expr="377"
+            id="HSI_cancer_detection_0_SupervisedClassification__rows" kind="param"/>
+        <node expr="329"
+            id="HSI_cancer_detection_0_SupervisedClassification__columns" kind="param"/>
+        <node expr="377"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__rows" kind="param"/>
+        <node expr="329"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__columns" kind="param"/>
+        <node expr="14"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__windowSizeKnn" kind="param"/>
+        <node expr="1"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__lambda" kind="param"/>
+        <node expr="1"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__slices" kind="param"/>
+        <node expr="124033"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__pixelsParallelism" kind="param"/>
+        <node expr="40"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__neighbors" kind="param"/>
+        <node expr="4"
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering__numClasses" kind="param"/>
+        <node expr="128" id="HSI_cancer_detection__bands" kind="param"/>
+        <node expr="124033" id="HSI_cancer_detection__pixels" kind="param"/>
+        <node expr="377" id="_rows" kind="param"/>
+        <node expr="329" id="_columns" kind="param"/>
+        <node expr="128" id="_bands" kind="param"/>
+        <node expr="4" id="_numClasses" kind="param"/>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_BroadcastInputImage_0" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="image"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageMeanComputation_0"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageRemoveMeanValue_1"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/pca.h</data>
+            <loop name="bandsRemoveMeanValue">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="meanValue" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="imageCentered" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="image"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="meanValue"/>
+            <port annotation="NONE" expr="15876224" kind="output" name="imageCentered"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueComputation_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/pca.h</data>
+            <loop name="bandsMeanValue">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="meanValue" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="image"/>
+            <port annotation="NONE" expr="15876224" kind="output" name="meanValue"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/pca.h</data>
+            <loop name="covariance">
+                <param direction="IN" isConfig="true"
+                    name="rowsMatrixA" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="rowsMatrixB" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="samples" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="matrixA" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="matrixB" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="cov" type="double "/>
+            </loop>
+            <port kind="cfg_input" name="rowsMatrixA"/>
+            <port kind="cfg_input" name="rowsMatrixB"/>
+            <port kind="cfg_input" name="samples"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="matrixA"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="matrixB"/>
+            <port annotation="NONE" expr="16384" kind="output" name="cov"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Jacobi_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/pca.h</data>
+            <loop name="jacobi">
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="pcs" type="int"/>
+                <param direction="IN" isConfig="false" name="cov" type="double "/>
+                <param direction="OUT" isConfig="false"
+                    name="eigenvectors" type="double "/>
+            </loop>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="pcs"/>
+            <port annotation="READ_ONLY" expr="16384"
+                kind="input" name="cov"/>
+            <port annotation="NONE" expr="128" kind="output" name="eigenvectors"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_BroadcastImageCentered_0" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="parallelismCovarianceMatrixB"/>
+            <port kind="cfg_input" name="parallelismCovarianceMatrixA"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="imageCentered"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageCenteredMatrixA_0"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageCenteredMatrixB_1"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageCenteredProjection_2"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_TransposeImageCentered_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/utils.h</data>
+            <loop name="transposeMatrix">
+                <param direction="IN" isConfig="true"
+                    name="matrixRows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="matrixColumns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="matrix" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="matrixTransposed" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="matrixRows"/>
+            <port kind="cfg_input" name="matrixColumns"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="matrix"/>
+            <port annotation="NONE" expr="15876224" kind="output" name="matrixTransposed"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/pca.h</data>
+            <loop name="projection">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true" name="pcs" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="imageCentered" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="eigenvectors" type="double "/>
+                <param direction="OUT" isConfig="false"
+                    name="pcaOutput" type="double "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="pcs"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="imageCentered"/>
+            <port annotation="READ_ONLY" expr="128" kind="input" name="eigenvectors"/>
+            <port annotation="NONE" expr="124033" kind="output" name="pcaOutput"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_PcaOutputBroadcast_0" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pcs"/>
+            <port annotation="READ_ONLY" expr="124033"
+                kind="input" name="pcaOutput"/>
+            <port annotation="WRITE_ONLY" expr="124033"
+                kind="output" name="pcaOutputResult_0"/>
+            <port annotation="WRITE_ONLY" expr="124033"
+                kind="output" name="pcaOutputTest_1"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_DimensionalityReduction_0_WritePcaResults_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/write_HS_results.h</data>
+            <loop name="saveResultsPca">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true" name="pcs" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="pcaOutput" type="double "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="pcs"/>
+            <port annotation="READ_ONLY" expr="124033"
+                kind="input" name="pcaOutput"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/svm.h</data>
+            <loop name="computeSvmPairwiseProbs">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="image" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="wVector" type="float "/>
+                <param direction="IN" isConfig="false" name="rho" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="probA" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="probB" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="pairwiseProb" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="image"/>
+            <port annotation="READ_ONLY" expr="768" kind="input" name="wVector"/>
+            <port annotation="READ_ONLY" expr="6" kind="input" name="rho"/>
+            <port annotation="READ_ONLY" expr="6" kind="input" name="probA"/>
+            <port annotation="READ_ONLY" expr="6" kind="input" name="probB"/>
+            <port annotation="NONE" expr="1984528" kind="output" name="pairwiseProb"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/svm.h</data>
+            <loop name="minimizationSolver">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="label" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="pairwiseProb" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="pixelProbs" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="4" kind="input" name="label"/>
+            <port annotation="READ_ONLY" expr="1984528"
+                kind="input" name="pairwiseProb"/>
+            <port annotation="NONE" expr="496132" kind="output" name="pixelProbs"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_DecisionMaking_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/utils.h</data>
+            <loop name="decisionMaking">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="pixelProbs" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="pixelClasses" type="char "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="pixelProbs"/>
+            <port annotation="NONE" expr="124033" kind="output" name="pixelClasses"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_BroadcastPixelProbs_0" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="pixelProbs"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="pixelProbsToDecision_0"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="pixelProbsToOutput_1"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/svm.h</data>
+            <loop name="readSvmModel">
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="OUT" isConfig="false"
+                    name="wVector" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="rho" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="label" type="int "/>
+                <param direction="OUT" isConfig="false"
+                    name="probA" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="probB" type="float "/>
+            </loop>
+            <init name="initReadSvmModel"/>
+            <port kind="cfg_input" name="bands"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="NONE" expr="768" kind="output" name="wVector"/>
+            <port annotation="NONE" expr="6" kind="output" name="rho"/>
+            <port annotation="NONE" expr="4" kind="output" name="label"/>
+            <port annotation="NONE" expr="6" kind="output" name="probA"/>
+            <port annotation="NONE" expr="6" kind="output" name="probB"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/write_HS_results.h</data>
+            <loop name="saveResultsSvm">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="svmProbs" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="svmClasses" type="char "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="svmProbs"/>
+            <port annotation="READ_ONLY" expr="124033"
+                kind="input" name="svmClasses"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SupervisedClassification_0_BroadcastProbA_0_0" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="svmProbs"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="svmProbsOutput_0"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="svmProbsTest_1"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/knn.h</data>
+            <loop name="featMatCreationSplit">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="windowSizeKnn" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="lambda" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="slices" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="pcaOutput" type="double "/>
+                <param direction="OUT" isConfig="false"
+                    name="featMat" type="featureMatrixNode "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="windowSizeKnn"/>
+            <port kind="cfg_input" name="lambda"/>
+            <port kind="cfg_input" name="slices"/>
+            <port annotation="READ_ONLY" expr="124033"
+                kind="input" name="pcaOutput"/>
+            <port annotation="NONE" expr="128639" kind="output" name="featMat"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/knn.h</data>
+            <loop name="searchKnn">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="neighbors" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="windowSizeKnn" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="featMat" type="featureMatrixNode "/>
+                <param direction="OUT" isConfig="false"
+                    name="knnMatrix" type="int "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="neighbors"/>
+            <port kind="cfg_input" name="windowSizeKnn"/>
+            <port annotation="READ_ONLY" expr="128639"
+                kind="input" name="featMat"/>
+            <port annotation="NONE" expr="4961320" kind="output" name="knnMatrix"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/knn.h</data>
+            <loop name="filterProbs">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="neighbors" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="knnMatrix" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="svmProbs" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="knnProbs" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port kind="cfg_input" name="neighbors"/>
+            <port kind="cfg_input" name="slices"/>
+            <port annotation="READ_ONLY" expr="4961320"
+                kind="input" name="knnMatrix"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="svmProbs"/>
+            <port annotation="NONE" expr="496132" kind="output" name="knnProbs"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering_0_BroadcastPixelProbs_0" kind="broadcast">
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="pixelProbs"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="pixelProbsToDecision_0"/>
+            <port annotation="WRITE_ONLY" expr="496132"
+                kind="output" name="pixelProbsToOutput_1"/>
+        </node>
+        <node
+            id="HSI_cancer_detection_0_SpatialSpectralFiltering_0_DecisionMaking_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/utils.h</data>
+            <loop name="decisionMaking">
+                <param direction="IN" isConfig="true"
+                    name="pixels" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="pixelProbs" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="pixelClasses" type="char "/>
+            </loop>
+            <port kind="cfg_input" name="pixels"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="pixelProbs"/>
+            <port annotation="NONE" expr="124033" kind="output" name="pixelClasses"/>
+        </node>
+        <node id="HSI_cancer_detection_0_BroadcastHsImage_0" kind="broadcast">
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="inputImage"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageToPca_0"/>
+            <port annotation="WRITE_ONLY" expr="15876224"
+                kind="output" name="imageToSvm_1"/>
+        </node>
+        <node id="HSI_cancer_detection_0_TransposeMatrix_0"
+            kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/utils.h</data>
+            <loop name="transposeMatrix">
+                <param direction="IN" isConfig="true"
+                    name="matrixRows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="matrixColumns" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="matrix" type="float "/>
+                <param direction="OUT" isConfig="false"
+                    name="matrixTransposed" type="float "/>
+            </loop>
+            <port kind="cfg_input" name="matrixRows"/>
+            <port kind="cfg_input" name="matrixColumns"/>
+            <port annotation="READ_ONLY" expr="15876224"
+                kind="input" name="matrix"/>
+            <port annotation="NONE" expr="15876224" kind="output" name="matrixTransposed"/>
+        </node>
+        <node id="Read_HS_image_0" kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/read_HS_image.h</data>
+            <loop name="readHSImage">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
+                <param direction="OUT" isConfig="false"
+                    name="image" type="float "/>
+            </loop>
+            <init name="initreadHSImage"/>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="NONE" expr="15876224" kind="output" name="image"/>
+        </node>
+        <node id="Write_results_0" kind="actor" period="0">
+            <data key="graph_desc">HSI_cancer_detection/Code/include/write_HS_results.h</data>
+            <loop name="saveResultsKnn">
+                <param direction="IN" isConfig="true" name="rows" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="columns" type="int"/>
+                <param direction="IN" isConfig="true"
+                    name="numClasses" type="int"/>
+                <param direction="IN" isConfig="false"
+                    name="knnProbs" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="knnClasses" type="char "/>
+            </loop>
+            <port kind="cfg_input" name="rows"/>
+            <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="numClasses"/>
+            <port annotation="READ_ONLY" expr="496132"
+                kind="input" name="knnProbs"/>
+            <port annotation="READ_ONLY" expr="124033"
+                kind="input" name="knnClasses"/>
+        </node>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_BroadcastInputImage_0"
+            sourceport="imageRemoveMeanValue_1"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueComputation_0"
+            sourceport="meanValue"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0"
+            targetport="meanValue" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_BroadcastInputImage_0"
+            sourceport="imageMeanComputation_0"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueComputation_0"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0"
+            sourceport="cov"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Jacobi_0"
+            targetport="cov" type="double"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_BroadcastImageCentered_0"
+            sourceport="imageCenteredProjection_2"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_TransposeImageCentered_0"
+            targetport="matrix" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_TransposeImageCentered_0"
+            sourceport="matrixTransposed"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0"
+            targetport="imageCentered" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_BroadcastImageCentered_0"
+            sourceport="imageCenteredMatrixA_0"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0"
+            targetport="matrixA" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_BroadcastImageCentered_0"
+            sourceport="imageCenteredMatrixB_1"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0"
+            targetport="matrixB" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Jacobi_0"
+            sourceport="eigenvectors"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0"
+            targetport="eigenvectors" type="double"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0"
+            sourceport="imageCentered"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_BroadcastImageCentered_0"
+            targetport="imageCentered" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0"
+            sourceport="pcaOutput"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PcaOutputBroadcast_0"
+            targetport="pcaOutput" type="double"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PcaOutputBroadcast_0"
+            sourceport="pcaOutputTest_1"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_WritePcaResults_0"
+            targetport="pcaOutput" type="double"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            sourceport="pairwiseProb"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0"
+            targetport="pairwiseProb" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0"
+            sourceport="pixelProbs"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_BroadcastPixelProbs_0"
+            targetport="pixelProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_BroadcastPixelProbs_0"
+            sourceport="pixelProbsToDecision_0"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_DecisionMaking_0"
+            targetport="pixelProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            sourceport="wVector"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            targetport="wVector" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            sourceport="rho"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            targetport="rho" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            sourceport="label"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0"
+            targetport="label" type="int"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            sourceport="probA"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            targetport="probA" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0"
+            sourceport="probB"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            targetport="probB" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_DecisionMaking_0"
+            sourceport="pixelClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0"
+            targetport="svmClasses" type="char"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_BroadcastPixelProbs_0"
+            sourceport="pixelProbsToOutput_1"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_BroadcastProbA_0_0"
+            targetport="svmProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_BroadcastProbA_0_0"
+            sourceport="svmProbsTest_1"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0"
+            targetport="svmProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0"
+            sourceport="featMat"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0"
+            targetport="featMat" type="featureMatrixNode"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0"
+            sourceport="knnMatrix"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0"
+            targetport="knnMatrix" type="int"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_BroadcastProbA_0_0"
+            sourceport="svmProbsOutput_0"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0"
+            targetport="svmProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0"
+            sourceport="knnProbs"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_BroadcastPixelProbs_0"
+            targetport="pixelProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_BroadcastPixelProbs_0"
+            sourceport="pixelProbsToDecision_0"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_DecisionMaking_0"
+            targetport="pixelProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_BroadcastHsImage_0"
+            sourceport="imageToPca_0"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_BroadcastInputImage_0"
+            targetport="image" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PcaOutputBroadcast_0"
+            sourceport="pcaOutputResult_0"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0"
+            targetport="pcaOutput" type="double"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_BroadcastHsImage_0"
+            sourceport="imageToSvm_1"
+            target="HSI_cancer_detection_0_TransposeMatrix_0"
+            targetport="matrix" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_TransposeMatrix_0"
+            sourceport="matrixTransposed"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0"
+            targetport="image" type="float"/>
+        <edge kind="fifo" source="Read_HS_image_0"
+            sourceport="image"
+            target="HSI_cancer_detection_0_BroadcastHsImage_0"
+            targetport="inputImage" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_BroadcastPixelProbs_0"
+            sourceport="pixelProbsToOutput_1"
+            target="Write_results_0" targetport="knnProbs" type="float"/>
+        <edge kind="fifo"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering_0_DecisionMaking_0"
+            sourceport="pixelClasses" target="Write_results_0"
+            targetport="knnClasses" type="char"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__pixels"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__bands"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueRemoval_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__pixels"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueComputation_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering__bands"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_ImageCentering_0_MeanValueComputation_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bandsCovarianceMatrixA"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0" targetport="rowsMatrixA"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bandsCovarianceMatrixB"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0" targetport="rowsMatrixB"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pixels"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Covariance_0" targetport="samples"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bands"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Jacobi_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pcs"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Jacobi_0" targetport="pcs"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bands"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_TransposeImageCentered_0" targetport="matrixRows"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pixels"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_TransposeImageCentered_0" targetport="matrixColumns"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pixelsParallelismProjection"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__bands"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction_0_PCA__pcs"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_PCA_0_Projection_0" targetport="pcs"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction__rows"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_WritePcaResults_0" targetport="rows"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction__columns"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_WritePcaResults_0" targetport="columns"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_DimensionalityReduction__pcs"
+            target="HSI_cancer_detection_0_DimensionalityReduction_0_WritePcaResults_0" targetport="pcs"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__pixels"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__bands"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__numClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_PairwiseProbsComputation_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__pixels"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__bands"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__numClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_MinimizationSolver_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__pixels"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_DecisionMaking_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification_0_SVM__numClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_SVM_0_DecisionMaking_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification__bands"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0" targetport="bands"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification__numClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_ReadSvmModel_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification__rows"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0" targetport="rows"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification__columns"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0" targetport="columns"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SupervisedClassification__numClasses"
+            target="HSI_cancer_detection_0_SupervisedClassification_0_Write_results_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__rows"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0" targetport="rows"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__columns"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0" targetport="columns"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__windowSizeKnn"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0" targetport="windowSizeKnn"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__lambda"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0" targetport="lambda"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__slices"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_featMatBuilding_0" targetport="slices"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__pixelsParallelism"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__columns"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0" targetport="columns"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__neighbors"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0" targetport="neighbors"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__windowSizeKnn"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_KnnSearch_0" targetport="windowSizeKnn"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__pixelsParallelism"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__numClasses"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__neighbors"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0" targetport="neighbors"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__slices"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_Filtering_0" targetport="slices"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__pixelsParallelism"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_DecisionMaking_0" targetport="pixels"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection_0_SpatialSpectralFiltering__numClasses"
+            target="HSI_cancer_detection_0_SpatialSpectralFiltering_0_DecisionMaking_0" targetport="numClasses"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection__bands"
+            target="HSI_cancer_detection_0_TransposeMatrix_0" targetport="matrixRows"/>
+        <edge kind="dependency"
+            source="HSI_cancer_detection__pixels"
+            target="HSI_cancer_detection_0_TransposeMatrix_0" targetport="matrixColumns"/>
+        <edge kind="dependency" source="_rows"
+            target="Read_HS_image_0" targetport="rows"/>
+        <edge kind="dependency" source="_columns"
+            target="Read_HS_image_0" targetport="columns"/>
+        <edge kind="dependency" source="_bands"
+            target="Read_HS_image_0" targetport="bands"/>
+        <edge kind="dependency" source="_rows"
+            target="Write_results_0" targetport="rows"/>
+        <edge kind="dependency" source="_columns"
+            target="Write_results_0" targetport="columns"/>
+        <edge kind="dependency" source="_numClasses"
+            target="Write_results_0" targetport="numClasses"/>
+    </graph>
+</graphml>

@@ -1,7 +1,8 @@
 /**
- * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2018) :
+ * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2019) :
  *
- * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2018)
+ * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2019)
+ * Florian Arrestier <florian.arrestier@insa-rennes.fr> (2018)
  *
  * This software is a computer program whose purpose is to help prototyping
  * parallel applications using dataflow formalism.
@@ -33,40 +34,36 @@
  * knowledge of the CeCILL license and that you accept its terms.
  */
 /*
-	============================================================================
-	Name        : fifo.c
-	Author      : kdesnos
-	Version     :
-	Copyright   : CECILL-C
-	Description :
-	============================================================================
-*/
+ ============================================================================
+ Name        : fifo.c
+ Author      : kdesnos
+ Version     :
+ Copyright   : CECILL-C
+ Description :
+ ============================================================================
+ */
 #include <string.h>
 #include "fifo.h"
 
-
-
-
 void fifoInit(void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
-    memset(headBuffer,0,headSize);
-    if(bodyBuffer != NULL) {
-        memset(bodyBuffer,0,bodySize);
-    }
+  memset(headBuffer, 0, headSize);
+  if (bodyBuffer != NULL) {
+    memset(bodyBuffer, 0, bodySize);
+  }
 }
 
-
-void fifoPush(void * inputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize){
-    if(bodyBuffer != NULL){
-        memcpy(headBuffer,bodyBuffer,headSize);
-        memcpy(bodyBuffer, (char *)bodyBuffer+headSize, bodySize-headSize);
-        memcpy((char *)bodyBuffer+bodySize-headSize,  inputBuffer, headSize);
-    } else {
-        memcpy(headBuffer,inputBuffer,headSize);
-    }
-    //memcpy(headBuffer, headBuffer+outputSize, fifoSize-outputSize);
-    //memset(headBuffer+fifoSize-outputSize, 0, outputSize); // Useless
+void fifoPush(void * inputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
+  if (bodyBuffer != NULL) {
+    memcpy(headBuffer, bodyBuffer, headSize);
+    memcpy(bodyBuffer, (char *) bodyBuffer + headSize, bodySize - headSize);
+    memcpy((char *) bodyBuffer + bodySize - headSize, inputBuffer, headSize);
+  } else {
+    memcpy(headBuffer, inputBuffer, headSize);
+  }
+  //memcpy(headBuffer, headBuffer+outputSize, fifoSize-outputSize);
+  //memset(headBuffer+fifoSize-outputSize, 0, outputSize); // Useless
 }
 
-void fifoPop(void * outputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize){
-    memcpy(outputBuffer, headBuffer, headSize);
+void fifoPop(void * outputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
+  memcpy(outputBuffer, headBuffer, headSize);
 }
