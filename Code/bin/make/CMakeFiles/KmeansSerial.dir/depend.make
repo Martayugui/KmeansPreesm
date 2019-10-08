@@ -12,11 +12,27 @@ CMakeFiles/KmeansSerial.dir/generated/Core0.c.o: ../../generated/fifo.h
 CMakeFiles/KmeansSerial.dir/generated/Core0.c.o: ../../generated/mac_barrier.h
 CMakeFiles/KmeansSerial.dir/generated/Core0.c.o: ../../generated/preesm_gen.h
 
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../include/kmeans.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../include/preesm.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../include/read_par_and_img.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../include/write_kmeans_results.h
 CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/communication.c
 CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/communication.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/dump.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/fifo.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/mac_barrier.h
+CMakeFiles/KmeansSerial.dir/generated/communication.c.o: ../../generated/preesm_gen.h
 
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../include/kmeans.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../include/preesm.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../include/read_par_and_img.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../include/write_kmeans_results.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/communication.h
 CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/dump.c
 CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/dump.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/fifo.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/mac_barrier.h
+CMakeFiles/KmeansSerial.dir/generated/dump.c.o: ../../generated/preesm_gen.h
 
 CMakeFiles/KmeansSerial.dir/generated/fifo.c.o: ../../generated/fifo.c
 CMakeFiles/KmeansSerial.dir/generated/fifo.c.o: ../../generated/fifo.h

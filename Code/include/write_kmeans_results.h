@@ -15,8 +15,9 @@
 
 #define namefileout PROJECT_ROOT_PATH "/dat/assignedClusterFinal.txt"
 #define nameimageout PROJECT_ROOT_PATH "/dat/immagine.bmp"
+#define nameassignedoriginal PROJECT_ROOT_PATH "/dat/assignedClusterFinaloriginal.txt"
 
-void writeResults (int rows, int columns, IN int *assignedCluster);
+void writeResults (int bands,int rows, int columns, int *assignedCluster,float *errorOut,float *clusterCentroidsOut);
 
 #endif
 

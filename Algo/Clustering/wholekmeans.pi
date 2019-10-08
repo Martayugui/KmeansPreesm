@@ -7,8 +7,8 @@
     <key attr.name="graph_desc" attr.type="string" for="node"/>
     <graph edgedefault="directed">
         <data key="name">wholekmeans</data>
-        <node expr="552" id="rows" kind="param"/>
-        <node expr="479" id="columns" kind="param"/>
+        <node expr="329" id="rows" kind="param"/>
+        <node expr="377" id="columns" kind="param"/>
         <node expr="128" id="bands" kind="param"/>
         <node expr="rows*columns" id="pixels" kind="param"/>
         <node id="read_parameters" kind="actor" period="0">
@@ -45,20 +45,31 @@
             <port annotation="NONE" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="rows*columns"
                 kind="output" name="assignedCluster"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroidsOut"/>
+            <port annotation="NONE" expr="4" kind="output" name="errorOut"/>
         </node>
         <node id="write_results" kind="actor" period="0">
             <data key="graph_desc">Code/include/write_kmeans_results.h</data>
             <loop name="writeResults">
+                <param direction="IN" isConfig="true"
+                    name="bands" type="int"/>
                 <param direction="IN" isConfig="true" name="rows" type="int"/>
                 <param direction="IN" isConfig="true"
                     name="columns" type="int"/>
                 <param direction="IN" isConfig="false"
                     name="assignedCluster" type="int "/>
+                <param direction="IN" isConfig="false"
+                    name="errorOut" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="clusterCentroidsOut" type="float "/>
             </loop>
             <port kind="cfg_input" name="rows"/>
             <port kind="cfg_input" name="columns"/>
+            <port kind="cfg_input" name="bands"/>
             <port annotation="NONE" expr="rows*columns"
                 kind="input" name="assignedCluster"/>
+            <port annotation="NONE" expr="4" kind="input" name="errorOut"/>
+            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroidsOut"/>
         </node>
         <edge kind="fifo" source="read_parameters"
             sourceport="image" target="kmeansCluster"
@@ -69,6 +80,13 @@
         <edge kind="fifo" source="kmeansCluster"
             sourceport="assignedCluster" target="write_results"
             targetport="assignedCluster" type="int"/>
+        <edge kind="fifo" source="kmeansCluster"
+            sourceport="clusterCentroidsOut"
+            target="write_results"
+            targetport="clusterCentroidsOut" type="float"/>
+        <edge kind="fifo" source="kmeansCluster"
+            sourceport="errorOut" target="write_results"
+            targetport="errorOut" type="float"/>
         <edge kind="dependency" source="rows"
             target="read_parameters" targetport="rows"/>
         <edge kind="dependency" source="columns"
@@ -91,5 +109,7 @@
             target="write_results" targetport="rows"/>
         <edge kind="dependency" source="columns"
             target="write_results" targetport="columns"/>
+        <edge kind="dependency" source="bands"
+            target="write_results" targetport="bands"/>
     </graph>
 </graphml>

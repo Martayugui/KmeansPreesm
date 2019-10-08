@@ -35,13 +35,13 @@
 #ifndef _PREESM_MAC_BARRIER_H
 #define _PREESM_MAC_BARRIER_H
 
-#include <pthread.h>
-
-#ifdef __APPLE__
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include <pthread.h>
+
+#ifdef __APPLE__
 
 #if !defined(PTHREAD_BARRIER_SERIAL_THREAD)
 # define PTHREAD_BARRIER_SERIAL_THREAD	(1)
@@ -55,35 +55,35 @@ extern "C" {
 #endif
 
 typedef struct {
-} pthread_barrierattr_t;
+}pthread_barrierattr_t;
 
 typedef struct {
-	pthread_mutex_t mutex;
-	pthread_cond_t cond;
-	unsigned int limit;
-	unsigned int count;
-	unsigned int phase;
-} pthread_barrier_t;
+  pthread_mutex_t mutex;
+  pthread_cond_t cond;
+  unsigned int limit;
+  unsigned int count;
+  unsigned int phase;
+}pthread_barrier_t;
 
 int pthread_barrierattr_init(pthread_barrierattr_t *attr);
 int pthread_barrierattr_destroy(pthread_barrierattr_t *attr);
 
 int pthread_barrierattr_getpshared(const pthread_barrierattr_t *restrict attr,
-				   int *restrict pshared);
+    int *restrict pshared);
 int pthread_barrierattr_setpshared(pthread_barrierattr_t *attr,
-				   int pshared);
+    int pshared);
 
 int pthread_barrier_init(pthread_barrier_t *restrict barrier,
-			 const pthread_barrierattr_t *restrict attr,
-			 unsigned int count);
+    const pthread_barrierattr_t *restrict attr,
+    unsigned int count);
 int pthread_barrier_destroy(pthread_barrier_t *barrier);
 
 int pthread_barrier_wait(pthread_barrier_t *barrier);
 
-#ifdef  __cplusplus
+#endif /* __APPLE__ */
+
+#ifdef __cplusplus
 }
 #endif
-
-#endif /* __APPLE__ */
 
 #endif /* PTHREAD_BARRIER_H */

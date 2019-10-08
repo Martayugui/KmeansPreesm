@@ -1,4 +1,4 @@
-# Install script for directory: /home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code
+# Install script for directory: /home/gdem/Desktop/PREESM/preesm/releng/org.preesm.product/target/products/preesm-3.17.0.201910051444-linux.gtk.x86_64/workspace/KmeansSerialLast/Code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gdem/Downloads/preesm-3.4.0-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gdem/Desktop/PREESM/preesm/releng/org.preesm.product/target/products/preesm-3.17.0.201910051444-linux.gtk.x86_64/workspace/KmeansSerialLast/Code/bin/make/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

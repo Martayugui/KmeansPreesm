@@ -146,13 +146,6 @@ if (WIN32)
 endif()
 
 # *******************************************
-# ************ PAPI LIBRARY *****************
-# *******************************************
-
-find_library(papi_LIBRARY papi)
-
-
-# *******************************************
 # ************ Spider LIBRARY ***************
 # *******************************************
 
@@ -197,7 +190,7 @@ file(
 
 
 add_executable( KmeansSerial ${source_files} ${header_files})
-target_link_libraries(KmeansSerial ${SDL2_LIBRARY} ${SDL2TTF_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${papi_LIBRARY} ${SPIDER_LIBRARY} -lm)
+target_link_libraries(KmeansSerial ${SDL2_LIBRARY} ${SDL2TTF_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${SPIDER_LIBRARY} -lm)
 set(CMAKE_C_FLAGS "-std=gnu99")
 
 

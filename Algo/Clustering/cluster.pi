@@ -27,41 +27,30 @@
                 <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
                 <param direction="IN" isConfig="false"
                     name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false"
-                    name="assignedCluster" type="int "/>
                 <param direction="IN" isConfig="false"
                     name="error" type="float "/>
-                <param direction="OUT" isConfig="false" name="p2" type="float "/>
-                <param direction="IN" isConfig="false"
-                    name="iterin" type="int "/>
                 <param direction="OUT" isConfig="false"
-                    name="iterout" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="assignedClusterIn" type="int "/>
+                    name="assignedCluster" type="int "/>
             </loop>
             <port kind="cfg_input" name="rows"/>
             <port kind="cfg_input" name="columns"/>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
-            <port annotation="NONE" expr="pixels*bands"
+            <port annotation="READ_ONLY" expr="pixels*bands"
                 kind="input" name="image"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
-            <port annotation="NONE" expr="rows*columns"
-                kind="input" name="assignedClusterIn"/>
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="READ_ONLY" expr="24*bands"
+                kind="input" name="clusterCentroids"/>
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="columns*rows"
                 kind="output" name="assignedCluster"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="p2"/>
-            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node id="loop" kind="actor" period="0">
             <data key="graph_desc">Code/include/kmeans.h</data>
             <loop name="loop">
                 <param direction="OUT" isConfig="false" name="N" type="char "/>
             </loop>
-            <port annotation="NONE" expr="8" kind="output" name="N"/>
+            <port annotation="NONE" expr="50" kind="output" name="N"/>
         </node>
         <node id="image" kind="src">
             <port annotation="NONE" expr="pixels*bands"
@@ -92,31 +81,21 @@
                     name="error" type="float "/>
                 <param direction="OUT" isConfig="false"
                     name="clusterCentroids" type="float "/>
-                <param direction="OUT" isConfig="false" name="p" type="float "/>
-                <param direction="IN" isConfig="false" name="p2" type="float "/>
-                <param direction="IN" isConfig="false"
-                    name="iterin" type="int "/>
-                <param direction="OUT" isConfig="false"
-                    name="iterout" type="int "/>
             </loop>
             <port kind="cfg_input" name="pixels"/>
             <port kind="cfg_input" name="bands"/>
             <port kind="cfg_input" name="rows"/>
             <port kind="cfg_input" name="columns"/>
-            <port annotation="NONE" expr="columns*rows"
+            <port annotation="READ_ONLY" expr="columns*rows"
                 kind="input" name="assignedCluster"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
-            <port annotation="NONE" expr="pixels*bands"
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
+            <port annotation="READ_ONLY" expr="pixels*bands"
                 kind="input" name="image"/>
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
-            <port annotation="NONE" expr="24*bands" kind="input" name="p2"/>
-            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="24*bands" kind="output" name="clusterCentroids"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="p"/>
-            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
         </node>
         <node id="BroadcastActorPar" kind="broadcast">
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="16" kind="output" name="parDistance"/>
             <port annotation="NONE" expr="16" kind="output" name="parUpdate"/>
             <port annotation="NONE" expr="16" kind="output" name="parError"/>
@@ -124,14 +103,12 @@
         <node id="BroadcastActorAssignedCluster" kind="broadcast">
             <port kind="cfg_input" name="rows"/>
             <port kind="cfg_input" name="columns"/>
-            <port annotation="NONE" expr="columns*rows"
+            <port annotation="READ_ONLY" expr="rows*columns"
                 kind="input" name="assignedCluster"/>
             <port annotation="NONE" expr="rows*columns"
-                kind="output" name="assignedClusterUpdate"/>
+                kind="output" name="assignedUpdate"/>
             <port annotation="NONE" expr="rows*columns"
-                kind="output" name="assignedClusterInterface"/>
-            <port annotation="NONE" expr="rows*columns"
-                kind="output" name="assignedClusterLoop"/>
+                kind="output" name="assignedInter"/>
         </node>
         <node id="assignedCluster" kind="snk">
             <port annotation="NONE" expr="rows*columns"
@@ -142,95 +119,93 @@
             <port kind="cfg_input" name="bands"/>
             <port annotation="READ_ONLY" expr="pixels*bands"
                 kind="input" name="image"/>
-            <port annotation="READ_ONLY" expr="pixels*bands"
-                kind="output" name="imageDistance"/>
-            <port annotation="READ_ONLY" expr="pixels*bands"
-                kind="output" name="imageUpdate"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="imgDistance"/>
+            <port annotation="NONE" expr="pixels*bands"
+                kind="output" name="imgUpdate"/>
         </node>
         <node id="computeError" kind="actor" period="0">
             <data key="graph_desc">Code/include/kmeans.h</data>
             <loop name="computeError">
                 <param direction="IN" isConfig="true" name="c" type="int"/>
-                <param direction="IN" isConfig="false" name="N" type="int "/>
-                <param direction="IN" isConfig="false"
-                    name="initialCentroids" type="float "/>
+                <param direction="IN" isConfig="false" name="N" type="char "/>
+                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
                 <param direction="IN" isConfig="false"
                     name="clusterCentroids" type="float "/>
-                <param direction="IN" isConfig="false" name="par" type="struct parameters "/>
+                <param direction="IN" isConfig="false"
+                    name="previousCentroids" type="float "/>
+                <param direction="IN" isConfig="false"
+                    name="errorIn" type="float "/>
                 <param direction="OUT" isConfig="false"
                     name="error" type="float "/>
                 <param direction="OUT" isConfig="false"
-                    name="previousCentroids" type="float "/>
-                <param direction="IN" isConfig="false" name="p" type="float "/>
-                <param direction="IN" isConfig="false"
-                    name="iterin" type="int "/>
-                <param direction="OUT" isConfig="false"
-                    name="iterout" type="int "/>
+                    name="updatedCentroids" type="float "/>
             </loop>
             <port kind="cfg_input" name="c"/>
             <port annotation="NONE" expr="1" kind="input" name="N"/>
-            <port annotation="NONE" expr="24*c" kind="input" name="initialCentroids"/>
-            <port annotation="NONE" expr="16" kind="input" name="par"/>
+            <port annotation="READ_ONLY" expr="16" kind="input" name="par"/>
             <port annotation="NONE" expr="24*c" kind="input" name="clusterCentroids"/>
-            <port annotation="NONE" expr="24*c" kind="input" name="p"/>
-            <port annotation="NONE" expr="4" kind="input" name="iterin"/>
+            <port annotation="READ_ONLY" expr="24*c" kind="input" name="previousCentroids"/>
+            <port annotation="READ_ONLY" expr="4" kind="input" name="errorIn"/>
             <port annotation="NONE" expr="4" kind="output" name="error"/>
-            <port annotation="NONE" expr="24*c" kind="output" name="previousCentroids"/>
-            <port annotation="NONE" expr="4" kind="output" name="iterout"/>
+            <port annotation="NONE" expr="24*c" kind="output" name="updatedCentroids"/>
         </node>
         <node id="BroadcastActorError" kind="broadcast">
-            <port annotation="NONE" expr="4" kind="input" name="error"/>
+            <port annotation="READ_ONLY" expr="4" kind="input" name="error"/>
             <port annotation="NONE" expr="4" kind="output" name="errorDistance"/>
             <port annotation="NONE" expr="4" kind="output" name="errorUpdate"/>
+            <port annotation="NONE" expr="4" kind="output" name="ErrorForError"/>
         </node>
-        <node expr="24*bands" getter=""
-            id="updateCentroids_clusterCentroids__computeError_previousCentroids"
-            kind="delay" level="permanent" setter="">
-            <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
+        <node id="BroadcastActorCentroids" kind="broadcast">
+            <port kind="cfg_input" name="bands"/>
+            <port annotation="READ_ONLY" expr="24*bands"
+                kind="input" name="clusterCentroids"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterDistance"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="clusterError"/>
         </node>
-        <node expr="24*bands" getter=""
-            id="updateCentroids_p__computeError_p" kind="delay"
-            level="permanent" setter="">
-            <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
-            <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
+        <node id="error" kind="src">
+            <port annotation="NONE" expr="4" kind="output" name="error"/>
         </node>
-        <node expr="4" getter=""
-            id="updateCentroids_iterout__computeError_niterin"
-            kind="delay" level="permanent" setter="">
+        <node id="errorOut" kind="snk">
+            <port annotation="NONE" expr="4" kind="input" name="errorOut"/>
+        </node>
+        <node id="clusterCentroidsOut" kind="snk">
+            <port annotation="NONE" expr="24*bands" kind="input" name="clusterCentroidsOut"/>
+        </node>
+        <node expr="4" getter="errorOut"
+            id="BroadcastActorError_errorComputeErrror__computeError_errorIn"
+            kind="delay" level="none" setter="error">
             <port annotation="NONE" expr="4" kind="input" name="set"/>
             <port annotation="NONE" expr="4" kind="output" name="get"/>
         </node>
-        <node expr="rows*columns" getter=""
-            id="BroadcastActorAssignedCluster_assignedClusterLoop__computeDistance_assignedClusterIn"
-            kind="delay" level="permanent" setter="">
-            <port annotation="NONE" expr="rows*columns"
-                kind="input" name="set"/>
-            <port annotation="NONE" expr="rows*columns"
-                kind="output" name="get"/>
+        <node expr="24*bands" getter="clusterCentroidsOut"
+            id="updateCentroids_clusterCentroids__computeError_clusterCentroids"
+            kind="delay" level="none" setter="clusterCentroids">
+            <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
         </node>
+        <node expr="24*bands" getter=""
+            id="BroadcastActorCentroids_clusterCentroidsError__computeError_previousCentroids"
+            kind="delay" level="permanent" setter="">
+            <port annotation="NONE" expr="24*bands" kind="input" name="set"/>
+            <port annotation="NONE" expr="24*bands" kind="output" name="get"/>
+        </node>
+        <edge expr="4" kind="fifo" source="BroadcastActorError"
+            sourceport="ErrorForError" target="computeError"
+            targetport="errorIn" type="float">
+            <data key="delay">BroadcastActorError_errorComputeErrror__computeError_errorIn</data>
+        </edge>
         <edge expr="24*bands" kind="fifo"
             source="updateCentroids"
             sourceport="clusterCentroids" target="computeError"
             targetport="clusterCentroids" type="float">
-            <data key="delay">updateCentroids_clusterCentroids__computeError_previousCentroids</data>
+            <data key="delay">updateCentroids_clusterCentroids__computeError_clusterCentroids</data>
         </edge>
         <edge expr="24*bands" kind="fifo"
-            source="updateCentroids" sourceport="p"
-            target="computeError" targetport="p" type="float">
-            <data key="delay">updateCentroids_p__computeError_p</data>
-        </edge>
-        <edge expr="4" kind="fifo" source="updateCentroids"
-            sourceport="iterout" target="computeError"
-            targetport="iterin" type="int">
-            <data key="delay">updateCentroids_iterout__computeError_niterin</data>
-        </edge>
-        <edge expr="rows*columns" kind="fifo"
-            source="BroadcastActorAssignedCluster"
-            sourceport="assignedClusterLoop"
-            target="computeDistance"
-            targetport="assignedClusterIn" type="int">
-            <data key="delay">BroadcastActorAssignedCluster_assignedClusterLoop__computeDistance_assignedClusterIn</data>
+            source="BroadcastActorCentroids"
+            sourceport="clusterError" target="computeError"
+            targetport="previousCentroids" type="float">
+            <data key="delay">BroadcastActorCentroids_clusterCentroidsError__computeError_previousCentroids</data>
         </edge>
         <edge kind="fifo" source="par" sourceport="par"
             target="BroadcastActorPar" targetport="par" type="parameters"/>
@@ -245,18 +220,18 @@
             target="BroadcastActorAssignedCluster"
             targetport="assignedCluster" type="int"/>
         <edge kind="fifo" source="BroadcastActorAssignedCluster"
-            sourceport="assignedClusterUpdate"
-            target="updateCentroids" targetport="assignedCluster" type="int"/>
+            sourceport="assignedUpdate" target="updateCentroids"
+            targetport="assignedCluster" type="int"/>
         <edge kind="fifo" source="BroadcastActorAssignedCluster"
-            sourceport="assignedClusterInterface"
-            target="assignedCluster" targetport="assignedCluster" type="int"/>
+            sourceport="assignedInter" target="assignedCluster"
+            targetport="assignedCluster" type="int"/>
         <edge kind="fifo" source="image" sourceport="image"
             target="BroadcastActorImage" targetport="image" type="float"/>
         <edge kind="fifo" source="BroadcastActorImage"
-            sourceport="imageDistance" target="computeDistance"
+            sourceport="imgDistance" target="computeDistance"
             targetport="image" type="float"/>
         <edge kind="fifo" source="BroadcastActorImage"
-            sourceport="imageUpdate" target="updateCentroids"
+            sourceport="imgUpdate" target="updateCentroids"
             targetport="image" type="float"/>
         <edge kind="fifo" source="loop" sourceport="N"
             target="computeError" targetport="N" type="char"/>
@@ -273,21 +248,27 @@
             sourceport="parError" target="computeError"
             targetport="par" type="parameters"/>
         <edge kind="fifo" source="computeError"
-            sourceport="previousCentroids"
-            target="computeDistance"
+            sourceport="updatedCentroids"
+            target="BroadcastActorCentroids"
             targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo" source="BroadcastActorCentroids"
+            sourceport="clusterDistance" target="computeDistance"
+            targetport="clusterCentroids" type="float"/>
+        <edge kind="fifo" source="error" sourceport="error"
+            target="BroadcastActorError_errorComputeErrror__computeError_errorIn"
+            targetport="set" type="float"/>
         <edge kind="fifo" source="clusterCentroids"
-            sourceport="clusterCentroids" target="computeError"
-            targetport="initialCentroids" type="float"/>
-        <edge kind="fifo" source="computeDistance"
-            sourceport="p2" target="updateCentroids"
-            targetport="p2" type="float"/>
-        <edge kind="fifo" source="computeError"
-            sourceport="iterout" target="computeDistance"
-            targetport="iterin" type="int"/>
-        <edge kind="fifo" source="computeDistance"
-            sourceport="iterout" target="updateCentroids"
-            targetport="iterin" type="int"/>
+            sourceport="clusterCentroids"
+            target="updateCentroids_clusterCentroids__computeError_clusterCentroids"
+            targetport="set" type="float"/>
+        <edge kind="fifo"
+            source="updateCentroids_clusterCentroids__computeError_clusterCentroids"
+            sourceport="get" target="clusterCentroidsOut"
+            targetport="clusterCentroidsOut" type="float"/>
+        <edge kind="fifo"
+            source="BroadcastActorError_errorComputeErrror__computeError_errorIn"
+            sourceport="get" target="errorOut"
+            targetport="errorOut" type="float"/>
         <edge kind="dependency" source="rows"
             target="computeDistance" targetport="rows"/>
         <edge kind="dependency" source="columns"
@@ -319,9 +300,10 @@
             target="BroadcastActorImage" targetport="bands"/>
         <edge kind="dependency" source="bands"
             target="computeError" targetport="c"/>
-        <edge kind="dependency" source="bands" target="updateCentroids_clusterCentroids__computeError_previousCentroids"/>
-        <edge kind="dependency" source="bands" target="updateCentroids_p__computeError_p"/>
-        <edge kind="dependency" source="rows" target="BroadcastActorAssignedCluster_assignedClusterLoop__computeDistance_assignedClusterIn"/>
-        <edge kind="dependency" source="columns" target="BroadcastActorAssignedCluster_assignedClusterLoop__computeDistance_assignedClusterIn"/>
+        <edge kind="dependency" source="bands" target="updateCentroids_clusterCentroids__computeError_clusterCentroids"/>
+        <edge kind="dependency" source="bands"
+            target="BroadcastActorCentroids" targetport="bands"/>
+        <edge kind="dependency" source="bands" target="BroadcastActorCentroids_clusterCentroidsError__computeError_previousCentroids"/>
+        <edge kind="dependency" source="bands" target="clusterCentroidsOut"/>
     </graph>
 </graphml>

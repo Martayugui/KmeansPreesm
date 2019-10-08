@@ -11,12 +11,12 @@
    Global Variable
 
    ======================================================================*/
-static FILE *fp ;
-static FILE *fp1;
-static FILE *c;
 
 void readParAndImg (int rows,int columns,int bands,int pixels,float *image,struct parameters *par){
 
+	FILE *fp ;
+	FILE *fp1;
+	FILE *c;
 	fp = fopen(namefile, "r");
 	fp1 = fopen(nameimage, "rb");
 	c=fopen(txtfile,"r+");

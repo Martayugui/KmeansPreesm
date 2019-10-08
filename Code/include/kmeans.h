@@ -11,14 +11,24 @@
 
 void kmeansfunction(int rows, int columns, int bands,int pixels,struct parameters * par, float * image, float * error, float * clusterCentroids, int * assignedCluster);
 
-void initializeCluster(int pixels, int bands, float * image,struct parameters * par,float *initialCentroids);
+void initializeCluster(int pixels, int bands, float * image,struct parameters * par,float *clusterCentroids);
 
-void computeError( int c,char *N,float *initialCentroids,float *clusterCentroids,struct parameters *par,float *error,float *previousCentroids,float *p,int *iterin,int *iterout);
+void computeErrorInitialization(int c,struct parameters *par,float * clusterCentroids,float * error);
 
-void computeDistance(int rows,int columns,int pixels,int bands,float * image,struct parameters *par, float * clusterCentroids,int *assignedCluster,float *error,float *p2,int *iterin,int *iterout,int *assignedClusterIn);
+void computeError( int c,char *N, struct parameters *par,float *clusterCentroids,float *previousCentroids,float *errorIn,float *error,float *updatedCentroids);
+
+void computeDistance(int rows,int columns,int pixels,int bands,float * image,struct parameters *par, float * clusterCentroids,float *error,int *assignedCluster);
 
 int findMinimum(float *vet, int size);
 
-void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float *image,float *error,float * clusterCentroids,float *p,float *p2,int *iterin,int *iterout);
+void updateClusterCentroids( int pixels,int bands,int rows,int columns, int * assignedCluster,struct parameters *par,float *image,float *error,float * clusterCentroids);
 
 void loop (char *N);
+
+void setter (int bands,float *in, float *clusterCentroids);
+
+void getter (int bands,float *out);
+
+void setterError (float *in,float *error);
+
+void getterError (float *out);

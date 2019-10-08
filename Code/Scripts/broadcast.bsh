@@ -1,8 +1,8 @@
 /**
- * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2019) :
+ * Copyright or © or Copr. IETR/INSA - Rennes (2014 - 2018) :
  *
- * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2019)
- * Florian Arrestier <florian.arrestier@insa-rennes.fr> (2018)
+ * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2018)
+ * Karol Desnos <karol.desnos@insa-rennes.fr> (2014)
  *
  * This software is a computer program whose purpose is to help prototyping
  * parallel applications using dataflow formalism.
@@ -33,37 +33,21 @@
  * The fact that you are presently reading this means that you have had
  * knowledge of the CeCILL license and that you accept its terms.
  */
-/*
- ============================================================================
- Name        : fifo.c
- Author      : kdesnos
- Version     :
- Copyright   : CECILL-C
- Description :
- ============================================================================
- */
-#include <string.h>
-#include "fifo.h"
+// Broadcast script
 
-void fifoInit(void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
-  memset(headBuffer, 0, headSize);
-  if (bodyBuffer != NULL) {
-    memset(bodyBuffer, 0, bodySize);
-  }
-}
-
-void fifoPush(void * inputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
-  if (bodyBuffer != NULL) {
-    memcpy(headBuffer, bodyBuffer, headSize);
-    memcpy(bodyBuffer, (char *) bodyBuffer + headSize, bodySize - headSize);
-    memcpy((char *) bodyBuffer + bodySize - headSize, inputBuffer, headSize);
-  } else {
-    memcpy(headBuffer, inputBuffer, headSize);
-  }
-  //memcpy(headBuffer, headBuffer+outputSize, fifoSize-outputSize);
-  //memset(headBuffer+fifoSize-outputSize, 0, outputSize); // Useless
-}
-
-void fifoPop(void * outputBuffer, void* headBuffer, int headSize, void* bodyBuffer, int bodySize) {
-  memcpy(outputBuffer, headBuffer, headSize);
+inIdx=0L;
+inSize = inputs.get(0).getNbTokens();
+for(output : outputs) {
+	remaining = output.getNbTokens();
+	outIdx=0L;
+	do {		
+		// Do the match
+		matchSize = ((remaining+inIdx)<=inSize)?remaining:inSize-inIdx;
+		inputs.get(0).matchWith(inIdx,output,outIdx,matchSize);
+		
+		// Update indexes
+		inIdx = (inIdx + matchSize)%inSize;
+		outIdx = outIdx + matchSize;
+		remaining = remaining - matchSize;		
+	} while(remaining>0);
 }

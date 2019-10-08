@@ -1,9 +1,11 @@
 /**
  * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2019) :
  *
+ * Alexandre Honorat <alexandre.honorat@insa-rennes.fr> (2019)
  * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2019)
  * Florian Arrestier <florian.arrestier@insa-rennes.fr> (2018)
  * Julien Hascoet <jhascoet@kalray.eu> (2017)
+ * Leonardo Suriano <leonardo.suriano@upm.es> (2019)
  *
  * This software is a computer program whose purpose is to help prototyping
  * parallel applications using dataflow formalism.
@@ -35,19 +37,23 @@
  * knowledge of the CeCILL license and that you accept its terms.
  */
 /*
-============================================================================
-Name        : communication.h
-Author      : kdesnos
-Version     : 2.0
-Copyright   : CECILL-C
-Description : Communication primitive for Preesm Codegen.
-Currently, primitives were tested only for x86, shared_mem
-communications.
-============================================================================
-*/
+ ============================================================================
+ Name        : communication.h
+ Author      : kdesnos
+ Version     : 2.0
+ Copyright   : CECILL-C
+ Description : Communication primitive for Preesm Codegen.
+ Currently, primitives were tested only for x86, shared_mem
+ communications.
+ ============================================================================
+ */
 
 #ifndef _PREESM_COMMUNICATION_H
 #define _PREESM_COMMUNICATION_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #ifdef __APPLE__
 #include <dispatch/dispatch.h>
@@ -55,90 +61,73 @@ communications.
 #include <semaphore.h>
 #endif
 
-// note: rk_ struct and functions comes from
-// https://stackoverflow.com/questions/27736618/why-are-sem-init-sem-getvalue-sem-destroy-deprecated-on-mac-os-x-and-w
-
 struct rk_sema {
 #ifdef __APPLE__
     dispatch_semaphore_t    sem;
 #else
-    sem_t                   sem;
+  sem_t sem;
 #endif
 };
 
-
-static void rk_sema_init(struct rk_sema *s, int value) {
-#ifdef __APPLE__
-    dispatch_semaphore_t *sem = &s->sem;
-    *sem = dispatch_semaphore_create(value);
+#ifdef _WIN32
+void rk_sema_init(struct rk_sema *s, int value);
 #else
-    sem_init(&s->sem, 0, value);
+void rk_sema_init(struct rk_sema *s, int value);
 #endif
-}
 
-static void rk_sema_wait(struct rk_sema *s) {
-#ifdef __APPLE__
-    dispatch_semaphore_wait(s->sem, DISPATCH_TIME_FOREVER);
+#ifdef _WIN32
+void rk_sema_wait(struct rk_sema *s);
 #else
-    int r;
-    do {
-            r = sem_wait(&s->sem);
-    } while (r == -1);
+void rk_sema_wait(struct rk_sema *s);
 #endif
-}
 
-static void rk_sema_post(struct rk_sema *s) {
-#ifdef __APPLE__
-    dispatch_semaphore_signal(s->sem);
+#ifdef _WIN32
+void rk_sema_post(struct rk_sema *s);
 #else
-    sem_post(&s->sem);
+void rk_sema_post(struct rk_sema *s);
 #endif
-}
 
 /**
-* Maximum number of core supported by the communication library.
-* This number is used to allocate the table of semaphores used for intercore
-* synchronization.
-*/
-#define MAX_NB_CORES 16
-
-/**
-* Initialize the semaphores used for inter-core synchronization.
-*/
+ * Initialize the semaphores used for inter-core synchronization.
+ */
 void communicationInit();
 
 /**
-* Non-blocking function called by the sender to signal that a buffer is ready
-* to be sent.
-*
-* @param[in] senderID
-*        the ID of the sender core
-* @param[in] coreID
-*        the ID of the receiver core
-*/
+ * Non-blocking function called by the sender to signal that a buffer is ready
+ * to be sent.
+ *
+ * @param[in] senderID
+ *        the ID of the sender core
+ * @param[in] coreID
+ *        the ID of the receiver core
+ */
 void sendStart(int senderID, int receveirID);
 
 /**
-* Blocking function (not for shared_mem communication) called by the sender to
-* signal that communication is completed.
-*/
+ * Blocking function (not for shared_mem communication) called by the sender to
+ * signal that communication is completed.
+ */
 void sendEnd();
 
 /**
-* Non-blocking function called by the receiver begin receiving the
-* data. (not implemented with shared memory communications).
-*/
+ * Non-blocking function called by the receiver begin receiving the
+ * data. (not implemented with shared memory communications).
+ */
 void receiveStart();
 
 /**
-* Blocking function called by the sender to wait for the received data
-* availability.
-*
-* @param[in] senderID
-*        the ID of the sender core
-* @param[in] coreID
-*        the ID of the receiver core
-*/
+ * Blocking function called by the sender to wait for the received data
+ * availability.
+ *
+ * @param[in] senderID
+ *        the ID of the sender core
+ * @param[in] coreID
+ *        the ID of the receiver core
+ */
 void receiveEnd(int senderID, int receveirID);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

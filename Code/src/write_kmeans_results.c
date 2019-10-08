@@ -11,8 +11,7 @@
    Global Variable
 
    ======================================================================*/
-static FILE *f;
-static FILE *fp;
+
 
 
 /* Colors' references https://web.njit.edu/~kevin/rgb.txt.html
@@ -46,12 +45,17 @@ const int COLOR_MAP[25][3] =
 	{ 139, 26, 26},		// firebrick4
 };
 
-void writeResults (int rows, int columns, int *assignedCluster)  {
-
+void writeResults (int bands,int rows, int columns, int *assignedCluster,float *errorOut,float *clusterCentroidsOut)  {
+	FILE *f;
+	FILE *fp;
+	//FILE *fr;
 	int p;
 	int q;
-
+	/*int no;
+	int np;*/
+//In order to test the image, namefileout has to be r+
 	fp = fopen(namefileout, "w");
+	//fr=fopen(nameassignedoriginal,"r");
 
 	for (p = 0; p < rows; p++) {
 		for (q = 0; q < columns; q++) {
@@ -60,7 +64,21 @@ void writeResults (int rows, int columns, int *assignedCluster)  {
 		fprintf(fp, "\n");
 	}
 	fprintf(fp, "\n");
+
+	/*for (p = 0; p < rows; p++) {
+		for (q = 0; q < columns; q++) {
+			no=fscanf(fr,"%d",&assignedCluster[rows*q+p]);
+			np=fscanf(fp,"%d",&assignedCluster[rows*q+p]);
+			if (no=np)  {
+			}
+			else {
+				printf("Does not match");
+			}
+		}
+	}*/
+
 	fclose(fp);
+	//fclose(fr);
 
 /* converts results to an image*/
 

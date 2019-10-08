@@ -2,15 +2,17 @@
 <layout>
    <vertices>
       <vertex id="scenario" x="57" y="102"/>
-      <vertex id="Display Gantt" x="587" y="113"/>
-      <vertex id="MEG Builder" x="587" y="254"/>
-      <vertex id="Memory Allocation" x="779" y="184"/>
-      <vertex id="Code Generation" x="987" y="71"/>
+      <vertex id="Display Gantt" x="689" y="44"/>
+      <vertex id="MEG Builder" x="682" y="204"/>
+      <vertex id="Memory Allocation" x="1062" y="380"/>
+      <vertex id="Code Generation" x="1209" y="129"/>
       <vertex id="Gantt Exporter" x="587" y="416"/>
       <vertex id="PiMM2SrDAG" x="219" y="194"/>
       <vertex id="PiSDF Scheduling" x="390" y="313"/>
       <vertex id="PiSDF Export" x="390" y="194"/>
-      <vertex id="Memory Bounds Estimator" x="978" y="282"/>
-      <vertex id="MEG Updater" x="504" y="47"/>
+      <vertex id="Memory Bounds Estimator" x="873" y="308"/>
+      <vertex id="MEG Updater" x="759" y="512"/>
+      <vertex id="Serial memory bounds" x="1052" y="47"/>
+      <vertex id="MemoryScripts" x="921" y="408"/>
    </vertices>
 </layout>

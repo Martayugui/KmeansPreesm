@@ -1,7 +1,8 @@
 /**
- * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2018) :
+ * Copyright or © or Copr. IETR/INSA - Rennes (2017 - 2019) :
  *
- * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2018)
+ * Alexandre Honorat <alexandre.honorat@insa-rennes.fr> (2019)
+ * Antoine Morvan <antoine.morvan@insa-rennes.fr> (2017 - 2019)
  * Julien Hascoet <jhascoet@kalray.eu> (2017)
  *
  * This software is a computer program whose purpose is to help prototyping
@@ -34,22 +35,40 @@
  * knowledge of the CeCILL license and that you accept its terms.
  */
 /*
-	============================================================================
-	Name        : preesm_gen.h
-	Author      : kdesnos
-	Version     :
-	Copyright   :
-	Description :
-	============================================================================
-*/
+ ============================================================================
+ Name        : preesm_gen.h
+ Author      : kdesnos
+ Version     :
+ Copyright   :
+ Description :
+ ============================================================================
+ */
 
 #ifndef _PREESM_PREESM_GEN_H
 #define _PREESM_PREESM_GEN_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * This _GNU_SOURCE actually creates possible incompatibilities
+ * and a few requirements due to the dump.c/.c source files.
+ *
+ * To not face problems, preesm_gen.h must be included before everything else
+ * (as the definition of _GNU_SOURCE). When needed, preesm_gen.h should be included in the .c,
+ * indeed the inclusion in the .h creates a cyclic inclusion.
+ */
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
+
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+
 #ifdef _WIN32
 #include <windows.h>
-#include <pthread.h>
 #else
 // For Linux
 // Pthread barriers are defined in POSIX 2001 version
@@ -66,7 +85,6 @@
 
 #define _POSIX_C_SOURCE 200112L
 #define _XOPEN_SOURCE 600
-#include <pthread.h>
 #include <unistd.h>
 #endif
 
@@ -75,7 +93,9 @@
 #include "mac_barrier.h"
 #endif
 
+#ifndef __k1__
 #include "communication.h"
+#endif
 #include "dump.h"
 #include "fifo.h"
 
@@ -84,5 +104,12 @@
 #include "kmeans.h"
 #include "read_par_and_img.h"
 #include "write_kmeans_results.h"
+
+#define NB_DESIGN_ELTS 2
+#define NB_CORES 1
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

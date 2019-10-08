@@ -15,9 +15,9 @@
         pluginId="org.ietr.preesm.memory.allocation.MemoryAllocatorTask" taskId="Memory Allocation">
         <dftools:data key="variables">
             <dftools:variable name="Allocator(s)" value="BestFit"/>
-            <dftools:variable name="Best/First Fit order" value="LargestFirst"/>
+            <dftools:variable name="Best/First Fit order" value="Shuffle"/>
             <dftools:variable name="Data alignment" value="None"/>
-            <dftools:variable name="Distribution" value="Mixed"/>
+            <dftools:variable name="Distribution" value="SharedOnly"/>
             <dftools:variable name="Merge broadcasts" value="True"/>
             <dftools:variable name="Nb of Shuffling Tested" value="10"/>
             <dftools:variable name="Verbose" value="True"/>
@@ -66,23 +66,17 @@
     <dftools:task
         pluginId="org.ietr.preesm.memory.exclusiongraph.MemExUpdater" taskId="MEG Updater">
         <dftools:data key="variables">
+            <dftools:variable name="Suppr Fork/Join" value="False"/>
+            <dftools:variable
+                name="Update with MemObject lifetime" value="False"/>
             <dftools:variable name="Verbose" value="True"/>
         </dftools:data>
     </dftools:task>
     <dftools:task
-        pluginId="org.ietr.preesm.memory.bounds.SerialMemoryBoundsEstimator" taskId="Serial memory bounds">
+        pluginId="org.ietr.preesm.memory.bounds.MemoryBoundsEstimator" taskId="MemBoundEst">
         <dftools:data key="variables">
             <dftools:variable name="Solver" value="Heuristic"/>
             <dftools:variable name="Verbose" value="False"/>
-        </dftools:data>
-    </dftools:task>
-    <dftools:task
-        pluginId="org.ietr.preesm.memory.script.MemoryScriptTask" taskId="MemoryScripts">
-        <dftools:data key="variables">
-            <dftools:variable name="Check" value="Thorough"/>
-            <dftools:variable name="Data alignment" value="None"/>
-            <dftools:variable name="Log Path" value="log_memoryScripts"/>
-            <dftools:variable name="Verbose" value="True"/>
         </dftools:data>
     </dftools:task>
     <dftools:dataTransfer from="scenario" sourceport="scenario"
@@ -117,18 +111,12 @@
         targetport="PiMM" to="PiSDF Export"/>
     <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
         targetport="MemEx" to="Memory Bounds Estimator"/>
+    <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
+        targetport="MemEx" to="MEG Updater"/>
+    <dftools:dataTransfer from="MEG Updater" sourceport="MemEx"
+        targetport="MemEx" to="Memory Allocation"/>
     <dftools:dataTransfer from="PiSDF Scheduling"
         sourceport="DAG" targetport="DAG" to="MEG Updater"/>
     <dftools:dataTransfer from="MEG Builder" sourceport="MemEx"
-        targetport="MemEx" to="MEG Updater"/>
-    <dftools:dataTransfer from="Memory Allocation"
-        sourceport="MEGs" targetport="MEGs" to="Serial memory bounds"/>
-    <dftools:dataTransfer from="MEG Updater" sourceport="MemEx"
-        targetport="MemEx" to="MemoryScripts"/>
-    <dftools:dataTransfer from="scenario" sourceport="scenario"
-        targetport="scenario" to="MemoryScripts"/>
-    <dftools:dataTransfer from="PiSDF Scheduling"
-        sourceport="DAG" targetport="DAG" to="MemoryScripts"/>
-    <dftools:dataTransfer from="MemoryScripts" sourceport="MemEx"
-        targetport="MemEx" to="Memory Allocation"/>
+        targetport="MemEx" to="MemBoundEst"/>
 </dftools:workflow>
